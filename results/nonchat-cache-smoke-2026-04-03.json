@@ -1,0 +1,98 @@
+{
+  "run_date": "2026-04-03",
+  "rows": [
+    {
+      "endpoint": "embed",
+      "scenario": "embed_exact_1",
+      "status": 200,
+      "elapsed_s": 0.38,
+      "meta": {
+        "api_version": {
+          "version": "2"
+        },
+        "billed_units": {
+          "input_tokens": 4800,
+          "image_tokens": 0
+        }
+      },
+      "id": "2780db8f-81a1-4491-8b8a-1e461c2d2290"
+    },
+    {
+      "endpoint": "embed",
+      "scenario": "embed_exact_2",
+      "status": 200,
+      "elapsed_s": 0.272,
+      "meta": {
+        "api_version": {
+          "version": "2"
+        },
+        "billed_units": {
+          "input_tokens": 4800,
+          "image_tokens": 0
+        }
+      },
+      "id": "43fc472b-ebd3-4306-8818-4abe1482ece9"
+    },
+    {
+      "endpoint": "embed",
+      "scenario": "embed_miss_1",
+      "status": 200,
+      "elapsed_s": 0.259,
+      "meta": {
+        "api_version": {
+          "version": "2"
+        },
+        "billed_units": {
+          "input_tokens": 4804,
+          "image_tokens": 0
+        }
+      },
+      "id": "094277ad-254b-461d-8e25-39f6b39cd9a2"
+    },
+    {
+      "endpoint": "rerank",
+      "scenario": "rerank_exact_1",
+      "status": 200,
+      "elapsed_s": 0.167,
+      "meta": {
+        "api_version": {
+          "version": "2"
+        },
+        "billed_units": {
+          "search_units": 1
+        }
+      },
+      "id": "2ee4071b-363c-4913-a38f-5a830f539345"
+    },
+    {
+      "endpoint": "rerank",
+      "scenario": "rerank_exact_2",
+      "status": 200,
+      "elapsed_s": 0.22,
+      "meta": {
+        "api_version": {
+          "version": "2"
+        },
+        "billed_units": {
+          "search_units": 1
+        }
+      },
+      "id": "b2c9c079-a809-4ea9-9eee-7a614ce9e702"
+    },
+    {
+      "endpoint": "rerank",
+      "scenario": "rerank_miss_1",
+      "status": 200,
+      "elapsed_s": 0.179,
+      "meta": {
+        "api_version": {
+          "version": "2"
+        },
+        "billed_units": {
+          "search_units": 1
+        }
+      },
+      "id": "6caaad95-9e9d-4913-bacd-90f9b76e7d38"
+    }
+  ]
+}
