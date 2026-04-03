@@ -8,6 +8,29 @@ This file answers three narrower questions:
 
 Raw data: [results/chat-shapes-2026-04-03.json](../results/chat-shapes-2026-04-03.json)
 
+Methodology and glossary: [docs/methodology.md](methodology.md)
+
+## How to read one row
+
+Example:
+
+`command-r7b-12-2024` + `size_large_exact_1` -> `35003 | 35532 | 14512`
+
+This means:
+
+- Cohere reported `35003` billable input tokens
+- Cohere reported `35532` total processed input tokens
+- Cohere reported `14512` cached tokens
+
+It does **not** mean "35532 tokens were repeated and only 35003 were billed because 14512 were discounted."
+
+Why not:
+
+- `35532 - 35003 = 529`
+- not `14512`
+
+That mismatch is one of the main reasons this repo treats `cached_tokens` as unclear telemetry rather than a clean public cache contract.
+
 ## Prompt sizes
 
 ### `command-a-03-2025`

@@ -1,0 +1,2204 @@
+{
+  "run_date": "2026-04-03",
+  "run_nonce": "50df5acf575a4879a9c59b254eeda365",
+  "cohere_models": [
+    "command-a-03-2025",
+    "command-r7b-12-2024"
+  ],
+  "openai_models": [
+    "gpt-5.4-mini",
+    "gpt-5.4"
+  ],
+  "rows": [
+    {
+      "provider": "cohere",
+      "model": "command-a-03-2025",
+      "group": "size_large",
+      "scenario": "size_large_exact_1",
+      "kind": "exact",
+      "status": 200,
+      "elapsed_s": 6.011,
+      "usage": {
+        "billed_input_tokens": 35018,
+        "billed_output_tokens": 3,
+        "raw_input_tokens": 35547,
+        "raw_output_tokens": 4,
+        "cached_tokens": 0
+      },
+      "estimated_cost_usd": 0.087575,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-a-03-2025",
+      "group": "size_large",
+      "scenario": "size_large_exact_2",
+      "kind": "exact",
+      "status": 200,
+      "elapsed_s": 9.956,
+      "usage": {
+        "billed_input_tokens": 35018,
+        "billed_output_tokens": 3,
+        "raw_input_tokens": 35547,
+        "raw_output_tokens": 4,
+        "cached_tokens": 0
+      },
+      "estimated_cost_usd": 0.087575,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-a-03-2025",
+      "group": "size_large",
+      "scenario": "size_large_exact_3",
+      "kind": "exact",
+      "status": 200,
+      "elapsed_s": 8.657,
+      "usage": {
+        "billed_input_tokens": 35018,
+        "billed_output_tokens": 3,
+        "raw_input_tokens": 35547,
+        "raw_output_tokens": 4,
+        "cached_tokens": 0
+      },
+      "estimated_cost_usd": 0.087575,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-a-03-2025",
+      "group": "size_large",
+      "scenario": "size_large_miss_1",
+      "kind": "miss",
+      "status": 200,
+      "elapsed_s": 9.51,
+      "usage": {
+        "billed_input_tokens": 35018,
+        "billed_output_tokens": 3,
+        "raw_input_tokens": 35547,
+        "raw_output_tokens": 4,
+        "cached_tokens": 0
+      },
+      "estimated_cost_usd": 0.087575,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-a-03-2025",
+      "group": "size_large",
+      "scenario": "size_large_miss_2",
+      "kind": "miss",
+      "status": 200,
+      "elapsed_s": 9.897,
+      "usage": {
+        "billed_input_tokens": 35018,
+        "billed_output_tokens": 3,
+        "raw_input_tokens": 35547,
+        "raw_output_tokens": 4,
+        "cached_tokens": 0
+      },
+      "estimated_cost_usd": 0.087575,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-a-03-2025",
+      "group": "size_large",
+      "scenario": "size_large_miss_3",
+      "kind": "miss",
+      "status": 200,
+      "elapsed_s": 10.585,
+      "usage": {
+        "billed_input_tokens": 35018,
+        "billed_output_tokens": 3,
+        "raw_input_tokens": 35547,
+        "raw_output_tokens": 4,
+        "cached_tokens": 0
+      },
+      "estimated_cost_usd": 0.087575,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-a-03-2025",
+      "group": "natural_prefix",
+      "scenario": "natural_prefix_exact_1",
+      "kind": "exact",
+      "status": 200,
+      "elapsed_s": 1.822,
+      "usage": {
+        "billed_input_tokens": 2513,
+        "billed_output_tokens": 2,
+        "raw_input_tokens": 3042,
+        "raw_output_tokens": 4,
+        "cached_tokens": 0
+      },
+      "estimated_cost_usd": 0.006302,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-a-03-2025",
+      "group": "natural_prefix",
+      "scenario": "natural_prefix_exact_2",
+      "kind": "exact",
+      "status": 200,
+      "elapsed_s": 2.329,
+      "usage": {
+        "billed_input_tokens": 2513,
+        "billed_output_tokens": 2,
+        "raw_input_tokens": 3042,
+        "raw_output_tokens": 4,
+        "cached_tokens": 0
+      },
+      "estimated_cost_usd": 0.006302,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-a-03-2025",
+      "group": "natural_prefix",
+      "scenario": "natural_prefix_exact_3",
+      "kind": "exact",
+      "status": 200,
+      "elapsed_s": 1.796,
+      "usage": {
+        "billed_input_tokens": 2513,
+        "billed_output_tokens": 2,
+        "raw_input_tokens": 3042,
+        "raw_output_tokens": 4,
+        "cached_tokens": 0
+      },
+      "estimated_cost_usd": 0.006302,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-a-03-2025",
+      "group": "natural_prefix",
+      "scenario": "natural_prefix_miss_1",
+      "kind": "miss",
+      "status": 200,
+      "elapsed_s": 4.27,
+      "usage": {
+        "billed_input_tokens": 2513,
+        "billed_output_tokens": 2,
+        "raw_input_tokens": 3042,
+        "raw_output_tokens": 4,
+        "cached_tokens": 0
+      },
+      "estimated_cost_usd": 0.006302,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-a-03-2025",
+      "group": "natural_prefix",
+      "scenario": "natural_prefix_miss_2",
+      "kind": "miss",
+      "status": 200,
+      "elapsed_s": 3.951,
+      "usage": {
+        "billed_input_tokens": 2513,
+        "billed_output_tokens": 2,
+        "raw_input_tokens": 3042,
+        "raw_output_tokens": 4,
+        "cached_tokens": 0
+      },
+      "estimated_cost_usd": 0.006302,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-a-03-2025",
+      "group": "natural_prefix",
+      "scenario": "natural_prefix_miss_3",
+      "kind": "miss",
+      "status": 200,
+      "elapsed_s": 0.599,
+      "usage": {
+        "billed_input_tokens": 2513,
+        "billed_output_tokens": 2,
+        "raw_input_tokens": 3042,
+        "raw_output_tokens": 4,
+        "cached_tokens": 0
+      },
+      "estimated_cost_usd": 0.006302,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-a-03-2025",
+      "group": "messages_history",
+      "scenario": "messages_history_exact_1",
+      "kind": "exact",
+      "status": 200,
+      "elapsed_s": 1.173,
+      "usage": {
+        "billed_input_tokens": 954,
+        "billed_output_tokens": 1,
+        "raw_input_tokens": 1547,
+        "raw_output_tokens": 3,
+        "cached_tokens": 0
+      },
+      "estimated_cost_usd": 0.002395,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-a-03-2025",
+      "group": "messages_history",
+      "scenario": "messages_history_exact_2",
+      "kind": "exact",
+      "status": 200,
+      "elapsed_s": 2.776,
+      "usage": {
+        "billed_input_tokens": 954,
+        "billed_output_tokens": 1,
+        "raw_input_tokens": 1547,
+        "raw_output_tokens": 3,
+        "cached_tokens": 0
+      },
+      "estimated_cost_usd": 0.002395,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-a-03-2025",
+      "group": "messages_history",
+      "scenario": "messages_history_exact_3",
+      "kind": "exact",
+      "status": 200,
+      "elapsed_s": 2.389,
+      "usage": {
+        "billed_input_tokens": 954,
+        "billed_output_tokens": 1,
+        "raw_input_tokens": 1547,
+        "raw_output_tokens": 3,
+        "cached_tokens": 0
+      },
+      "estimated_cost_usd": 0.002395,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-a-03-2025",
+      "group": "messages_history",
+      "scenario": "messages_history_miss_1",
+      "kind": "miss",
+      "status": 200,
+      "elapsed_s": 0.759,
+      "usage": {
+        "billed_input_tokens": 954,
+        "billed_output_tokens": 1,
+        "raw_input_tokens": 1547,
+        "raw_output_tokens": 3,
+        "cached_tokens": 0
+      },
+      "estimated_cost_usd": 0.002395,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-a-03-2025",
+      "group": "messages_history",
+      "scenario": "messages_history_miss_2",
+      "kind": "miss",
+      "status": 200,
+      "elapsed_s": 0.356,
+      "usage": {
+        "billed_input_tokens": 954,
+        "billed_output_tokens": 1,
+        "raw_input_tokens": 1547,
+        "raw_output_tokens": 3,
+        "cached_tokens": 0
+      },
+      "estimated_cost_usd": 0.002395,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-a-03-2025",
+      "group": "messages_history",
+      "scenario": "messages_history_miss_3",
+      "kind": "miss",
+      "status": 200,
+      "elapsed_s": 0.595,
+      "usage": {
+        "billed_input_tokens": 954,
+        "billed_output_tokens": 1,
+        "raw_input_tokens": 1547,
+        "raw_output_tokens": 3,
+        "cached_tokens": 0
+      },
+      "estimated_cost_usd": 0.002395,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-a-03-2025",
+      "group": "messages_history_long",
+      "scenario": "messages_history_long_exact_1",
+      "kind": "exact",
+      "status": 200,
+      "elapsed_s": 0.652,
+      "usage": {
+        "billed_input_tokens": 1885,
+        "billed_output_tokens": 1,
+        "raw_input_tokens": 2542,
+        "raw_output_tokens": 3,
+        "cached_tokens": 0
+      },
+      "estimated_cost_usd": 0.004722,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-a-03-2025",
+      "group": "messages_history_long",
+      "scenario": "messages_history_long_exact_2",
+      "kind": "exact",
+      "status": 200,
+      "elapsed_s": 3.829,
+      "usage": {
+        "billed_input_tokens": 1885,
+        "billed_output_tokens": 1,
+        "raw_input_tokens": 2542,
+        "raw_output_tokens": 3,
+        "cached_tokens": 0
+      },
+      "estimated_cost_usd": 0.004722,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-a-03-2025",
+      "group": "messages_history_long",
+      "scenario": "messages_history_long_exact_3",
+      "kind": "exact",
+      "status": 200,
+      "elapsed_s": 0.671,
+      "usage": {
+        "billed_input_tokens": 1885,
+        "billed_output_tokens": 1,
+        "raw_input_tokens": 2542,
+        "raw_output_tokens": 3,
+        "cached_tokens": 0
+      },
+      "estimated_cost_usd": 0.004722,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-a-03-2025",
+      "group": "messages_history_long",
+      "scenario": "messages_history_long_miss_1",
+      "kind": "miss",
+      "status": 200,
+      "elapsed_s": 0.949,
+      "usage": {
+        "billed_input_tokens": 1885,
+        "billed_output_tokens": 1,
+        "raw_input_tokens": 2542,
+        "raw_output_tokens": 3,
+        "cached_tokens": 0
+      },
+      "estimated_cost_usd": 0.004722,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-a-03-2025",
+      "group": "messages_history_long",
+      "scenario": "messages_history_long_miss_2",
+      "kind": "miss",
+      "status": 200,
+      "elapsed_s": 0.94,
+      "usage": {
+        "billed_input_tokens": 1885,
+        "billed_output_tokens": 1,
+        "raw_input_tokens": 2542,
+        "raw_output_tokens": 3,
+        "cached_tokens": 0
+      },
+      "estimated_cost_usd": 0.004722,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-a-03-2025",
+      "group": "messages_history_long",
+      "scenario": "messages_history_long_miss_3",
+      "kind": "miss",
+      "status": 200,
+      "elapsed_s": 1.015,
+      "usage": {
+        "billed_input_tokens": 1885,
+        "billed_output_tokens": 1,
+        "raw_input_tokens": 2542,
+        "raw_output_tokens": 3,
+        "cached_tokens": 0
+      },
+      "estimated_cost_usd": 0.004722,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-r7b-12-2024",
+      "group": "size_large",
+      "scenario": "size_large_exact_1",
+      "kind": "exact",
+      "status": 200,
+      "elapsed_s": 1.619,
+      "usage": {
+        "billed_input_tokens": 35018,
+        "billed_output_tokens": 2,
+        "raw_input_tokens": 35547,
+        "raw_output_tokens": 4,
+        "cached_tokens": 512
+      },
+      "estimated_cost_usd": 0.001313,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-r7b-12-2024",
+      "group": "size_large",
+      "scenario": "size_large_exact_2",
+      "kind": "exact",
+      "status": 200,
+      "elapsed_s": 0.657,
+      "usage": {
+        "billed_input_tokens": 35018,
+        "billed_output_tokens": 2,
+        "raw_input_tokens": 35547,
+        "raw_output_tokens": 4,
+        "cached_tokens": 35536
+      },
+      "estimated_cost_usd": 0.001313,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-r7b-12-2024",
+      "group": "size_large",
+      "scenario": "size_large_exact_3",
+      "kind": "exact",
+      "status": 200,
+      "elapsed_s": 1.65,
+      "usage": {
+        "billed_input_tokens": 35018,
+        "billed_output_tokens": 2,
+        "raw_input_tokens": 35547,
+        "raw_output_tokens": 4,
+        "cached_tokens": 512
+      },
+      "estimated_cost_usd": 0.001313,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-r7b-12-2024",
+      "group": "size_large",
+      "scenario": "size_large_miss_1",
+      "kind": "miss",
+      "status": 200,
+      "elapsed_s": 1.626,
+      "usage": {
+        "billed_input_tokens": 35018,
+        "billed_output_tokens": 2,
+        "raw_input_tokens": 35547,
+        "raw_output_tokens": 4,
+        "cached_tokens": 528
+      },
+      "estimated_cost_usd": 0.001313,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-r7b-12-2024",
+      "group": "size_large",
+      "scenario": "size_large_miss_2",
+      "kind": "miss",
+      "status": 200,
+      "elapsed_s": 1.578,
+      "usage": {
+        "billed_input_tokens": 35018,
+        "billed_output_tokens": 2,
+        "raw_input_tokens": 35547,
+        "raw_output_tokens": 4,
+        "cached_tokens": 528
+      },
+      "estimated_cost_usd": 0.001313,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-r7b-12-2024",
+      "group": "size_large",
+      "scenario": "size_large_miss_3",
+      "kind": "miss",
+      "status": 200,
+      "elapsed_s": 1.713,
+      "usage": {
+        "billed_input_tokens": 35018,
+        "billed_output_tokens": 2,
+        "raw_input_tokens": 35547,
+        "raw_output_tokens": 4,
+        "cached_tokens": 528
+      },
+      "estimated_cost_usd": 0.001313,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-r7b-12-2024",
+      "group": "natural_prefix",
+      "scenario": "natural_prefix_exact_1",
+      "kind": "exact",
+      "status": 200,
+      "elapsed_s": 0.258,
+      "usage": {
+        "billed_input_tokens": 2513,
+        "billed_output_tokens": 1,
+        "raw_input_tokens": 3042,
+        "raw_output_tokens": 3,
+        "cached_tokens": 528
+      },
+      "estimated_cost_usd": 9.4e-05,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-r7b-12-2024",
+      "group": "natural_prefix",
+      "scenario": "natural_prefix_exact_2",
+      "kind": "exact",
+      "status": 200,
+      "elapsed_s": 0.263,
+      "usage": {
+        "billed_input_tokens": 2513,
+        "billed_output_tokens": 1,
+        "raw_input_tokens": 3042,
+        "raw_output_tokens": 3,
+        "cached_tokens": 528
+      },
+      "estimated_cost_usd": 9.4e-05,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-r7b-12-2024",
+      "group": "natural_prefix",
+      "scenario": "natural_prefix_exact_3",
+      "kind": "exact",
+      "status": 200,
+      "elapsed_s": 0.215,
+      "usage": {
+        "billed_input_tokens": 2513,
+        "billed_output_tokens": 1,
+        "raw_input_tokens": 3042,
+        "raw_output_tokens": 3,
+        "cached_tokens": 3040
+      },
+      "estimated_cost_usd": 9.4e-05,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-r7b-12-2024",
+      "group": "natural_prefix",
+      "scenario": "natural_prefix_miss_1",
+      "kind": "miss",
+      "status": 200,
+      "elapsed_s": 0.267,
+      "usage": {
+        "billed_input_tokens": 2513,
+        "billed_output_tokens": 1,
+        "raw_input_tokens": 3042,
+        "raw_output_tokens": 3,
+        "cached_tokens": 528
+      },
+      "estimated_cost_usd": 9.4e-05,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-r7b-12-2024",
+      "group": "natural_prefix",
+      "scenario": "natural_prefix_miss_2",
+      "kind": "miss",
+      "status": 200,
+      "elapsed_s": 0.248,
+      "usage": {
+        "billed_input_tokens": 2513,
+        "billed_output_tokens": 1,
+        "raw_input_tokens": 3042,
+        "raw_output_tokens": 3,
+        "cached_tokens": 528
+      },
+      "estimated_cost_usd": 9.4e-05,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-r7b-12-2024",
+      "group": "natural_prefix",
+      "scenario": "natural_prefix_miss_3",
+      "kind": "miss",
+      "status": 200,
+      "elapsed_s": 0.256,
+      "usage": {
+        "billed_input_tokens": 2513,
+        "billed_output_tokens": 1,
+        "raw_input_tokens": 3042,
+        "raw_output_tokens": 3,
+        "cached_tokens": 528
+      },
+      "estimated_cost_usd": 9.4e-05,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-r7b-12-2024",
+      "group": "messages_history",
+      "scenario": "messages_history_exact_1",
+      "kind": "exact",
+      "status": 200,
+      "elapsed_s": 0.223,
+      "usage": {
+        "billed_input_tokens": 954,
+        "billed_output_tokens": 1,
+        "raw_input_tokens": 1547,
+        "raw_output_tokens": 3,
+        "cached_tokens": 528
+      },
+      "estimated_cost_usd": 3.6e-05,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-r7b-12-2024",
+      "group": "messages_history",
+      "scenario": "messages_history_exact_2",
+      "kind": "exact",
+      "status": 200,
+      "elapsed_s": 0.195,
+      "usage": {
+        "billed_input_tokens": 954,
+        "billed_output_tokens": 1,
+        "raw_input_tokens": 1547,
+        "raw_output_tokens": 3,
+        "cached_tokens": 528
+      },
+      "estimated_cost_usd": 3.6e-05,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-r7b-12-2024",
+      "group": "messages_history",
+      "scenario": "messages_history_exact_3",
+      "kind": "exact",
+      "status": 200,
+      "elapsed_s": 0.178,
+      "usage": {
+        "billed_input_tokens": 954,
+        "billed_output_tokens": 1,
+        "raw_input_tokens": 1547,
+        "raw_output_tokens": 3,
+        "cached_tokens": 1536
+      },
+      "estimated_cost_usd": 3.6e-05,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-r7b-12-2024",
+      "group": "messages_history",
+      "scenario": "messages_history_miss_1",
+      "kind": "miss",
+      "status": 200,
+      "elapsed_s": 0.227,
+      "usage": {
+        "billed_input_tokens": 954,
+        "billed_output_tokens": 1,
+        "raw_input_tokens": 1547,
+        "raw_output_tokens": 3,
+        "cached_tokens": 528
+      },
+      "estimated_cost_usd": 3.6e-05,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-r7b-12-2024",
+      "group": "messages_history",
+      "scenario": "messages_history_miss_2",
+      "kind": "miss",
+      "status": 200,
+      "elapsed_s": 0.282,
+      "usage": {
+        "billed_input_tokens": 954,
+        "billed_output_tokens": 1,
+        "raw_input_tokens": 1547,
+        "raw_output_tokens": 3,
+        "cached_tokens": 528
+      },
+      "estimated_cost_usd": 3.6e-05,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-r7b-12-2024",
+      "group": "messages_history",
+      "scenario": "messages_history_miss_3",
+      "kind": "miss",
+      "status": 200,
+      "elapsed_s": 0.23,
+      "usage": {
+        "billed_input_tokens": 954,
+        "billed_output_tokens": 1,
+        "raw_input_tokens": 1547,
+        "raw_output_tokens": 3,
+        "cached_tokens": 528
+      },
+      "estimated_cost_usd": 3.6e-05,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-r7b-12-2024",
+      "group": "messages_history_long",
+      "scenario": "messages_history_long_exact_1",
+      "kind": "exact",
+      "status": 200,
+      "elapsed_s": 0.253,
+      "usage": {
+        "billed_input_tokens": 1885,
+        "billed_output_tokens": 1,
+        "raw_input_tokens": 2542,
+        "raw_output_tokens": 3,
+        "cached_tokens": 528
+      },
+      "estimated_cost_usd": 7.1e-05,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-r7b-12-2024",
+      "group": "messages_history_long",
+      "scenario": "messages_history_long_exact_2",
+      "kind": "exact",
+      "status": 200,
+      "elapsed_s": 0.213,
+      "usage": {
+        "billed_input_tokens": 1885,
+        "billed_output_tokens": 1,
+        "raw_input_tokens": 2542,
+        "raw_output_tokens": 3,
+        "cached_tokens": 2528
+      },
+      "estimated_cost_usd": 7.1e-05,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-r7b-12-2024",
+      "group": "messages_history_long",
+      "scenario": "messages_history_long_exact_3",
+      "kind": "exact",
+      "status": 200,
+      "elapsed_s": 0.255,
+      "usage": {
+        "billed_input_tokens": 1885,
+        "billed_output_tokens": 1,
+        "raw_input_tokens": 2542,
+        "raw_output_tokens": 3,
+        "cached_tokens": 2528
+      },
+      "estimated_cost_usd": 7.1e-05,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-r7b-12-2024",
+      "group": "messages_history_long",
+      "scenario": "messages_history_long_miss_1",
+      "kind": "miss",
+      "status": 200,
+      "elapsed_s": 0.274,
+      "usage": {
+        "billed_input_tokens": 1885,
+        "billed_output_tokens": 1,
+        "raw_input_tokens": 2542,
+        "raw_output_tokens": 3,
+        "cached_tokens": 528
+      },
+      "estimated_cost_usd": 7.1e-05,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-r7b-12-2024",
+      "group": "messages_history_long",
+      "scenario": "messages_history_long_miss_2",
+      "kind": "miss",
+      "status": 200,
+      "elapsed_s": 0.273,
+      "usage": {
+        "billed_input_tokens": 1885,
+        "billed_output_tokens": 1,
+        "raw_input_tokens": 2542,
+        "raw_output_tokens": 3,
+        "cached_tokens": 528
+      },
+      "estimated_cost_usd": 7.1e-05,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-r7b-12-2024",
+      "group": "messages_history_long",
+      "scenario": "messages_history_long_miss_3",
+      "kind": "miss",
+      "status": 200,
+      "elapsed_s": 0.281,
+      "usage": {
+        "billed_input_tokens": 1885,
+        "billed_output_tokens": 1,
+        "raw_input_tokens": 2542,
+        "raw_output_tokens": 3,
+        "cached_tokens": 528
+      },
+      "estimated_cost_usd": 7.1e-05,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4-mini",
+      "resolved_model": "gpt-5.4-mini-2026-03-17",
+      "group": "size_large",
+      "scenario": "size_large_exact_1",
+      "kind": "exact",
+      "status": 200,
+      "elapsed_s": 0.702,
+      "usage": {
+        "input_tokens": 15026,
+        "cached_tokens": 0,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.011292,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4-mini",
+      "resolved_model": "gpt-5.4-mini-2026-03-17",
+      "group": "size_large",
+      "scenario": "size_large_exact_2",
+      "kind": "exact",
+      "status": 200,
+      "elapsed_s": 0.856,
+      "usage": {
+        "input_tokens": 15026,
+        "cached_tokens": 14592,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.001442,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4-mini",
+      "resolved_model": "gpt-5.4-mini-2026-03-17",
+      "group": "size_large",
+      "scenario": "size_large_exact_3",
+      "kind": "exact",
+      "status": 200,
+      "elapsed_s": 0.705,
+      "usage": {
+        "input_tokens": 15026,
+        "cached_tokens": 14592,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.001442,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4-mini",
+      "resolved_model": "gpt-5.4-mini-2026-03-17",
+      "group": "size_large",
+      "scenario": "size_large_miss_1",
+      "kind": "miss",
+      "status": 200,
+      "elapsed_s": 0.78,
+      "usage": {
+        "input_tokens": 15026,
+        "cached_tokens": 0,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.011292,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4-mini",
+      "resolved_model": "gpt-5.4-mini-2026-03-17",
+      "group": "size_large",
+      "scenario": "size_large_miss_2",
+      "kind": "miss",
+      "status": 200,
+      "elapsed_s": 0.775,
+      "usage": {
+        "input_tokens": 15026,
+        "cached_tokens": 0,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.011292,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4-mini",
+      "resolved_model": "gpt-5.4-mini-2026-03-17",
+      "group": "size_large",
+      "scenario": "size_large_miss_3",
+      "kind": "miss",
+      "status": 200,
+      "elapsed_s": 0.845,
+      "usage": {
+        "input_tokens": 15026,
+        "cached_tokens": 0,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.011292,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4-mini",
+      "resolved_model": "gpt-5.4-mini-2026-03-17",
+      "group": "natural_prefix",
+      "scenario": "natural_prefix_exact_1",
+      "kind": "exact",
+      "status": 200,
+      "elapsed_s": 0.937,
+      "usage": {
+        "input_tokens": 2381,
+        "cached_tokens": 0,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.001808,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4-mini",
+      "resolved_model": "gpt-5.4-mini-2026-03-17",
+      "group": "natural_prefix",
+      "scenario": "natural_prefix_exact_2",
+      "kind": "exact",
+      "status": 200,
+      "elapsed_s": 0.686,
+      "usage": {
+        "input_tokens": 2381,
+        "cached_tokens": 1792,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.000599,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4-mini",
+      "resolved_model": "gpt-5.4-mini-2026-03-17",
+      "group": "natural_prefix",
+      "scenario": "natural_prefix_exact_3",
+      "kind": "exact",
+      "status": 200,
+      "elapsed_s": 0.666,
+      "usage": {
+        "input_tokens": 2381,
+        "cached_tokens": 1792,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.000599,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4-mini",
+      "resolved_model": "gpt-5.4-mini-2026-03-17",
+      "group": "natural_prefix",
+      "scenario": "natural_prefix_miss_1",
+      "kind": "miss",
+      "status": 200,
+      "elapsed_s": 0.663,
+      "usage": {
+        "input_tokens": 2381,
+        "cached_tokens": 0,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.001808,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4-mini",
+      "resolved_model": "gpt-5.4-mini-2026-03-17",
+      "group": "natural_prefix",
+      "scenario": "natural_prefix_miss_2",
+      "kind": "miss",
+      "status": 200,
+      "elapsed_s": 0.63,
+      "usage": {
+        "input_tokens": 2381,
+        "cached_tokens": 0,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.001808,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4-mini",
+      "resolved_model": "gpt-5.4-mini-2026-03-17",
+      "group": "natural_prefix",
+      "scenario": "natural_prefix_miss_3",
+      "kind": "miss",
+      "status": 200,
+      "elapsed_s": 0.652,
+      "usage": {
+        "input_tokens": 2381,
+        "cached_tokens": 0,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.001808,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4-mini",
+      "resolved_model": "gpt-5.4-mini-2026-03-17",
+      "group": "messages_history",
+      "scenario": "messages_history_exact_1",
+      "kind": "exact",
+      "status": 200,
+      "elapsed_s": 0.71,
+      "usage": {
+        "input_tokens": 1024,
+        "cached_tokens": 0,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.00079,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4-mini",
+      "resolved_model": "gpt-5.4-mini-2026-03-17",
+      "group": "messages_history",
+      "scenario": "messages_history_exact_2",
+      "kind": "exact",
+      "status": 200,
+      "elapsed_s": 0.606,
+      "usage": {
+        "input_tokens": 1024,
+        "cached_tokens": 0,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.00079,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4-mini",
+      "resolved_model": "gpt-5.4-mini-2026-03-17",
+      "group": "messages_history",
+      "scenario": "messages_history_exact_3",
+      "kind": "exact",
+      "status": 200,
+      "elapsed_s": 0.653,
+      "usage": {
+        "input_tokens": 1024,
+        "cached_tokens": 0,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.00079,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4-mini",
+      "resolved_model": "gpt-5.4-mini-2026-03-17",
+      "group": "messages_history",
+      "scenario": "messages_history_miss_1",
+      "kind": "miss",
+      "status": 200,
+      "elapsed_s": 0.943,
+      "usage": {
+        "input_tokens": 1024,
+        "cached_tokens": 0,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.00079,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4-mini",
+      "resolved_model": "gpt-5.4-mini-2026-03-17",
+      "group": "messages_history",
+      "scenario": "messages_history_miss_2",
+      "kind": "miss",
+      "status": 200,
+      "elapsed_s": 0.805,
+      "usage": {
+        "input_tokens": 1024,
+        "cached_tokens": 0,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.00079,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4-mini",
+      "resolved_model": "gpt-5.4-mini-2026-03-17",
+      "group": "messages_history",
+      "scenario": "messages_history_miss_3",
+      "kind": "miss",
+      "status": 200,
+      "elapsed_s": 0.791,
+      "usage": {
+        "input_tokens": 1024,
+        "cached_tokens": 0,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.00079,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4-mini",
+      "resolved_model": "gpt-5.4-mini-2026-03-17",
+      "group": "messages_history_long",
+      "scenario": "messages_history_long_exact_1",
+      "kind": "exact",
+      "status": 200,
+      "elapsed_s": 0.789,
+      "usage": {
+        "input_tokens": 1985,
+        "cached_tokens": 0,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.001511,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4-mini",
+      "resolved_model": "gpt-5.4-mini-2026-03-17",
+      "group": "messages_history_long",
+      "scenario": "messages_history_long_exact_2",
+      "kind": "exact",
+      "status": 200,
+      "elapsed_s": 0.867,
+      "usage": {
+        "input_tokens": 1985,
+        "cached_tokens": 1792,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.000302,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4-mini",
+      "resolved_model": "gpt-5.4-mini-2026-03-17",
+      "group": "messages_history_long",
+      "scenario": "messages_history_long_exact_3",
+      "kind": "exact",
+      "status": 200,
+      "elapsed_s": 0.853,
+      "usage": {
+        "input_tokens": 1985,
+        "cached_tokens": 1792,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.000302,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4-mini",
+      "resolved_model": "gpt-5.4-mini-2026-03-17",
+      "group": "messages_history_long",
+      "scenario": "messages_history_long_miss_1",
+      "kind": "miss",
+      "status": 200,
+      "elapsed_s": 0.918,
+      "usage": {
+        "input_tokens": 1985,
+        "cached_tokens": 0,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.001511,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4-mini",
+      "resolved_model": "gpt-5.4-mini-2026-03-17",
+      "group": "messages_history_long",
+      "scenario": "messages_history_long_miss_2",
+      "kind": "miss",
+      "status": 200,
+      "elapsed_s": 0.836,
+      "usage": {
+        "input_tokens": 1985,
+        "cached_tokens": 0,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.001511,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4-mini",
+      "resolved_model": "gpt-5.4-mini-2026-03-17",
+      "group": "messages_history_long",
+      "scenario": "messages_history_long_miss_3",
+      "kind": "miss",
+      "status": 200,
+      "elapsed_s": 0.994,
+      "usage": {
+        "input_tokens": 1985,
+        "cached_tokens": 0,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.001511,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4",
+      "resolved_model": "gpt-5.4-2026-03-05",
+      "group": "size_large",
+      "scenario": "size_large_exact_1",
+      "kind": "exact",
+      "status": 200,
+      "elapsed_s": 1.745,
+      "usage": {
+        "input_tokens": 15026,
+        "cached_tokens": 0,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.03764,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4",
+      "resolved_model": "gpt-5.4-2026-03-05",
+      "group": "size_large",
+      "scenario": "size_large_exact_2",
+      "kind": "exact",
+      "status": 200,
+      "elapsed_s": 9.204,
+      "usage": {
+        "input_tokens": 15026,
+        "cached_tokens": 14848,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.004232,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4",
+      "resolved_model": "gpt-5.4-2026-03-05",
+      "group": "size_large",
+      "scenario": "size_large_exact_3",
+      "kind": "exact",
+      "status": 200,
+      "elapsed_s": 2.921,
+      "usage": {
+        "input_tokens": 15026,
+        "cached_tokens": 14848,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.004232,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4",
+      "resolved_model": "gpt-5.4-2026-03-05",
+      "group": "size_large",
+      "scenario": "size_large_miss_1",
+      "kind": "miss",
+      "status": 200,
+      "elapsed_s": 1.426,
+      "usage": {
+        "input_tokens": 15026,
+        "cached_tokens": 0,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.03764,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4",
+      "resolved_model": "gpt-5.4-2026-03-05",
+      "group": "size_large",
+      "scenario": "size_large_miss_2",
+      "kind": "miss",
+      "status": 200,
+      "elapsed_s": 3.142,
+      "usage": {
+        "input_tokens": 15026,
+        "cached_tokens": 0,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.03764,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4",
+      "resolved_model": "gpt-5.4-2026-03-05",
+      "group": "size_large",
+      "scenario": "size_large_miss_3",
+      "kind": "miss",
+      "status": 200,
+      "elapsed_s": 1.691,
+      "usage": {
+        "input_tokens": 15026,
+        "cached_tokens": 0,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.03764,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4",
+      "resolved_model": "gpt-5.4-2026-03-05",
+      "group": "natural_prefix",
+      "scenario": "natural_prefix_exact_1",
+      "kind": "exact",
+      "status": 200,
+      "elapsed_s": 1.931,
+      "usage": {
+        "input_tokens": 2381,
+        "cached_tokens": 0,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.006027,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4",
+      "resolved_model": "gpt-5.4-2026-03-05",
+      "group": "natural_prefix",
+      "scenario": "natural_prefix_exact_2",
+      "kind": "exact",
+      "status": 200,
+      "elapsed_s": 1.814,
+      "usage": {
+        "input_tokens": 2381,
+        "cached_tokens": 2176,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.001131,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4",
+      "resolved_model": "gpt-5.4-2026-03-05",
+      "group": "natural_prefix",
+      "scenario": "natural_prefix_exact_3",
+      "kind": "exact",
+      "status": 200,
+      "elapsed_s": 2.326,
+      "usage": {
+        "input_tokens": 2381,
+        "cached_tokens": 2176,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.001131,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4",
+      "resolved_model": "gpt-5.4-2026-03-05",
+      "group": "natural_prefix",
+      "scenario": "natural_prefix_miss_1",
+      "kind": "miss",
+      "status": 200,
+      "elapsed_s": 1.784,
+      "usage": {
+        "input_tokens": 2381,
+        "cached_tokens": 0,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.006027,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4",
+      "resolved_model": "gpt-5.4-2026-03-05",
+      "group": "natural_prefix",
+      "scenario": "natural_prefix_miss_2",
+      "kind": "miss",
+      "status": 200,
+      "elapsed_s": 1.345,
+      "usage": {
+        "input_tokens": 2381,
+        "cached_tokens": 0,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.006027,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4",
+      "resolved_model": "gpt-5.4-2026-03-05",
+      "group": "natural_prefix",
+      "scenario": "natural_prefix_miss_3",
+      "kind": "miss",
+      "status": 200,
+      "elapsed_s": 2.066,
+      "usage": {
+        "input_tokens": 2381,
+        "cached_tokens": 0,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.006027,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4",
+      "resolved_model": "gpt-5.4-2026-03-05",
+      "group": "messages_history",
+      "scenario": "messages_history_exact_1",
+      "kind": "exact",
+      "status": 200,
+      "elapsed_s": 1.817,
+      "usage": {
+        "input_tokens": 1024,
+        "cached_tokens": 0,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.002635,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4",
+      "resolved_model": "gpt-5.4-2026-03-05",
+      "group": "messages_history",
+      "scenario": "messages_history_exact_2",
+      "kind": "exact",
+      "status": 200,
+      "elapsed_s": 1.94,
+      "usage": {
+        "input_tokens": 1024,
+        "cached_tokens": 0,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.002635,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4",
+      "resolved_model": "gpt-5.4-2026-03-05",
+      "group": "messages_history",
+      "scenario": "messages_history_exact_3",
+      "kind": "exact",
+      "status": 200,
+      "elapsed_s": 1.919,
+      "usage": {
+        "input_tokens": 1024,
+        "cached_tokens": 0,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.002635,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4",
+      "resolved_model": "gpt-5.4-2026-03-05",
+      "group": "messages_history",
+      "scenario": "messages_history_miss_1",
+      "kind": "miss",
+      "status": 200,
+      "elapsed_s": 1.948,
+      "usage": {
+        "input_tokens": 1024,
+        "cached_tokens": 0,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.002635,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4",
+      "resolved_model": "gpt-5.4-2026-03-05",
+      "group": "messages_history",
+      "scenario": "messages_history_miss_2",
+      "kind": "miss",
+      "status": 200,
+      "elapsed_s": 2.005,
+      "usage": {
+        "input_tokens": 1024,
+        "cached_tokens": 0,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.002635,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4",
+      "resolved_model": "gpt-5.4-2026-03-05",
+      "group": "messages_history",
+      "scenario": "messages_history_miss_3",
+      "kind": "miss",
+      "status": 200,
+      "elapsed_s": 2.036,
+      "usage": {
+        "input_tokens": 1024,
+        "cached_tokens": 0,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.002635,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4",
+      "resolved_model": "gpt-5.4-2026-03-05",
+      "group": "messages_history_long",
+      "scenario": "messages_history_long_exact_1",
+      "kind": "exact",
+      "status": 200,
+      "elapsed_s": 0.903,
+      "usage": {
+        "input_tokens": 1985,
+        "cached_tokens": 0,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.005038,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4",
+      "resolved_model": "gpt-5.4-2026-03-05",
+      "group": "messages_history_long",
+      "scenario": "messages_history_long_exact_2",
+      "kind": "exact",
+      "status": 200,
+      "elapsed_s": 0.818,
+      "usage": {
+        "input_tokens": 1985,
+        "cached_tokens": 0,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.005038,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4",
+      "resolved_model": "gpt-5.4-2026-03-05",
+      "group": "messages_history_long",
+      "scenario": "messages_history_long_exact_3",
+      "kind": "exact",
+      "status": 200,
+      "elapsed_s": 1.853,
+      "usage": {
+        "input_tokens": 1985,
+        "cached_tokens": 1792,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.001006,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4",
+      "resolved_model": "gpt-5.4-2026-03-05",
+      "group": "messages_history_long",
+      "scenario": "messages_history_long_miss_1",
+      "kind": "miss",
+      "status": 200,
+      "elapsed_s": 1.071,
+      "usage": {
+        "input_tokens": 1985,
+        "cached_tokens": 0,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.005038,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4",
+      "resolved_model": "gpt-5.4-2026-03-05",
+      "group": "messages_history_long",
+      "scenario": "messages_history_long_miss_2",
+      "kind": "miss",
+      "status": 200,
+      "elapsed_s": 1.096,
+      "usage": {
+        "input_tokens": 1985,
+        "cached_tokens": 0,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.005038,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4",
+      "resolved_model": "gpt-5.4-2026-03-05",
+      "group": "messages_history_long",
+      "scenario": "messages_history_long_miss_3",
+      "kind": "miss",
+      "status": 200,
+      "elapsed_s": 0.886,
+      "usage": {
+        "input_tokens": 1985,
+        "cached_tokens": 0,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.005038,
+      "error": null
+    }
+  ],
+  "summary": {
+    "cohere": {
+      "command-a-03-2025": {
+        "size_large": {
+          "cold_exact_latency_s": 6.011,
+          "cold_exact_cost_usd": 0.087575,
+          "cold_exact_cached_tokens": 0,
+          "cold_exact_input_tokens": 35018,
+          "exact_after_warm_median_elapsed_s": 9.306,
+          "miss_median_elapsed_s": 9.897,
+          "exact_after_warm_median_cost_usd": 0.087575,
+          "miss_median_cost_usd": 0.087575,
+          "exact_after_warm_cached_tokens": [
+            0,
+            0
+          ],
+          "miss_cached_tokens": [
+            0,
+            0,
+            0
+          ],
+          "exact_after_warm_input_tokens": [
+            35018,
+            35018
+          ],
+          "miss_input_tokens": [
+            35018,
+            35018,
+            35018
+          ]
+        },
+        "natural_prefix": {
+          "cold_exact_latency_s": 1.822,
+          "cold_exact_cost_usd": 0.006302,
+          "cold_exact_cached_tokens": 0,
+          "cold_exact_input_tokens": 2513,
+          "exact_after_warm_median_elapsed_s": 2.062,
+          "miss_median_elapsed_s": 3.951,
+          "exact_after_warm_median_cost_usd": 0.006302,
+          "miss_median_cost_usd": 0.006302,
+          "exact_after_warm_cached_tokens": [
+            0,
+            0
+          ],
+          "miss_cached_tokens": [
+            0,
+            0,
+            0
+          ],
+          "exact_after_warm_input_tokens": [
+            2513,
+            2513
+          ],
+          "miss_input_tokens": [
+            2513,
+            2513,
+            2513
+          ]
+        },
+        "messages_history": {
+          "cold_exact_latency_s": 1.173,
+          "cold_exact_cost_usd": 0.002395,
+          "cold_exact_cached_tokens": 0,
+          "cold_exact_input_tokens": 954,
+          "exact_after_warm_median_elapsed_s": 2.582,
+          "miss_median_elapsed_s": 0.595,
+          "exact_after_warm_median_cost_usd": 0.002395,
+          "miss_median_cost_usd": 0.002395,
+          "exact_after_warm_cached_tokens": [
+            0,
+            0
+          ],
+          "miss_cached_tokens": [
+            0,
+            0,
+            0
+          ],
+          "exact_after_warm_input_tokens": [
+            954,
+            954
+          ],
+          "miss_input_tokens": [
+            954,
+            954,
+            954
+          ]
+        },
+        "messages_history_long": {
+          "cold_exact_latency_s": 0.652,
+          "cold_exact_cost_usd": 0.004722,
+          "cold_exact_cached_tokens": 0,
+          "cold_exact_input_tokens": 1885,
+          "exact_after_warm_median_elapsed_s": 2.25,
+          "miss_median_elapsed_s": 0.949,
+          "exact_after_warm_median_cost_usd": 0.004722,
+          "miss_median_cost_usd": 0.004722,
+          "exact_after_warm_cached_tokens": [
+            0,
+            0
+          ],
+          "miss_cached_tokens": [
+            0,
+            0,
+            0
+          ],
+          "exact_after_warm_input_tokens": [
+            1885,
+            1885
+          ],
+          "miss_input_tokens": [
+            1885,
+            1885,
+            1885
+          ]
+        }
+      },
+      "command-r7b-12-2024": {
+        "size_large": {
+          "cold_exact_latency_s": 1.619,
+          "cold_exact_cost_usd": 0.001313,
+          "cold_exact_cached_tokens": 512,
+          "cold_exact_input_tokens": 35018,
+          "exact_after_warm_median_elapsed_s": 1.153,
+          "miss_median_elapsed_s": 1.626,
+          "exact_after_warm_median_cost_usd": 0.001313,
+          "miss_median_cost_usd": 0.001313,
+          "exact_after_warm_cached_tokens": [
+            35536,
+            512
+          ],
+          "miss_cached_tokens": [
+            528,
+            528,
+            528
+          ],
+          "exact_after_warm_input_tokens": [
+            35018,
+            35018
+          ],
+          "miss_input_tokens": [
+            35018,
+            35018,
+            35018
+          ]
+        },
+        "natural_prefix": {
+          "cold_exact_latency_s": 0.258,
+          "cold_exact_cost_usd": 9.4e-05,
+          "cold_exact_cached_tokens": 528,
+          "cold_exact_input_tokens": 2513,
+          "exact_after_warm_median_elapsed_s": 0.239,
+          "miss_median_elapsed_s": 0.256,
+          "exact_after_warm_median_cost_usd": 9.4e-05,
+          "miss_median_cost_usd": 9.4e-05,
+          "exact_after_warm_cached_tokens": [
+            528,
+            3040
+          ],
+          "miss_cached_tokens": [
+            528,
+            528,
+            528
+          ],
+          "exact_after_warm_input_tokens": [
+            2513,
+            2513
+          ],
+          "miss_input_tokens": [
+            2513,
+            2513,
+            2513
+          ]
+        },
+        "messages_history": {
+          "cold_exact_latency_s": 0.223,
+          "cold_exact_cost_usd": 3.6e-05,
+          "cold_exact_cached_tokens": 528,
+          "cold_exact_input_tokens": 954,
+          "exact_after_warm_median_elapsed_s": 0.186,
+          "miss_median_elapsed_s": 0.23,
+          "exact_after_warm_median_cost_usd": 3.6e-05,
+          "miss_median_cost_usd": 3.6e-05,
+          "exact_after_warm_cached_tokens": [
+            528,
+            1536
+          ],
+          "miss_cached_tokens": [
+            528,
+            528,
+            528
+          ],
+          "exact_after_warm_input_tokens": [
+            954,
+            954
+          ],
+          "miss_input_tokens": [
+            954,
+            954,
+            954
+          ]
+        },
+        "messages_history_long": {
+          "cold_exact_latency_s": 0.253,
+          "cold_exact_cost_usd": 7.1e-05,
+          "cold_exact_cached_tokens": 528,
+          "cold_exact_input_tokens": 1885,
+          "exact_after_warm_median_elapsed_s": 0.234,
+          "miss_median_elapsed_s": 0.274,
+          "exact_after_warm_median_cost_usd": 7.1e-05,
+          "miss_median_cost_usd": 7.1e-05,
+          "exact_after_warm_cached_tokens": [
+            2528,
+            2528
+          ],
+          "miss_cached_tokens": [
+            528,
+            528,
+            528
+          ],
+          "exact_after_warm_input_tokens": [
+            1885,
+            1885
+          ],
+          "miss_input_tokens": [
+            1885,
+            1885,
+            1885
+          ]
+        }
+      }
+    },
+    "openai": {
+      "gpt-5.4-mini": {
+        "size_large": {
+          "cold_exact_latency_s": 0.702,
+          "cold_exact_cost_usd": 0.011292,
+          "cold_exact_cached_tokens": 0,
+          "cold_exact_input_tokens": 15026,
+          "exact_after_warm_median_elapsed_s": 0.78,
+          "miss_median_elapsed_s": 0.78,
+          "exact_after_warm_median_cost_usd": 0.001442,
+          "miss_median_cost_usd": 0.011292,
+          "exact_after_warm_cached_tokens": [
+            14592,
+            14592
+          ],
+          "miss_cached_tokens": [
+            0,
+            0,
+            0
+          ],
+          "exact_after_warm_input_tokens": [
+            15026,
+            15026
+          ],
+          "miss_input_tokens": [
+            15026,
+            15026,
+            15026
+          ]
+        },
+        "natural_prefix": {
+          "cold_exact_latency_s": 0.937,
+          "cold_exact_cost_usd": 0.001808,
+          "cold_exact_cached_tokens": 0,
+          "cold_exact_input_tokens": 2381,
+          "exact_after_warm_median_elapsed_s": 0.676,
+          "miss_median_elapsed_s": 0.652,
+          "exact_after_warm_median_cost_usd": 0.000599,
+          "miss_median_cost_usd": 0.001808,
+          "exact_after_warm_cached_tokens": [
+            1792,
+            1792
+          ],
+          "miss_cached_tokens": [
+            0,
+            0,
+            0
+          ],
+          "exact_after_warm_input_tokens": [
+            2381,
+            2381
+          ],
+          "miss_input_tokens": [
+            2381,
+            2381,
+            2381
+          ]
+        },
+        "messages_history": {
+          "cold_exact_latency_s": 0.71,
+          "cold_exact_cost_usd": 0.00079,
+          "cold_exact_cached_tokens": 0,
+          "cold_exact_input_tokens": 1024,
+          "exact_after_warm_median_elapsed_s": 0.629,
+          "miss_median_elapsed_s": 0.805,
+          "exact_after_warm_median_cost_usd": 0.00079,
+          "miss_median_cost_usd": 0.00079,
+          "exact_after_warm_cached_tokens": [
+            0,
+            0
+          ],
+          "miss_cached_tokens": [
+            0,
+            0,
+            0
+          ],
+          "exact_after_warm_input_tokens": [
+            1024,
+            1024
+          ],
+          "miss_input_tokens": [
+            1024,
+            1024,
+            1024
+          ]
+        },
+        "messages_history_long": {
+          "cold_exact_latency_s": 0.789,
+          "cold_exact_cost_usd": 0.001511,
+          "cold_exact_cached_tokens": 0,
+          "cold_exact_input_tokens": 1985,
+          "exact_after_warm_median_elapsed_s": 0.86,
+          "miss_median_elapsed_s": 0.918,
+          "exact_after_warm_median_cost_usd": 0.000302,
+          "miss_median_cost_usd": 0.001511,
+          "exact_after_warm_cached_tokens": [
+            1792,
+            1792
+          ],
+          "miss_cached_tokens": [
+            0,
+            0,
+            0
+          ],
+          "exact_after_warm_input_tokens": [
+            1985,
+            1985
+          ],
+          "miss_input_tokens": [
+            1985,
+            1985,
+            1985
+          ]
+        }
+      },
+      "gpt-5.4": {
+        "size_large": {
+          "cold_exact_latency_s": 1.745,
+          "cold_exact_cost_usd": 0.03764,
+          "cold_exact_cached_tokens": 0,
+          "cold_exact_input_tokens": 15026,
+          "exact_after_warm_median_elapsed_s": 6.062,
+          "miss_median_elapsed_s": 1.691,
+          "exact_after_warm_median_cost_usd": 0.004232,
+          "miss_median_cost_usd": 0.03764,
+          "exact_after_warm_cached_tokens": [
+            14848,
+            14848
+          ],
+          "miss_cached_tokens": [
+            0,
+            0,
+            0
+          ],
+          "exact_after_warm_input_tokens": [
+            15026,
+            15026
+          ],
+          "miss_input_tokens": [
+            15026,
+            15026,
+            15026
+          ]
+        },
+        "natural_prefix": {
+          "cold_exact_latency_s": 1.931,
+          "cold_exact_cost_usd": 0.006027,
+          "cold_exact_cached_tokens": 0,
+          "cold_exact_input_tokens": 2381,
+          "exact_after_warm_median_elapsed_s": 2.07,
+          "miss_median_elapsed_s": 1.784,
+          "exact_after_warm_median_cost_usd": 0.001131,
+          "miss_median_cost_usd": 0.006027,
+          "exact_after_warm_cached_tokens": [
+            2176,
+            2176
+          ],
+          "miss_cached_tokens": [
+            0,
+            0,
+            0
+          ],
+          "exact_after_warm_input_tokens": [
+            2381,
+            2381
+          ],
+          "miss_input_tokens": [
+            2381,
+            2381,
+            2381
+          ]
+        },
+        "messages_history": {
+          "cold_exact_latency_s": 1.817,
+          "cold_exact_cost_usd": 0.002635,
+          "cold_exact_cached_tokens": 0,
+          "cold_exact_input_tokens": 1024,
+          "exact_after_warm_median_elapsed_s": 1.929,
+          "miss_median_elapsed_s": 2.005,
+          "exact_after_warm_median_cost_usd": 0.002635,
+          "miss_median_cost_usd": 0.002635,
+          "exact_after_warm_cached_tokens": [
+            0,
+            0
+          ],
+          "miss_cached_tokens": [
+            0,
+            0,
+            0
+          ],
+          "exact_after_warm_input_tokens": [
+            1024,
+            1024
+          ],
+          "miss_input_tokens": [
+            1024,
+            1024,
+            1024
+          ]
+        },
+        "messages_history_long": {
+          "cold_exact_latency_s": 0.903,
+          "cold_exact_cost_usd": 0.005038,
+          "cold_exact_cached_tokens": 0,
+          "cold_exact_input_tokens": 1985,
+          "exact_after_warm_median_elapsed_s": 1.335,
+          "miss_median_elapsed_s": 1.071,
+          "exact_after_warm_median_cost_usd": 0.003022,
+          "miss_median_cost_usd": 0.005038,
+          "exact_after_warm_cached_tokens": [
+            0,
+            1792
+          ],
+          "miss_cached_tokens": [
+            0,
+            0,
+            0
+          ],
+          "exact_after_warm_input_tokens": [
+            1985,
+            1985
+          ],
+          "miss_input_tokens": [
+            1985,
+            1985,
+            1985
+          ]
+        }
+      }
+    }
+  }
+}
