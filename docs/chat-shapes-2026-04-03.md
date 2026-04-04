@@ -1,4 +1,5 @@
-# Chat Shapes Summary: 2026-04-03
+**Chat Shapes Summary: 2026-04-03**
+<sub>────────────────────────────────────────────────────────────────────────────────────────────────────────────────────</sub>
 
 This file answers three narrower questions:
 
@@ -10,7 +11,8 @@ Raw data: [results/chat-shapes-2026-04-03.json](../results/chat-shapes-2026-04-0
 
 Methodology and glossary: [docs/methodology.md](methodology.md)
 
-## How to read one row
+**How to read one row**
+<sub>────────────────────────────────────────────────────────────────────────────────────────────────────────────────────</sub>
 
 Example:
 
@@ -31,9 +33,11 @@ Why not:
 
 That mismatch is one of the main reasons this repo treats `cached_tokens` as an unclear cache counter rather than a clean public cache feature.
 
-## Prompt sizes
+**Prompt sizes**
+<sub>────────────────────────────────────────────────────────────────────────────────────────────────────────────────────</sub>
 
-### `command-a-03-2025`
+**`command-a-03-2025`**
+<sub>────────────────────────────────────────────────────────────────────────────────────────────────────────────────────</sub>
 
 | Scenario | billed input | raw input | cached tokens |
 | --- | ---: | ---: | ---: |
@@ -46,7 +50,8 @@ That mismatch is one of the main reasons this repo treats `cached_tokens` as an 
 
 Result: no cache signal across small, medium, or large unique prefixes.
 
-### `command-a-reasoning-08-2025`
+**`command-a-reasoning-08-2025`**
+<sub>────────────────────────────────────────────────────────────────────────────────────────────────────────────────────</sub>
 
 | Scenario | billed input | raw input | cached tokens |
 | --- | ---: | ---: | ---: |
@@ -59,7 +64,8 @@ Result: no cache signal across small, medium, or large unique prefixes.
 
 Result: same conclusion as Command A.
 
-### `command-r7b-12-2024`
+**`command-r7b-12-2024`**
+<sub>────────────────────────────────────────────────────────────────────────────────────────────────────────────────────</sub>
 
 | Scenario | billed input | raw input | cached tokens |
 | --- | ---: | ---: | ---: |
@@ -75,7 +81,8 @@ Result: same conclusion as Command A.
 
 Result: `cached_tokens` exists, but it changes unpredictably across exact repeats and does not show a clean billing effect.
 
-## Natural-language prefix
+**Natural-language prefix**
+<sub>────────────────────────────────────────────────────────────────────────────────────────────────────────────────────</sub>
 
 These prompts used prose paragraphs instead of repeated token lists.
 
@@ -96,7 +103,8 @@ Result:
 - natural prompts did not unlock cache behavior on the two Command A models
 - `r7b` again showed unstable `cached_tokens` values on exact repeats without a billed-input drop
 
-## Multi-turn `messages` history
+**Multi-turn `messages` history**
+<sub>────────────────────────────────────────────────────────────────────────────────────────────────────────────────────</sub>
 
 These prompts used a normal conversation history with alternating user and assistant turns.
 
@@ -117,7 +125,8 @@ Result:
 - normal multi-turn history still showed no cache signal on the two Command A models
 - `r7b` still looked inconsistent rather than productized
 
-## Safe conclusion
+**Safe conclusion**
+<sub>────────────────────────────────────────────────────────────────────────────────────────────────────────────────────</sub>
 
 - Yes, prompt size was tested.
 - Yes, natural-language prompts were tested.
