@@ -1,227 +1,152 @@
 # Cohere Cache Profile
 
-This repo tests whether Cohere's public API exposes usable prompt caching, and compares that behavior to OpenAI.
+This repo tests one narrow question:
 
-## Executive Summary
+**If your app keeps resending stable context across turns, does Cohere's public API give you useful prompt-caching savings?**
 
-If you only need the main result:
+It compares Cohere to OpenAI on that question.
 
-- **Cost:** OpenAI showed real cost reductions on repeated prompts. Cohere `command-a-03-2025` did not.
-- **Cheap exception:** Cohere `command-r7b-12-2024` stayed inexpensive, but the repo does not show a clean public cache discount behind that price.
-- **Latency:** in this sample, latency was noisy and not a dependable win on either provider. Cost was the much stronger signal.
-- **Scaling:** for long-running agents with a large repeated prefix, the cost gap becomes material very quickly.
-- **Stability follow-up:** the stronger repeat study kept the Command A conclusion intact and showed that the earlier weak `gpt-5.4` long-history result was probably just under-sampled.
+It does **not** try to judge:
 
-How this summary is measured:
+- overall model quality
+- embeddings or rerank quality
+- private deployment / Model Vault
+- whether Cohere is a good provider in general
 
-- `cold turn` = first exact request for that prompt shape
-- `warm repeated turn` = median of the warm exact repeats used by that benchmark
-- projections assume the same prompt shape repeats: `cold turn cost + (N - 1) * warm repeated turn cost`
+## Bottom Line
+
+If your project depends on repeated prompt reuse to stay cheap, this repo is a warning against **Cohere Command A on the public API**.
+
+- OpenAI showed real cost drops after the first turn.
+- Cohere `command-a-03-2025` did not.
+- Cohere `command-r7b-12-2024` stayed cheap, but mostly because the model itself is cheap, not because we found a trustworthy public cache discount.
+- Latency was noisy. Cost was the useful signal.
+
+## When You Should Care
+
+These results matter if your app looks like one of these:
+
+- a coding agent with a large system prompt, tools, and growing history
+- a multi-turn assistant that keeps resending lots of retained history
+- a RAG chat app that reuses big repeated instructions or document context
+- any workflow where you expect later turns to get cheaper because the prefix is reused
+
+If your project is choosing Cohere mainly for **rerank, embeddings, retrieval, or private deployment**, this repo is not the right benchmark.
+
+## Quick Decision
+
+| Your app | Practical reading |
+| --- | --- |
+| Repeats a large stable prompt every turn | Avoid Cohere Command A public API if cost depends on prompt caching |
+| Keeps a long retained chat history | Same warning: Cohere Command A stayed flat in our tests |
+| Only needs a very cheap small model | `command-r7b-12-2024` may be worth testing, but this repo does not judge model quality |
+| Needs predictable cache savings or trustworthy cache telemetry | Do not rely on Cohere public API based on these results |
+| Is being evaluated for rerank, embeddings, or private deployment | Out of scope for this repo |
+
+## Key Numbers
+
+Two prompt shapes mattered most:
+
+- **Large repeated prompt:** a big stable prefix repeated every turn
+- **Longer multi-turn conversation:** retained `messages` history reused across turns
+
+The `50 turns` column below is a projection, not a directly observed 50-turn run.
+It uses:
+
+`cold turn cost + (49 * repeated turn cost)`
+
+All dollar figures in this repo are estimated from published pricing and API usage fields. They are not invoice exports.
 
 ### Large Repeated Prompt
 
-Measured prompt shape:
+Source of truth: [docs/openai-vs-cohere-latency-cost-2026-04-03.md](docs/openai-vs-cohere-latency-cost-2026-04-03.md)
 
-- OpenAI repeated input: `15026` input tokens
-- Cohere repeated input: `35018` billed input tokens
-
-Important: those token counts are provider-specific accounting, not a fair cross-provider token match. The cost numbers are the comparable part.
-
-Cold turn vs warm repeated turn:
-
-| Model | cold turn cost | warm repeated turn cost | observed change |
+| Model | cold turn | repeated turn | 50 turns |
 | --- | ---: | ---: | ---: |
-| `command-a-03-2025` | `$0.087575` | `$0.087575` | `0.0%` |
-| `command-r7b-12-2024` | `$0.001313` | `$0.001313` | `0.0%` |
-| `gpt-5.4-mini` | `$0.011292` | `$0.001442` | `87.2% cheaper` |
-| `gpt-5.4` | `$0.037640` | `$0.004232` | `88.8% cheaper` |
+| `command-a-03-2025` | `$0.087575` | `$0.087575` | `$4.378750` |
+| `command-r7b-12-2024` | `$0.001313` | `$0.001313` | `$0.065650` |
+| `gpt-5.4-mini` | `$0.011292` | `$0.001442` | `$0.081950` |
+| `gpt-5.4` | `$0.037640` | `$0.004232` | `$0.245008` |
 
-Evidence:
+Project meaning:
 
-- [results/openai-vs-cohere-latency-cost-2026-04-03.json](results/openai-vs-cohere-latency-cost-2026-04-03.json)
-- [Large repeated prompt analysis](docs/openai-vs-cohere-latency-cost-2026-04-03.md#large-repeated-prompt)
-- [Methodology](docs/methodology.md#openai-comparison-design)
+- Cohere Command A kept charging full price.
+- OpenAI got dramatically cheaper after the first turn.
+- R7B stayed cheap, but not because we found a clean public cache feature.
 
 ### Longer Multi-Turn Conversation
 
-Measured prompt shape:
+Source of truth: [docs/stability-study-2026-04-03.md](docs/stability-study-2026-04-03.md)
 
-- OpenAI repeated input: `1985` input tokens
-- Cohere repeated input: `1885` billed input tokens
-
-This used a retained `messages` history with alternating user and assistant turns.
-
-These numbers come from the follow-up stability study rather than the earlier 2-repeat comparison.
-
-| Model | cold turn cost | warm repeated turn cost | observed change |
+| Model | cold turn | repeated turn | 50 turns |
 | --- | ---: | ---: | ---: |
-| `command-a-03-2025` | `$0.004727` | `$0.004727` | `0.0%` |
-| `command-r7b-12-2024` | `$0.000071` | `$0.000071` | `0.0%` |
-| `gpt-5.4-mini` | `$0.001513` | `$0.000303` | `80.0% cheaper` |
-| `gpt-5.4` | `$0.005043` | `$0.001010` | `80.0% cheaper` |
+| `command-a-03-2025` | `$0.004727` | `$0.004727` | `$0.236350` |
+| `command-r7b-12-2024` | `$0.000071` | `$0.000071` | `$0.003550` |
+| `gpt-5.4-mini` | `$0.001513` | `$0.000303` | `$0.016360` |
+| `gpt-5.4` | `$0.005043` | `$0.001010` | `$0.054533` |
 
-Evidence:
+Project meaning:
+
+- Even on a more normal retained-history chat shape, Cohere Command A still stayed flat.
+- OpenAI still got materially cheaper.
+- OpenAI `gpt-5.4` still looked much cheaper on long retained histories in the stronger repeat-heavy study.
+
+## What We Actually Proved
+
+- **Cohere Command A:** no useful public prompt-cache signal in the tested public chat API path.
+  - In the stability study, repeated requests did not get cheaper on either key prompt shape.
+- **Cohere R7B:** `cached_tokens` exists, but it is not a trustworthy billing signal.
+  - In the stability study it still reported cache hits even when we intentionally changed the prefix to avoid reusing the same cache entry.
+- **OpenAI:** repeated warm requests usually stayed cheaper.
+  - `gpt-5.4` got cheaper in every repeated run on both key prompt shapes in the stability study.
+  - `gpt-5.4-mini` was also stable, except for one delayed miss on the long-history case.
+- **Latency:** too noisy to use as the main decision signal.
+
+## What This Means For A Real Project
+
+Use this repo as evidence **against Cohere Command A public API** when:
+
+- your architecture expects later turns to get cheaper because the prefix repeats
+- your chatbot keeps a lot of retained history
+- your agent resends a large stable prompt every turn
+- your budget depends on repeat-prompt caching working predictably
+
+This repo does **not** tell you to reject Cohere in general.
+
+`command-r7b-12-2024` may still be worth testing if:
+
+- you mainly care about very low base cost
+- you do not need predictable cache savings
+- you do not need trustworthy cache telemetry
+
+That is a cost recommendation only. This repo does not claim that R7B is the right model for your task.
+
+## What This Repo Does Not Prove
+
+- It does not prove that Cohere has no internal caching.
+- It does not compare overall model quality.
+- It does not judge embeddings, rerank, or retrieval quality.
+- It does not test private deployments, Model Vault, or non-public serving setups.
+- It does not map full cache lifetime; the delay check was only `20s`.
+
+## Read Next
+
+Recommended order:
+
+- [docs/stability-study-2026-04-03.md](docs/stability-study-2026-04-03.md): read this if your app keeps repeating stable context and you want the strongest evidence
+- [docs/openai-vs-cohere-latency-cost-2026-04-03.md](docs/openai-vs-cohere-latency-cost-2026-04-03.md): read this if you want the broader sweep across more prompt shapes
+- [docs/chat-shapes-2026-04-03.md](docs/chat-shapes-2026-04-03.md): read this if you want the clearest Cohere-only telemetry examples
+- [docs/methodology.md](docs/methodology.md): read this if you want the exact benchmark design and limits
+
+Historical note:
+
+- [docs/findings-2026-04-03.md](docs/findings-2026-04-03.md) is the earliest repetitive-prefix probe. It is not the first thing to trust.
+
+Raw data:
 
 - [results/cache-stability-study-2026-04-03.json](results/cache-stability-study-2026-04-03.json)
-- [Stability study analysis](docs/stability-study-2026-04-03.md#longer-multi-turn-messages-history)
-- [Methodology](docs/methodology.md#stability-study-design)
-
-### Latency
-
-Caching was **not** a clean latency story in this sample.
-
-Large repeated prompt, cold vs warm:
-
-| Model | cold latency | warm repeated latency | reading |
-| --- | ---: | ---: | --- |
-| `command-a-03-2025` | `6.011s` | `9.306s` | worse |
-| `command-r7b-12-2024` | `1.619s` | `1.153s` | better, but no cost change |
-| `gpt-5.4-mini` | `0.702s` | `0.780s` | roughly flat |
-| `gpt-5.4` | `1.745s` | `6.062s` | worse in this run |
-
-So the practical takeaway is:
-
-- treat **cost** as the reliable caching benefit
-- do **not** budget around a latency improvement from these results alone
-
-Evidence:
-
-- [Latency tables](docs/openai-vs-cohere-latency-cost-2026-04-03.md#large-repeated-prompt)
-- [Raw comparison results](results/openai-vs-cohere-latency-cost-2026-04-03.json)
-
-### Cost Scaling
-
-These projections use the measured formula:
-
-`cold turn cost + (N - 1) * warm repeated turn cost`
-
-Sources:
-
-- large repeated prompt: broader cross-provider comparison
-- longer multi-turn conversation: follow-up stability study
-
-#### Large Repeated Prompt
-
-| Model | 10 turns | 50 turns |
-| --- | ---: | ---: |
-| `command-a-03-2025` | `$0.875750` | `$4.378750` |
-| `command-r7b-12-2024` | `$0.013130` | `$0.065650` |
-| `gpt-5.4-mini` | `$0.024270` | `$0.081950` |
-| `gpt-5.4` | `$0.075728` | `$0.245008` |
-
-#### Longer Multi-Turn Conversation
-
-| Model | 10 turns | 50 turns |
-| --- | ---: | ---: |
-| `command-a-03-2025` | `$0.047270` | `$0.236350` |
-| `command-r7b-12-2024` | `$0.000710` | `$0.003550` |
-| `gpt-5.4-mini` | `$0.004240` | `$0.016360` |
-| `gpt-5.4` | `$0.014133` | `$0.054533` |
-
-What this means:
-
-- if your app keeps repeating a large stable prefix, **Command A scales almost linearly**
-- OpenAI cost **bends downward** after the first turn because the repeated prefix is cached
-- `command-r7b-12-2024` is still cheap, but that is because the model itself is cheap, not because the public cache story is clear
-- on the long-history case, the stronger follow-up study makes `gpt-5.4` look much better than the original 2-repeat sample suggested
-
-Evidence:
-
-- [Stability study](docs/stability-study-2026-04-03.md)
-- [Raw comparison results](results/openai-vs-cohere-latency-cost-2026-04-03.json)
-- [Raw stability results](results/cache-stability-study-2026-04-03.json)
-
-### Stability Follow-Up
-
-Focused repeat study:
-
-- `1` cold request
-- `6` immediate warm repeats
-- `4` misses
-- `2` warm repeats after `20s`
-
-What changed:
-
-- `command-a-03-2025` still showed `0/6` immediate billing hits and `0/2` delayed billing hits on both key prompt shapes
-- `gpt-5.4` large repeated prompt hit `6/6` immediate and `2/2` delayed warm requests
-- `gpt-5.4` long retained history also hit `6/6` immediate and `2/2` delayed warm requests
-- `gpt-5.4-mini` was also stable except for `1` delayed miss on the long-history case
-- `command-r7b-12-2024` reported cache hits even on `4/4` miss cases, which makes the telemetry hard to trust as a public cache signal
-
-This is the strongest answer in the repo to "did we repeat enough times to judge stability?":
-
-- enough to reject obvious stability on Cohere Command A
-- enough to show real short-run stability on OpenAI
-- not enough to fully map TTL or region-dependent routing behavior
-
-Evidence:
-
-- [Stability study](docs/stability-study-2026-04-03.md)
-- [Raw stability results](results/cache-stability-study-2026-04-03.json)
-- [Methodology](docs/methodology.md#stability-study-design)
-
-### Where Cohere Public API Is a Poor Fit
-
-These are the places where Cohere public API looks weak **relative to providers with documented prompt caching**:
-
-- long-running coding agents that resend large repo context every turn
-- assistants with heavy system prompts, tool schemas, or retained history that stay mostly stable across turns
-- workloads where you need prompt caching to lower cost predictably
-- teaching, QA, or ops setups where cache telemetry needs to be easy to interpret
-- systems where architecture or pricing depends on a provider-exposed cache contract
-
-The most important nuance:
-
-- `command-r7b-12-2024` may still be a valid choice if you only want a very cheap model
-- it is **not** evidence that Cohere public prompt caching is working like OpenAI or Anthropic prompt caching
-
-Evidence:
-
-- [Command R7B examples](docs/chat-shapes-2026-04-03.md#prompt-sizes)
-- [Why `cached_tokens` is confusing](docs/methodology.md#example-why-cached_tokens-is-confusing)
-
-## Start Here
-
-- methodology and glossary: [docs/methodology.md](docs/methodology.md)
-- latency/cost comparison: [docs/openai-vs-cohere-latency-cost-2026-04-03.md](docs/openai-vs-cohere-latency-cost-2026-04-03.md)
-- stability follow-up: [docs/stability-study-2026-04-03.md](docs/stability-study-2026-04-03.md)
-- broader chat-shape summary: [docs/chat-shapes-2026-04-03.md](docs/chat-shapes-2026-04-03.md)
-- earlier repetitive-prefix notes: [docs/findings-2026-04-03.md](docs/findings-2026-04-03.md)
-- raw comparison results: [results/openai-vs-cohere-latency-cost-2026-04-03.json](results/openai-vs-cohere-latency-cost-2026-04-03.json)
-- raw stability results: [results/cache-stability-study-2026-04-03.json](results/cache-stability-study-2026-04-03.json)
-- raw chat-shape results: [results/chat-shapes-2026-04-03.json](results/chat-shapes-2026-04-03.json)
-- raw earlier chat results: [results/chat-cache-2026-04-03.json](results/chat-cache-2026-04-03.json)
-- raw non-chat smoke results: [results/nonchat-cache-smoke-2026-04-03.json](results/nonchat-cache-smoke-2026-04-03.json)
-
-## How To Read The Results
-
-Each scenario name follows this pattern:
-
-- `*_exact_1`: first request with a specific payload
-- `*_exact_2`: second request with the exact same payload, sent immediately after `exact_1`
-- `*_exact_3`: third request with the exact same payload
-- `*_miss_*`: same scenario shape, but the earliest content is changed
-
-The key fields are:
-
-- `billed_input_tokens`: what Cohere says counts as billable input
-- `raw_input_tokens`: total input tokens Cohere says were processed
-- `cached_tokens`: provider-reported cache hits
-
-Important:
-
-- on Cohere, `cached_tokens` does **not** map cleanly to billing
-- on OpenAI, the main comparison uses cold `exact_1` versus warm `exact_2` and `exact_3`
-- the miss cases are supporting evidence, not the main baseline
-
-## Limits
-
-- this is an exploratory benchmark, not a formal audit
-- all runs were on public API paths, not private deployments or Model Vault
-- latency was noisier than cost
-- the stability study only checked a `20s` delay, not full cache lifetime
-- `v2/embed` and `v2/rerank` were only smoke-tested
-- the prompts are benchmark prompts, not real production traffic
+- [results/openai-vs-cohere-latency-cost-2026-04-03.json](results/openai-vs-cohere-latency-cost-2026-04-03.json)
+- [results/chat-shapes-2026-04-03.json](results/chat-shapes-2026-04-03.json)
 
 ## Run
 

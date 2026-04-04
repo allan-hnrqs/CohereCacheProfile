@@ -1,190 +1,157 @@
 # Methodology
 
-This file explains exactly what the scripts do and how to read the results.
+This file explains how the repo's benchmarks were run and how to interpret them.
 
-## Scope
+## What The Repo Is Testing
 
-The current repo contains five probe scripts:
+The repo is testing a narrow product question:
+
+- if an app keeps resending stable context across turns, does the provider expose a useful public prompt-cache effect?
+
+The repo is **not** testing:
+
+- invoice-level billing reconciliation
+- overall model quality
+- embeddings or rerank quality
+- private deployment options
+
+## Benchmark Families
+
+### 1. Chat Shapes
+
+Files:
+
+- [scripts/profile_chat_shapes.py](../scripts/profile_chat_shapes.py)
+- [docs/chat-shapes-2026-04-03.md](chat-shapes-2026-04-03.md)
+
+Purpose:
+
+- test different Cohere prompt shapes
+- inspect `cached_tokens`
+- check whether prompt size, natural prose, or `messages` history changes the story
+
+This is the clearest single Cohere-focused experiment in the repo.
+
+### 2. Broad Cross-Provider Comparison
+
+Files:
+
+- [scripts/compare_openai_cohere_latency_cost.py](../scripts/compare_openai_cohere_latency_cost.py)
+- [docs/openai-vs-cohere-latency-cost-2026-04-03.md](openai-vs-cohere-latency-cost-2026-04-03.md)
+
+Purpose:
+
+- compare Cohere and OpenAI on several prompt shapes
+- estimate cost and latency
+- get a first-pass view of whether repeated prompts become cheaper
+
+This is the source of truth for the **large repeated prompt** summary in the README.
+
+### 3. Stability Follow-Up
+
+Files:
 
 - [scripts/cache_stability_study.py](../scripts/cache_stability_study.py)
-- [scripts/profile_chat_shapes.py](../scripts/profile_chat_shapes.py)
+- [docs/stability-study-2026-04-03.md](stability-study-2026-04-03.md)
+
+Purpose:
+
+- rerun the key prompt shapes with more repeats
+- check whether warm hits stay stable
+- check whether short-delay reuse still works
+
+This is the strongest evidence in the repo and the source of truth for the README's **longer multi-turn conversation** summary.
+
+### 4. Historical Probe
+
+Files:
+
 - [scripts/profile_chat_cache.py](../scripts/profile_chat_cache.py)
-- [scripts/smoke_nonchat_cache.py](../scripts/smoke_nonchat_cache.py)
-- [scripts/compare_openai_cohere_latency_cost.py](../scripts/compare_openai_cohere_latency_cost.py)
+- [docs/findings-2026-04-03.md](findings-2026-04-03.md)
 
-The main teaching value is in `profile_chat_shapes.py`. That script is the clearest version of the experiment.
-The newest comparison work is in `compare_openai_cohere_latency_cost.py`.
-The strongest evidence about fluctuation is in `cache_stability_study.py`.
+Purpose:
 
-## Experiment design
+- early repetitive-prefix probe
 
-For the chat-shape probes (`profile_chat_shapes.py` and `profile_chat_cache.py`):
+Use this as historical context, not as the main decision source.
 
-- endpoint: `POST /v2/chat`
-- output cap: `max_tokens=4`
-- sampling controls: `temperature=0`, `seed=1`
-- goal: keep output cost and randomness small so differences mostly come from the input side
+## Key Terms
 
-Each shape-probe group has:
+- `cold request`: the first exact request for a prompt family
+- `warm request`: a repeated request using the same prompt family
+- `miss`: a request where the earliest prefix was changed on purpose, so it should not reuse the same cache entry
+- `reported cache hit`: provider says `cached_tokens > 0`
+- `billing-visible hit`: request cost is meaningfully lower than the cold request
 
-- `exact_1`: first request with a payload
-- `exact_2`: second request with the same payload, sent immediately after
-- `miss_1`: same basic scenario, but the earliest message is changed by prepending a marker such as `MISS-LARGE`
+Why that last distinction matters:
 
-That design is sound for an exploratory cache probe because it asks the simplest useful question:
+- Cohere `command-r7b-12-2024` can report `cached_tokens` even when billing does not change
 
-- does sending the exact same prompt again change billed input, latency, or `cached_tokens`?
+## Core Design Choices
 
-It is not strong enough to prove subtle production behavior because the sample size is still small.
+Across the repo, the benchmark tries to keep output-side noise small:
 
-## OpenAI comparison design
+- short outputs
+- low temperature
+- fixed seed where supported
 
-The cross-provider comparison uses:
+Cost figures in the repo are estimated from:
 
-- Cohere `POST /v2/chat`
-- OpenAI `POST /v1/responses`
+- published provider pricing
+- token usage fields returned by the APIs
 
-OpenAI-specific settings:
+They are not invoice exports.
 
-- `prompt_cache_key` is kept stable within each scenario group
-- `prompt_cache_retention` is set to `in_memory`
-- each scenario group gets a fresh run marker inserted into the earliest content so `exact_1` is cold and `exact_2` / `exact_3` are warm repeats inside the same run
-- output is kept short
+The important prompt families are:
 
-That choice is deliberate. OpenAI's own docs recommend using `prompt_cache_key` consistently and note that prompt caching applies to prompts of 1024 tokens or more. The comparison is trying to give OpenAI a fair chance to show cache behavior, not to hide it behind routing randomness.
+- **large repeated prompt**: big stable prefix repeated every turn
+- **messages history**: retained multi-turn conversation
 
-Each comparison group has:
+The stability study used:
 
-- `exact_1`: cold request
-- `exact_2`: warm repeat
-- `exact_3`: second warm repeat
-- `miss_1`, `miss_2`, `miss_3`: same overall shape, but with a changed earliest prefix
+- `1` cold request
+- `6` immediate warm repeats
+- `4` misses
+- `2` delayed warm repeats after `20s`
 
-One important correction from the earlier draft:
+## How To Read The Raw Files
 
-- the shorter `messages_history` case measured `1024` OpenAI input tokens, not `1011`
-- it still showed `cached_tokens = 0` on all repeats
-- the longer `messages_history_long` case did show cache hits
+The raw files do **not** all share one schema.
 
-So the safe lesson is not "1024 always caches." The safe lesson is that crossing the documented threshold was not enough by itself in this benchmark.
+Comparison-style files use scenario names like:
 
-## Stability-study design
+- `*_exact_1`
+- `*_exact_2`
+- `*_exact_3`
+- `*_miss_*`
 
-The stability follow-up uses:
+The stability-study raw file uses phases instead:
 
-- the same public Cohere and OpenAI endpoints as the cross-provider comparison
-- two prompt groups that matter most to the repo's main conclusion:
-  - `size_large`
-  - `messages_history_long`
+- `cold`
+- `warm_immediate`
+- `miss_immediate`
+- `warm_delayed`
 
-Each provider/model/group gets:
+Provider token fields also differ:
 
-- `cold`: 1 request
-- `warm_immediate`: 6 exact repeats
-- `miss_immediate`: 4 mutated-prefix misses
-- `warm_delayed`: 2 exact repeats after a `20s` pause
+- Cohere uses `billed_input_tokens`, `raw_input_tokens`, and `cached_tokens`
+- OpenAI uses `input_tokens`, `cached_tokens`, and `output_tokens`
 
-The stability study also uses two different hit definitions:
+## Limits
 
-- `reported cache hit`: `cached_tokens > 0`
-- `billing-visible hit`: estimated request cost is at least `5%` lower than the cold request
-
-That second definition is necessary because Cohere `command-r7b-12-2024` can report `cached_tokens` even on miss cases where billing does not move.
-
-## Scenario types
-
-### Size sweep
-
-Uses unique token lists rather than repeated words. This avoids the strongest criticism of the earlier repetitive-prefix experiment.
-
-Examples:
-
-- `size_small_*`
-- `size_medium_*`
-- `size_large_*`
-
-### Natural prefix
-
-Uses readable multi-paragraph prose instead of token lists.
-
-Important: this is more natural than synthetic token IDs, but it is still generated benchmark text, not real user traffic.
-
-### Messages history
-
-Uses a normal `messages` array with:
-
-- one system message
-- alternating user and assistant messages
-- one final user message that asks for `OK`
-
-This is the closest test in the repo to real chatbot history reuse.
-
-### Earlier repetitive-prefix probe
-
-Saved in [docs/findings-2026-04-03.md](findings-2026-04-03.md) and [results/chat-cache-2026-04-03.json](../results/chat-cache-2026-04-03.json).
-
-This probe is still useful, but it should not be the first thing a reader trusts because highly repetitive prompts can trigger weird optimizer behavior.
-
-## Meaning of the token fields
-
-The result tables use three token numbers:
-
-- `billed_input_tokens`
-- `raw_input_tokens`
-- `cached_tokens`
-
-How to interpret them:
-
-- `billed_input_tokens`: closest thing to "what Cohere says you pay for"
-- `raw_input_tokens`: closest thing to "how many input tokens Cohere says the model processed"
-- `cached_tokens`: Cohere's reported inference-cache hits
-
-The reason this repo exists is that those three fields do not behave the way a new programmer would expect from public prompt caching.
-
-## Example: why `cached_tokens` is confusing
-
-From [results/chat-shapes-2026-04-03.json](../results/chat-shapes-2026-04-03.json), `command-r7b-12-2024`, `size_large_exact_1`:
-
-- `billed_input_tokens = 35003`
-- `raw_input_tokens = 35532`
-- `cached_tokens = 14512`
-
-If `cached_tokens` were a simple billing discount, the numbers would line up more cleanly. They do not:
-
-- `35532 - 35003 = 529`
-- not `14512`
-
-That is why the docs describe `cached_tokens` as real telemetry but not a reliable billing indicator.
-
-## What was methodologically sound
-
-- exact and miss cases are clearly separated
-- the same prompt is retried immediately for the cache-hit check
-- the cross-provider comparison uses one cold request and two warm repeats, which is more stable than relying on a single retry
-- a mutated earliest message is used for the miss check
-- `temperature=0` and `seed=1` reduce generation noise
-- low `max_tokens` reduces output-side cost noise
-- both synthetic and more human-readable prompts were tested
-- a real `messages` history was tested, not just a single system prefix
-
-## What was methodologically weak
-
-- only 2 exact repeats and 1 miss per group in the main shape test
-- only 3 exact or miss requests per group in the cross-provider comparison
-- only 6 immediate repeats and 2 delayed repeats in the stability study
-- no delay curve beyond the single `20s` bucket in the stability study
-- no streaming test
-- no Model Vault test
-- no multi-region or multi-account comparison
+- all tests were on public API paths
+- this repo does not test private deployments or Model Vault
+- latency was noisier than cost
+- the stability study only checked a `20s` delay
 - non-chat endpoints were only smoke-tested
+- this is good enough to reject obvious prompt-caching behavior, not to map every backend detail
+- cost estimates are based on pricing docs and response usage, not invoice reconciliation
 
-Those are limitations, not fatal flaws. The current methodology is good enough to reject obvious prompt-caching behavior, but not good enough to fully map Cohere's backend.
+## Safe Reading
 
-## Best current reading
+The safest high-level interpretation is:
 
-The safe interpretation is:
-
-1. The Command A models did not show any usable prompt-cache signal in the tested chat scenarios.
-2. `command-r7b-12-2024` did report `cached_tokens`, but the values were inconsistent and did not map cleanly to billed input.
-3. The stability follow-up showed that OpenAI's cache behavior was much more consistent than the earlier 2-repeat sample implied, especially on the long-history prompt.
-4. Therefore, this repo does not support the claim that Cohere currently offers Anthropic-style public prompt caching on the tested public API path.
+1. Cohere `command-a-03-2025` did not show a useful public prompt-cache effect in the tested public chat API path.
+2. Cohere `command-r7b-12-2024` reported cache telemetry, but that telemetry did not behave like a clean billing signal.
+3. OpenAI showed real billing-visible savings on repeated prompts, especially in the repeat-heavy stability follow-up.
+4. This repo does not support treating Cohere's tested public API path as offering a clear Anthropic/OpenAI-style public prompt-cache contract.
