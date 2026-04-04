@@ -182,7 +182,7 @@ Those are limitations, not fatal flaws. The current methodology is good enough t
 
 ## Best current reading
 
-For a TA or new programmer, the safe interpretation is:
+The safe interpretation is:
 
 1. The Command A models did not show any usable prompt-cache signal in the tested chat scenarios.
 2. `command-r7b-12-2024` did report `cached_tokens`, but the values were inconsistent and did not map cleanly to billed input.
