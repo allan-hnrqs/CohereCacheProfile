@@ -1,4 +1,5 @@
 ### Methodology
+---
 
 This repo asks one narrow question:
 
@@ -7,6 +8,7 @@ This repo asks one narrow question:
 The repo does not try to settle invoice-level billing reconciliation, overall model quality, embeddings, rerank quality, or private deployment options.
 
 #### The Four Docs
+---
 
 [docs/stability-study-2026-04-03.md](stability-study-2026-04-03.md) is the strongest evidence in the repo. It reruns the key prompt shapes with more repeats and a short delay.
 
@@ -24,6 +26,7 @@ Related scripts:
 4. [scripts/profile_chat_cache.py](../scripts/profile_chat_cache.py)
 
 #### Terms
+---
 
 A `cold request` is the first exact request for a prompt family. A `warm request` is a repeated request using the same prompt family. A `miss` is a request where the earliest prefix was changed on purpose, so it should not reuse the same cache entry.
 
@@ -34,6 +37,7 @@ The reason to care about cold versus warm is straightforward: if warm requests d
 That last distinction matters because `command-r7b-12-2024` could report `cached_tokens` even when billing did not change.
 
 #### Benchmark Shape
+---
 
 Across the repo, the benchmark keeps output-side noise small with short outputs, low temperature, and a fixed seed where supported.
 
@@ -49,6 +53,7 @@ Those delayed repeats matter because a cache that only helps on back-to-back req
 All dollar figures in the repo are estimates from published provider pricing and the token usage fields returned by the APIs. They are not invoice exports.
 
 #### Reading The Raw Files
+---
 
 The raw files do not all share one schema.
 
@@ -62,6 +67,7 @@ Provider token fields differ too:
 2. OpenAI uses `input_tokens`, `cached_tokens`, and `output_tokens`
 
 #### Limits
+---
 
 1. all tests were on public API paths
 2. this repo does not test private deployments or Model Vault
@@ -72,6 +78,7 @@ Provider token fields differ too:
 7. cost estimates are based on pricing docs and response usage, not invoice reconciliation
 
 #### Safest Reading
+---
 
 1. Cohere `command-a-03-2025` did not show a useful public prompt-cache effect in the tested public chat API path.
 2. Cohere `command-r7b-12-2024` reported cache counters, but those counters did not behave like a clean billing signal.
