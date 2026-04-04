@@ -1,5 +1,5 @@
 **OpenAI vs Cohere: Broad Comparison**
-<sub>────────────────────────────────────────────────────────────────────────────────────────────────────────────────────</sub>
+<table width="100%" cellpadding="0" cellspacing="0"><tr><td height="1" bgcolor="#d0d7de"></td></tr></table>
 
 This file broadens the prompt shapes. It is useful when you want more than the single strongest result, but it is not the final word on the long-history case. For that, use [docs/stability-study-2026-04-03.md](stability-study-2026-04-03.md).
 
@@ -9,7 +9,7 @@ Methodology: [docs/methodology.md](methodology.md)
 All cost figures here are estimates from published pricing and API usage fields. They are not invoice exports.
 
 **What This Adds**
-<sub>────────────────────────────────────────────────────────────────────────────────────────────────────────────────────</sub>
+<table width="100%" cellpadding="0" cellspacing="0"><tr><td height="1" bgcolor="#d0d7de"></td></tr></table>
 
 Compared with the stability study, this file adds:
 
@@ -20,14 +20,14 @@ Compared with the stability study, this file adds:
 It is still the source of truth for the README's large repeated prompt summary.
 
 **The Broad Pattern**
-<sub>────────────────────────────────────────────────────────────────────────────────────────────────────────────────────</sub>
+<table width="100%" cellpadding="0" cellspacing="0"><tr><td height="1" bgcolor="#d0d7de"></td></tr></table>
 
 OpenAI showed meaningful cost drops on repeated prompts. Cohere `command-a-03-2025` did not. Latency moved around enough that cost was easier to trust than response time.
 
 The practical point is that a provider that stays flat on repeated prompt shapes is a worse fit for workloads that depend on prompt caching to control cost.
 
 **Prompt Shapes**
-<sub>────────────────────────────────────────────────────────────────────────────────────────────────────────────────────</sub>
+<table width="100%" cellpadding="0" cellspacing="0"><tr><td height="1" bgcolor="#d0d7de"></td></tr></table>
 
 Large repeated prompt.
 
@@ -74,7 +74,7 @@ This section is the original 2-repeat sample. It is useful as background, but no
 | `gpt-5.4` | `$0.005038` | `$0.003022` | under-sampled here; see stability study |
 
 **Scaling**
-<sub>────────────────────────────────────────────────────────────────────────────────────────────────────────────────────</sub>
+<table width="100%" cellpadding="0" cellspacing="0"><tr><td height="1" bgcolor="#d0d7de"></td></tr></table>
 
 The cost projection used throughout this repo is:
 
@@ -101,6 +101,6 @@ This table is kept for completeness from the first-pass comparison. For the repo
 | `gpt-5.4` | `$0.032236` | `$0.153116` |
 
 **How To Use This File**
-<sub>────────────────────────────────────────────────────────────────────────────────────────────────────────────────────</sub>
+<table width="100%" cellpadding="0" cellspacing="0"><tr><td height="1" bgcolor="#d0d7de"></td></tr></table>
 
 Use it for the broad picture across prompt shapes and for the large repeated prompt summary. Do not use it as the final source for the long-history conclusion; the stability study is stronger there.
