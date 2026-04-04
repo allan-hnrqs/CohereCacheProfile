@@ -1,87 +1,79 @@
 # OpenAI vs Cohere: Broad Comparison
 
-Raw data: [results/openai-vs-cohere-latency-cost-2026-04-03.json](../results/openai-vs-cohere-latency-cost-2026-04-03.json)
+> Read this after the stability study if you want the wider sweep across prompt shapes.
 
+Raw data: [results/openai-vs-cohere-latency-cost-2026-04-03.json](../results/openai-vs-cohere-latency-cost-2026-04-03.json)
 Methodology: [docs/methodology.md](methodology.md)
 
-Use this document for the **broad first pass** across several prompt shapes.
+This file is the broad first pass. It covers more prompt shapes than the stability study, but it is not the strongest source for the long-history conclusion. For that, use [docs/stability-study-2026-04-03.md](stability-study-2026-04-03.md).
 
-If you care mainly about the strongest repeat-heavy evidence, read [docs/stability-study-2026-04-03.md](stability-study-2026-04-03.md) first.
+All cost figures here are estimates from published pricing and API usage fields. They are not invoice exports.
 
-Cost figures in this file are estimates from published pricing and API usage fields, not invoice exports.
+## What This Adds
 
-## What This File Adds
+Compared with the stability study, this file adds:
 
-Compared with the stability study, this file covers more prompt shapes:
+- a natural-language prefix case
+- a shorter `messages` history case
+- the original first-pass long-history sample
 
-- large repeated prompt
-- natural-language prefix
-- shorter `messages` history
-- longer `messages` history
+It is still the source of truth for the README's **large repeated prompt** summary.
 
-It is especially useful for:
+## Quick Read
 
-- the large repeated prompt summary
-- the natural-language prefix result
-- the shorter-history edge case
+OpenAI showed meaningful cost drops on repeated prompts. Cohere `command-a-03-2025` did not. Latency moved around enough that cost was easier to trust.
 
-## Core Result
+That matters because a provider that stays flat here can make long-running chats and agents much more expensive than you planned.
 
-OpenAI showed meaningful cost drops on repeated prompts.
-
-Cohere `command-a-03-2025` did not.
-
-Latency was noisy and much less useful than cost.
-
-## Results By Prompt Shape
+## By Prompt Shape
 
 ### Large Repeated Prompt
 
-| Model | cold cost | warm cost | reading |
+| Model | cold cost | warm cost | What to take from this |
 | --- | ---: | ---: | --- |
 | `command-a-03-2025` | `$0.087575` | `$0.087575` | no cost change |
 | `command-r7b-12-2024` | `$0.001313` | `$0.001313` | cheap, but not a clean cache discount |
 | `gpt-5.4-mini` | `$0.011292` | `$0.001442` | much cheaper after the first turn |
 | `gpt-5.4` | `$0.037640` | `$0.004232` | much cheaper after the first turn |
 
+This is the cleanest comparison in the file, and the one that matters most for agent-style workloads with a large stable prefix.
+
 ### Natural-Language Prefix
 
-| Model | cold cost | warm cost | reading |
+| Model | cold cost | warm cost | What to take from this |
 | --- | ---: | ---: | --- |
 | `command-a-03-2025` | `$0.006302` | `$0.006302` | no cost change |
-| `command-r7b-12-2024` | `$0.000094` | `$0.000094` | cheap, but telemetry still unclear |
+| `command-r7b-12-2024` | `$0.000094` | `$0.000094` | cheap, but the API cache counters still did not explain the billing |
 | `gpt-5.4-mini` | `$0.001808` | `$0.000599` | cheaper after the first turn |
 | `gpt-5.4` | `$0.006027` | `$0.001131` | cheaper after the first turn |
 
-This matters because it shows the result was not limited to synthetic token lists.
+This matters because it shows the outcome was not limited to synthetic token lists or obviously artificial prompts.
 
 ### Shorter `messages` History
 
-| Model | cold cost | warm cost | reading |
+| Model | cold cost | warm cost | What to take from this |
 | --- | ---: | ---: | --- |
 | `command-a-03-2025` | `$0.002395` | `$0.002395` | no cost change |
-| `command-r7b-12-2024` | `$0.000036` | `$0.000036` | cheap, telemetry still unclear |
+| `command-r7b-12-2024` | `$0.000036` | `$0.000036` | cheap, but the API cache counters still did not explain the billing |
 | `gpt-5.4-mini` | `$0.000790` | `$0.000790` | no visible cache effect in this sample |
 | `gpt-5.4` | `$0.002635` | `$0.002635` | no visible cache effect in this sample |
 
-This is the useful edge case: a shorter retained history did **not** automatically produce cache savings on OpenAI.
+This is the useful edge case. A shorter retained history did not automatically produce cache savings on OpenAI.
 
 ### Longer `messages` History
 
-This section is retained as the original 2-repeat sample.
+This section is kept as the original 2-repeat sample. It is useful as background, but not as the final word. For the current long-history summary, use [docs/stability-study-2026-04-03.md](stability-study-2026-04-03.md).
 
-For the repo's current long-history summary, use [docs/stability-study-2026-04-03.md](stability-study-2026-04-03.md), which has more repeats and is the stronger source of truth.
-
-| Model | cold cost | warm cost | reading |
+| Model | cold cost | warm cost | What to take from this |
 | --- | ---: | ---: | --- |
 | `command-a-03-2025` | `$0.004722` | `$0.004722` | no cost change |
-| `command-r7b-12-2024` | `$0.000071` | `$0.000071` | cheap, telemetry still unclear |
+| `command-r7b-12-2024` | `$0.000071` | `$0.000071` | cheap, but the API cache counters still did not explain the billing |
 | `gpt-5.4-mini` | `$0.001511` | `$0.000302` | cheaper after the first turn |
 | `gpt-5.4` | `$0.005038` | `$0.003022` | under-sampled here; see stability study |
 
-## Scaling
+## Scaling The Costs
 
-Formula:
+Projection formula:
 
 `cold turn cost + (N - 1) * warm turn cost`
 
@@ -96,9 +88,7 @@ Formula:
 
 ### Longer Multi-Turn Conversation
 
-This table is kept for completeness from the first-pass comparison.
-
-For the repo's current long-history projections, use the README or [docs/stability-study-2026-04-03.md](stability-study-2026-04-03.md).
+This table is kept for completeness from the first-pass comparison. For the repo's current long-history projections, use the README or the stability study.
 
 | Model | 10 turns | 50 turns |
 | --- | ---: | ---: |
@@ -107,8 +97,8 @@ For the repo's current long-history projections, use the README or [docs/stabili
 | `gpt-5.4-mini` | `$0.004229` | `$0.016309` |
 | `gpt-5.4` | `$0.032236` | `$0.153116` |
 
-## Safe Reading
+## How To Use This File
 
-- This file is the broad sweep, not the strongest stability evidence.
-- It supports the main claim that Cohere Command A stayed flat while OpenAI usually got cheaper.
-- For final long-history conclusions, prefer the stability study.
+- Use it for the broad picture across prompt shapes.
+- Use it for the large repeated prompt summary.
+- Do not use it as the final source for the long-history conclusion; the stability study is stronger there.

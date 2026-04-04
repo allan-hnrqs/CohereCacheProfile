@@ -1,52 +1,53 @@
 # Cache Stability Study: 2026-04-03
 
-Raw data: [results/cache-stability-study-2026-04-03.json](../results/cache-stability-study-2026-04-03.json)
+> If you read only one supporting doc in this repo, read this one.
 
+Raw data: [results/cache-stability-study-2026-04-03.json](../results/cache-stability-study-2026-04-03.json)
 Methodology: [docs/methodology.md](methodology.md)
 
-This is the strongest benchmark in the repo.
+This is the strongest benchmark in the repo. It checks whether repeated requests actually stay cheaper, whether that still holds after a short delay, and whether a provider reports cache use even when the request was changed on purpose.
 
-It asks:
+That delay check matters because a cache that only helps on back-to-back requests is much less useful in a real app.
 
-- do repeated warm requests stay cheaper?
-- does that still hold after a short delay?
-- does the provider report cache hits even when it should not?
+All cost figures here are estimates from published pricing and API usage fields. They are not invoice exports.
 
-Cost figures in this file are estimates from published pricing and API usage fields, not invoice exports.
+## At A Glance
 
-## What Was Tested
+| Model | Prompt group | immediate billing hits | delayed billing hits | miss reported hits | What to take from this |
+| --- | --- | ---: | ---: | ---: | --- |
+| `command-a-03-2025` | large repeated prompt (`size_large`) | `0/6` | `0/2` | `0/4` | no useful public prompt-cache signal |
+| `command-a-03-2025` | long retained chat history (`messages_history_long`) | `0/6` | `0/2` | `0/4` | same result |
+| `command-r7b-12-2024` | large repeated prompt (`size_large`) | `0/6` | `0/2` | `4/4` | API cache counters existed, but they did not behave like a billing discount |
+| `command-r7b-12-2024` | long retained chat history (`messages_history_long`) | `0/6` | `0/2` | `4/4` | same problem |
+| `gpt-5.4-mini` | large repeated prompt (`size_large`) | `6/6` | `2/2` | `0/4` | repeated requests stayed cheaper |
+| `gpt-5.4-mini` | long retained chat history (`messages_history_long`) | `6/6` | `1/2` | `0/4` | mostly stable, one delayed miss |
+| `gpt-5.4` | large repeated prompt (`size_large`) | `6/6` | `2/2` | `0/4` | repeated requests stayed cheaper |
+| `gpt-5.4` | long retained chat history (`messages_history_long`) | `6/6` | `2/2` | `0/4` | repeated requests stayed cheaper |
 
-Prompt groups:
+The main point is straightforward: Command A stayed flat, OpenAI got cheaper, and R7B's cache counters were not something you could safely build a billing model around.
 
-- `size_large`: large repeated stable prompt
-- `messages_history_long`: longer retained multi-turn conversation
+## What Was Actually Run
 
-Per model and prompt group:
+Two prompt groups:
+
+- `size_large`: a large repeated stable prompt
+- `messages_history_long`: a longer retained multi-turn conversation
+
+For each model and prompt group:
 
 - `1` cold request
 - `6` immediate warm repeats
-- `4` misses
+- `4` intentional misses
 - `2` delayed warm repeats after `20s`
 
-Important definitions:
+Definitions:
 
-- `reported cache hit` = `cached_tokens > 0`
-- `billing-visible hit` = request cost is meaningfully lower than the cold request
+- `reported cache hit` means `cached_tokens > 0`
+- `billing-visible hit` means the request cost was meaningfully lower than the cold request
 
-## Main Result
+That second definition matters because `command-r7b-12-2024` could report `cached_tokens` even when billing did not move.
 
-| Model | Prompt group | immediate billing hits | delayed billing hits | miss reported hits | Practical reading |
-| --- | --- | ---: | ---: | ---: | --- |
-| `command-a-03-2025` | `size_large` | `0/6` | `0/2` | `0/4` | no useful public prompt-cache signal |
-| `command-a-03-2025` | `messages_history_long` | `0/6` | `0/2` | `0/4` | no useful public prompt-cache signal |
-| `command-r7b-12-2024` | `size_large` | `0/6` | `0/2` | `4/4` | telemetry exists, but not as a billing signal |
-| `command-r7b-12-2024` | `messages_history_long` | `0/6` | `0/2` | `4/4` | same problem |
-| `gpt-5.4-mini` | `size_large` | `6/6` | `2/2` | `0/4` | stable billing-visible savings |
-| `gpt-5.4-mini` | `messages_history_long` | `6/6` | `1/2` | `0/4` | mostly stable, one delayed miss |
-| `gpt-5.4` | `size_large` | `6/6` | `2/2` | `0/4` | stable billing-visible savings |
-| `gpt-5.4` | `messages_history_long` | `6/6` | `2/2` | `0/4` | stable billing-visible savings |
-
-## Cost Tables
+## Cost View
 
 ### Large Repeated Prompt
 
@@ -57,11 +58,7 @@ Important definitions:
 | `gpt-5.4-mini` | `$0.011293` | `$0.001444` | `$0.001444` |
 | `gpt-5.4` | `$0.037645` | `$0.004237` | `$0.004237` |
 
-Meaning:
-
-- Cohere Command A stayed flat.
-- OpenAI stayed much cheaper after the cold request.
-- R7B stayed cheap, but not because this study found a trustworthy public cache discount.
+For this prompt shape, the economic story is blunt. Command A kept charging the same amount. OpenAI stayed much cheaper after the first request. R7B stayed cheap, but this table does not show a public cache discount you could treat as reliable for budgeting.
 
 ### Longer Multi-Turn Conversation
 
@@ -72,25 +69,15 @@ Meaning:
 | `gpt-5.4-mini` | `$0.001513` | `$0.000303` | `$0.000908` |
 | `gpt-5.4` | `$0.005043` | `$0.001010` | `$0.001010` |
 
-Meaning:
+This is closer to a normal chat app. The conclusion still held. Command A stayed flat. `gpt-5.4` stayed cheaper across the repeated runs. `gpt-5.4-mini` still looked good overall, but one delayed repeat missed cache.
 
-- Cohere Command A still stayed flat.
-- `gpt-5.4` was much more stable than the earlier 2-repeat sample suggested.
-- `gpt-5.4-mini` still looked good overall, but one delayed repeat missed cache.
+## What To Do With This
 
-## Why This Matters
+If your project expects later turns to get cheaper because a stable prefix keeps repeating, this study argues against **Cohere Command A on the tested public API path**.
 
-If your project expects later turns to get cheaper because the prompt repeats:
+If you only care about low base cost, R7B may still be acceptable. Just do not treat its `cached_tokens` field as a trustworthy signal of a real billing discount.
 
-- Cohere Command A looked like a poor fit on the tested public API path.
-- OpenAI looked much safer.
-
-If your project only cares about low base cost:
-
-- R7B may still be acceptable.
-- But do not treat its `cached_tokens` field as a trustworthy public cache contract.
-
-## Latency
+## A Note On Latency
 
 Latency was not the clean story here.
 
@@ -99,7 +86,7 @@ Examples:
 - `command-a-03-2025`, `size_large`: warm immediate latency ranged from `6.000s` to `10.156s` with no cost change
 - `gpt-5.4`, `size_large`: warm immediate latency ranged from `0.805s` to `0.983s` while cost stayed consistently lower
 
-Use this study mainly for **cost** conclusions, not latency promises.
+So the right use of this study is cost planning, not latency promises.
 
 ## Limits
 

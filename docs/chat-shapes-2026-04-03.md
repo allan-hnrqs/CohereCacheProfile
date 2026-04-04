@@ -29,7 +29,7 @@ Why not:
 - `35532 - 35003 = 529`
 - not `14512`
 
-That mismatch is one of the main reasons this repo treats `cached_tokens` as unclear telemetry rather than a clean public cache contract.
+That mismatch is one of the main reasons this repo treats `cached_tokens` as an unclear cache counter rather than a clean public cache feature.
 
 ## Prompt sizes
 
