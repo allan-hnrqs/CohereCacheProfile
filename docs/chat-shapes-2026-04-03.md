@@ -1,5 +1,4 @@
-**Chat Shapes Summary: 2026-04-03**
-<table width="100%" cellpadding="0" cellspacing="0"><tr><td height="1" bgcolor="#d0d7de"></td></tr></table>
+### Chat Shapes Summary: 2026-04-03
 
 This file answers three narrower questions:
 
@@ -11,8 +10,7 @@ Raw data: [results/chat-shapes-2026-04-03.json](../results/chat-shapes-2026-04-0
 
 Methodology and glossary: [docs/methodology.md](methodology.md)
 
-**How to read one row**
-<table width="100%" cellpadding="0" cellspacing="0"><tr><td height="1" bgcolor="#d0d7de"></td></tr></table>
+#### How to read one row
 
 Example:
 
@@ -33,11 +31,9 @@ Why not:
 
 That mismatch is one of the main reasons this repo treats `cached_tokens` as an unclear cache counter rather than a clean public cache feature.
 
-**Prompt sizes**
-<table width="100%" cellpadding="0" cellspacing="0"><tr><td height="1" bgcolor="#d0d7de"></td></tr></table>
+#### Prompt sizes
 
-**`command-a-03-2025`**
-<table width="100%" cellpadding="0" cellspacing="0"><tr><td height="1" bgcolor="#d0d7de"></td></tr></table>
+##### `command-a-03-2025`
 
 | Scenario | billed input | raw input | cached tokens |
 | --- | ---: | ---: | ---: |
@@ -50,8 +46,7 @@ That mismatch is one of the main reasons this repo treats `cached_tokens` as an 
 
 Result: no cache signal across small, medium, or large unique prefixes.
 
-**`command-a-reasoning-08-2025`**
-<table width="100%" cellpadding="0" cellspacing="0"><tr><td height="1" bgcolor="#d0d7de"></td></tr></table>
+##### `command-a-reasoning-08-2025`
 
 | Scenario | billed input | raw input | cached tokens |
 | --- | ---: | ---: | ---: |
@@ -64,8 +59,7 @@ Result: no cache signal across small, medium, or large unique prefixes.
 
 Result: same conclusion as Command A.
 
-**`command-r7b-12-2024`**
-<table width="100%" cellpadding="0" cellspacing="0"><tr><td height="1" bgcolor="#d0d7de"></td></tr></table>
+##### `command-r7b-12-2024`
 
 | Scenario | billed input | raw input | cached tokens |
 | --- | ---: | ---: | ---: |
@@ -81,8 +75,7 @@ Result: same conclusion as Command A.
 
 Result: `cached_tokens` exists, but it changes unpredictably across exact repeats and does not show a clean billing effect.
 
-**Natural-language prefix**
-<table width="100%" cellpadding="0" cellspacing="0"><tr><td height="1" bgcolor="#d0d7de"></td></tr></table>
+#### Natural-language prefix
 
 These prompts used prose paragraphs instead of repeated token lists.
 
@@ -103,8 +96,7 @@ Result:
 - natural prompts did not unlock cache behavior on the two Command A models
 - `r7b` again showed unstable `cached_tokens` values on exact repeats without a billed-input drop
 
-**Multi-turn `messages` history**
-<table width="100%" cellpadding="0" cellspacing="0"><tr><td height="1" bgcolor="#d0d7de"></td></tr></table>
+#### Multi-turn `messages` history
 
 These prompts used a normal conversation history with alternating user and assistant turns.
 
@@ -125,8 +117,7 @@ Result:
 - normal multi-turn history still showed no cache signal on the two Command A models
 - `r7b` still looked inconsistent rather than productized
 
-**Safe conclusion**
-<table width="100%" cellpadding="0" cellspacing="0"><tr><td height="1" bgcolor="#d0d7de"></td></tr></table>
+#### Safe conclusion
 
 - Yes, prompt size was tested.
 - Yes, natural-language prompts were tested.
