@@ -1,19 +1,20 @@
 # Methodology
 
-This repo keeps the question intentionally small:
+This repo asks one narrow question:
 
 **If an app keeps resending stable context across turns, does the provider expose a useful public prompt-cache effect?**
 
-That means this repo is not trying to settle everything. It does not measure invoice-level billing reconciliation, overall model quality, embeddings, rerank quality, or private deployment options.
+Everything else is secondary to that. The repo does not try to settle invoice-level billing reconciliation, overall model quality, embeddings, rerank quality, or private deployment options.
 
-## Which File Does What
+## The Four Docs
 
-| File | Why it exists | Use it for |
-| --- | --- | --- |
-| [docs/stability-study-2026-04-03.md](stability-study-2026-04-03.md) | reruns the key prompt shapes with more repeats and short-delay reuse | strongest evidence in the repo |
-| [docs/openai-vs-cohere-latency-cost-2026-04-03.md](openai-vs-cohere-latency-cost-2026-04-03.md) | wider sweep across prompt shapes | large repeated prompt summary and broader comparison |
-| [docs/chat-shapes-2026-04-03.md](chat-shapes-2026-04-03.md) | Cohere-only cache-counter behavior across several prompt shapes | best place to inspect `cached_tokens` behavior directly |
-| [docs/findings-2026-04-03.md](findings-2026-04-03.md) | earliest repetitive-prefix probe | historical context only |
+[docs/stability-study-2026-04-03.md](stability-study-2026-04-03.md) is the strongest evidence in the repo. It reruns the key prompt shapes with more repeats and a short delay.
+
+[docs/openai-vs-cohere-latency-cost-2026-04-03.md](openai-vs-cohere-latency-cost-2026-04-03.md) is the wider sweep across prompt shapes. It is the source of the large repeated prompt summary in the README.
+
+[docs/chat-shapes-2026-04-03.md](chat-shapes-2026-04-03.md) is where to inspect Cohere's returned cache counters directly across several prompt shapes.
+
+[docs/findings-2026-04-03.md](findings-2026-04-03.md) is the earliest repetitive-prefix probe. Treat it as historical context only.
 
 Related scripts:
 
@@ -22,64 +23,38 @@ Related scripts:
 - [scripts/profile_chat_shapes.py](../scripts/profile_chat_shapes.py)
 - [scripts/profile_chat_cache.py](../scripts/profile_chat_cache.py)
 
-## Terms Used Across The Repo
+## Terms
 
-- `cold request`: the first exact request for a prompt family
-- `warm request`: a repeated request using the same prompt family
-- `miss`: a request where the earliest prefix was changed on purpose, so it should not reuse the same cache entry
-- `reported cache hit`: the provider returned `cached_tokens > 0`
-- `billing-visible hit`: the request cost was meaningfully lower than the cold request
+A `cold request` is the first exact request for a prompt family. A `warm request` is a repeated request using the same prompt family. A `miss` is a request where the earliest prefix was changed on purpose, so it should not reuse the same cache entry.
 
-The reason to care about `cold` versus `warm` is simple: if warm requests do not get cheaper, repeated prompts are not saving you money.
+A `reported cache hit` means the provider returned `cached_tokens > 0`. A `billing-visible hit` means the request cost was meaningfully lower than the cold request.
+
+The reason to care about cold versus warm is straightforward: if warm requests do not get cheaper, repeated prompts are not saving you money.
 
 That last distinction matters because `command-r7b-12-2024` could report `cached_tokens` even when billing did not change.
 
-## How The Benchmarks Were Kept Simple
+## Benchmark Shape
 
-Across the repo, the benchmark tries to keep output-side noise small:
+Across the repo, the benchmark keeps output-side noise small with short outputs, low temperature, and a fixed seed where supported.
 
-- short outputs
-- low temperature
-- fixed seed where supported
+The two prompt families that mattered most were:
 
-The important prompt families are:
+- a **large repeated prompt**, meaning a big stable prefix repeated every turn
+- **messages history**, meaning a retained multi-turn conversation
 
-- **large repeated prompt**: a big stable prefix repeated every turn
-- **messages history**: retained multi-turn conversation
-
-The stability study used:
-
-- `1` cold request
-- `6` immediate warm repeats
-- `4` misses
-- `2` delayed warm repeats after `20s`
+The stability study used `1` cold request, `6` immediate warm repeats, `4` misses, and `2` delayed warm repeats after `20s`.
 
 Those delayed repeats matter because a cache that only helps on back-to-back requests is much less useful in a real application.
 
-All dollar figures in the repo are estimates from:
-
-- published provider pricing
-- token usage fields returned by the APIs
-
-They are not invoice exports.
+All dollar figures in the repo are estimates from published provider pricing and the token usage fields returned by the APIs. They are not invoice exports.
 
 ## Reading The Raw Files
 
 The raw files do not all share one schema.
 
-Comparison-style files use scenario names like:
+Comparison-style files use scenario names like `*_exact_1`, `*_exact_2`, `*_exact_3`, and `*_miss_*`.
 
-- `*_exact_1`
-- `*_exact_2`
-- `*_exact_3`
-- `*_miss_*`
-
-The stability-study raw file uses phases instead:
-
-- `cold`
-- `warm_immediate`
-- `miss_immediate`
-- `warm_delayed`
+The stability-study raw file uses phases instead: `cold`, `warm_immediate`, `miss_immediate`, and `warm_delayed`.
 
 Provider token fields differ too:
 
@@ -96,7 +71,7 @@ Provider token fields differ too:
 - this is good enough to reject obvious prompt-caching behavior, not to map every backend detail
 - cost estimates are based on pricing docs and response usage, not invoice reconciliation
 
-## Safest Way To Read The Results
+## Safest Reading
 
 1. Cohere `command-a-03-2025` did not show a useful public prompt-cache effect in the tested public chat API path.
 2. Cohere `command-r7b-12-2024` reported cache counters, but those counters did not behave like a clean billing signal.

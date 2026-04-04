@@ -1,11 +1,9 @@
 # OpenAI vs Cohere: Broad Comparison
 
-> Read this after the stability study if you want the wider sweep across prompt shapes.
+This file is the wider sweep across prompt shapes. It is useful when you want more than the single strongest result, but it is not the final word on the long-history case. For that, use [docs/stability-study-2026-04-03.md](stability-study-2026-04-03.md).
 
 Raw data: [results/openai-vs-cohere-latency-cost-2026-04-03.json](../results/openai-vs-cohere-latency-cost-2026-04-03.json)
 Methodology: [docs/methodology.md](methodology.md)
-
-This file is the broad first pass. It covers more prompt shapes than the stability study, but it is not the strongest source for the long-history conclusion. For that, use [docs/stability-study-2026-04-03.md](stability-study-2026-04-03.md).
 
 All cost figures here are estimates from published pricing and API usage fields. They are not invoice exports.
 
@@ -17,15 +15,15 @@ Compared with the stability study, this file adds:
 - a shorter `messages` history case
 - the original first-pass long-history sample
 
-It is still the source of truth for the README's **large repeated prompt** summary.
+It is still the source of truth for the README's large repeated prompt summary.
 
-## Quick Read
+## The Broad Pattern
 
-OpenAI showed meaningful cost drops on repeated prompts. Cohere `command-a-03-2025` did not. Latency moved around enough that cost was easier to trust.
+OpenAI showed meaningful cost drops on repeated prompts. Cohere `command-a-03-2025` did not. Latency moved around enough that cost was easier to trust than response time.
 
-That matters because a provider that stays flat here can make long-running chats and agents much more expensive than you planned.
+That matters because a provider that stays flat on repeated prompt shapes can make long-running chats and agents much more expensive than they first appear.
 
-## By Prompt Shape
+## Prompt Shapes
 
 ### Large Repeated Prompt
 
@@ -36,7 +34,7 @@ That matters because a provider that stays flat here can make long-running chats
 | `gpt-5.4-mini` | `$0.011292` | `$0.001442` | much cheaper after the first turn |
 | `gpt-5.4` | `$0.037640` | `$0.004232` | much cheaper after the first turn |
 
-This is the cleanest comparison in the file, and the one that matters most for agent-style workloads with a large stable prefix.
+This is the cleanest comparison in the file and the most important one for agent-style workloads with a large stable prefix.
 
 ### Natural-Language Prefix
 
@@ -47,7 +45,7 @@ This is the cleanest comparison in the file, and the one that matters most for a
 | `gpt-5.4-mini` | `$0.001808` | `$0.000599` | cheaper after the first turn |
 | `gpt-5.4` | `$0.006027` | `$0.001131` | cheaper after the first turn |
 
-This matters because it shows the outcome was not limited to synthetic token lists or obviously artificial prompts.
+This matters because it shows the pattern was not limited to synthetic token lists or obviously artificial prompts.
 
 ### Shorter `messages` History
 
@@ -62,7 +60,7 @@ This is the useful edge case. A shorter retained history did not automatically p
 
 ### Longer `messages` History
 
-This section is kept as the original 2-repeat sample. It is useful as background, but not as the final word. For the current long-history summary, use [docs/stability-study-2026-04-03.md](stability-study-2026-04-03.md).
+This section is the original 2-repeat sample. It is useful as background, but not as the final word. For the current long-history summary, use [docs/stability-study-2026-04-03.md](stability-study-2026-04-03.md).
 
 | Model | cold cost | warm cost | What to take from this |
 | --- | ---: | ---: | --- |
@@ -71,9 +69,9 @@ This section is kept as the original 2-repeat sample. It is useful as background
 | `gpt-5.4-mini` | `$0.001511` | `$0.000302` | cheaper after the first turn |
 | `gpt-5.4` | `$0.005038` | `$0.003022` | under-sampled here; see stability study |
 
-## Scaling The Costs
+## Scaling
 
-Projection formula:
+The cost projection used throughout this repo is:
 
 `cold turn cost + (N - 1) * warm turn cost`
 
@@ -99,6 +97,4 @@ This table is kept for completeness from the first-pass comparison. For the repo
 
 ## How To Use This File
 
-- Use it for the broad picture across prompt shapes.
-- Use it for the large repeated prompt summary.
-- Do not use it as the final source for the long-history conclusion; the stability study is stronger there.
+Use it for the broad picture across prompt shapes and for the large repeated prompt summary. Do not use it as the final source for the long-history conclusion; the stability study is stronger there.
