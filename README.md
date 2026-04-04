@@ -1,14 +1,16 @@
-# Cohere Cache Profile
+Cohere Cache Profile
+---
 
-If you are trying to estimate the cost of a multi-turn app that keeps resending a lot of stable context, this repo is about that and almost nothing else.
+This repo benchmarks whether repeated prompt reuse becomes cheaper on the public API.
 
-The question is simple: when the same prompt prefix keeps showing up across turns, does the provider make later requests meaningfully cheaper? In these tests, OpenAI did. Cohere Command A did not.
+In these tests, OpenAI did. Cohere Command A did not.
 
-That matters for exactly the kinds of systems that quietly get expensive: coding agents, chat apps with long retained history, and RAG flows that keep reusing the same instructions or document context. If later turns stay flat, the budget you thought would improve over time never actually improves.
+The practical consequence is that Cohere Command A looks like a weak fit for repeat-heavy workloads whose economics depend on prompt caching, such as coding agents, long-history chat, and some RAG flows.
 
 This is not a general model comparison. It does not judge embeddings, rerank quality, retrieval quality, or private deployment options.
 
-## Main Result
+Main Result
+---
 
 Cohere `command-a-03-2025` stayed flat on the tested public API path. Repeating the same large prefix did not make requests cheaper, and the same held for the longer retained-history chat shape.
 
@@ -16,9 +18,10 @@ Cohere `command-r7b-12-2024` stayed very cheap, but the low price looked like ba
 
 OpenAI behaved differently. Repeated requests usually did get cheaper, often by a lot. Latency moved around enough that cost was the more useful signal.
 
-If you want the blunt recommendation: if your cost model depends on prompt caching working predictably, this repo is evidence against **Cohere Command A on the public API**.
+If your cost model depends on prompt caching working predictably, this repo is evidence against **Cohere Command A on the public API**.
 
-## Two Cost Snapshots
+Two Cost Snapshots
+---
 
 The two prompt shapes that mattered most were:
 
@@ -27,7 +30,8 @@ The two prompt shapes that mattered most were:
 
 The `50 turns` column below is a projection using `cold turn cost + (49 * repeated turn cost)`. All dollar figures are estimates from published pricing and API usage fields, not invoice exports.
 
-### Large Repeated Prompt
+Large Repeated Prompt
+---
 
 Source: [docs/openai-vs-cohere-latency-cost-2026-04-03.md](docs/openai-vs-cohere-latency-cost-2026-04-03.md)
 
@@ -40,7 +44,8 @@ Source: [docs/openai-vs-cohere-latency-cost-2026-04-03.md](docs/openai-vs-cohere
 
 This is the clearest economic signal in the repo. Command A stays flat. OpenAI drops sharply after the cold turn. R7B stays cheap, but not because this repo found a public cache feature you could safely budget around.
 
-### Longer Multi-Turn Conversation
+Longer Multi-Turn Conversation
+---
 
 Source: [docs/stability-study-2026-04-03.md](docs/stability-study-2026-04-03.md)
 
@@ -53,15 +58,17 @@ Source: [docs/stability-study-2026-04-03.md](docs/stability-study-2026-04-03.md)
 
 This is closer to a normal chat app, and the conclusion still holds. Command A stayed flat. OpenAI got materially cheaper once the repeated history became reusable.
 
-## How To Use This Repo
+How To Use This Repo
+---
 
 Use this as evidence against Cohere Command A public API when your architecture expects later turns to get cheaper because the prefix repeats, your chatbot carries a lot of retained history, or your agent resends a large stable prompt every turn.
 
-Do not use it to conclude that Cohere is bad in general. The repo does not test private deployments, Model Vault, embeddings, rerank, or overall model quality. It also does not prove that Cohere has no internal caching. It only says that on the tested public API path, Command A did not show the kind of prompt-cache savings that Anthropic, OpenAI, and Google users usually mean when they talk about prompt caching.
+Do not use it to conclude that Cohere is bad in general. The repo does not test private deployments, Model Vault, embeddings, rerank, or overall model quality. It also does not prove that Cohere has no internal caching. It only shows that on the tested public API path, Command A did not show useful prompt-cache savings.
 
-`command-r7b-12-2024` may still be worth testing if you mostly care about very low base cost and do not need predictable cache savings or trustworthy cache counters from the API. That is a cost recommendation only. It is not a claim that R7B is the right model for your task.
+`command-r7b-12-2024` may still be worth testing if you mostly care about very low base cost and do not need predictable cache savings or trustworthy cache counters from the API. That is a cost recommendation only.
 
-## Read This Next
+Read This Next
+---
 
 Start with [docs/stability-study-2026-04-03.md](docs/stability-study-2026-04-03.md) if you want the strongest supporting evidence.
 
@@ -77,7 +84,8 @@ Raw result files:
 - [results/openai-vs-cohere-latency-cost-2026-04-03.json](results/openai-vs-cohere-latency-cost-2026-04-03.json)
 - [results/chat-shapes-2026-04-03.json](results/chat-shapes-2026-04-03.json)
 
-## Running The Scripts
+Running The Scripts
+---
 
 Set `COHERE_API_KEY` and `OPENAI_API_KEY`, then run:
 

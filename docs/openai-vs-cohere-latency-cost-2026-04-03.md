@@ -1,13 +1,15 @@
-# OpenAI vs Cohere: Broad Comparison
+OpenAI vs Cohere: Broad Comparison
+---
 
-This file is the wider sweep across prompt shapes. It is useful when you want more than the single strongest result, but it is not the final word on the long-history case. For that, use [docs/stability-study-2026-04-03.md](stability-study-2026-04-03.md).
+This file broadens the prompt shapes. It is useful when you want more than the single strongest result, but it is not the final word on the long-history case. For that, use [docs/stability-study-2026-04-03.md](stability-study-2026-04-03.md).
 
 Raw data: [results/openai-vs-cohere-latency-cost-2026-04-03.json](../results/openai-vs-cohere-latency-cost-2026-04-03.json)
 Methodology: [docs/methodology.md](methodology.md)
 
 All cost figures here are estimates from published pricing and API usage fields. They are not invoice exports.
 
-## What This Adds
+What This Adds
+---
 
 Compared with the stability study, this file adds:
 
@@ -17,15 +19,18 @@ Compared with the stability study, this file adds:
 
 It is still the source of truth for the README's large repeated prompt summary.
 
-## The Broad Pattern
+The Broad Pattern
+---
 
 OpenAI showed meaningful cost drops on repeated prompts. Cohere `command-a-03-2025` did not. Latency moved around enough that cost was easier to trust than response time.
 
-That matters because a provider that stays flat on repeated prompt shapes can make long-running chats and agents much more expensive than they first appear.
+The practical point is that a provider that stays flat on repeated prompt shapes is a worse fit for workloads that depend on prompt caching to control cost.
 
-## Prompt Shapes
+Prompt Shapes
+---
 
-### Large Repeated Prompt
+Large Repeated Prompt
+---
 
 | Model | cold cost | warm cost | What to take from this |
 | --- | ---: | ---: | --- |
@@ -36,7 +41,8 @@ That matters because a provider that stays flat on repeated prompt shapes can ma
 
 This is the cleanest comparison in the file and the most important one for agent-style workloads with a large stable prefix.
 
-### Natural-Language Prefix
+Natural-Language Prefix
+---
 
 | Model | cold cost | warm cost | What to take from this |
 | --- | ---: | ---: | --- |
@@ -47,7 +53,8 @@ This is the cleanest comparison in the file and the most important one for agent
 
 This matters because it shows the pattern was not limited to synthetic token lists or obviously artificial prompts.
 
-### Shorter `messages` History
+Shorter `messages` History
+---
 
 | Model | cold cost | warm cost | What to take from this |
 | --- | ---: | ---: | --- |
@@ -58,7 +65,8 @@ This matters because it shows the pattern was not limited to synthetic token lis
 
 This is the useful edge case. A shorter retained history did not automatically produce cache savings on OpenAI.
 
-### Longer `messages` History
+Longer `messages` History
+---
 
 This section is the original 2-repeat sample. It is useful as background, but not as the final word. For the current long-history summary, use [docs/stability-study-2026-04-03.md](stability-study-2026-04-03.md).
 
@@ -69,13 +77,15 @@ This section is the original 2-repeat sample. It is useful as background, but no
 | `gpt-5.4-mini` | `$0.001511` | `$0.000302` | cheaper after the first turn |
 | `gpt-5.4` | `$0.005038` | `$0.003022` | under-sampled here; see stability study |
 
-## Scaling
+Scaling
+---
 
 The cost projection used throughout this repo is:
 
 `cold turn cost + (N - 1) * warm turn cost`
 
-### Large Repeated Prompt
+Large Repeated Prompt
+---
 
 | Model | 10 turns | 50 turns |
 | --- | ---: | ---: |
@@ -84,7 +94,8 @@ The cost projection used throughout this repo is:
 | `gpt-5.4-mini` | `$0.024270` | `$0.081950` |
 | `gpt-5.4` | `$0.075728` | `$0.245008` |
 
-### Longer Multi-Turn Conversation
+Longer Multi-Turn Conversation
+---
 
 This table is kept for completeness from the first-pass comparison. For the repo's current long-history projections, use the README or the stability study.
 
@@ -95,6 +106,7 @@ This table is kept for completeness from the first-pass comparison. For the repo
 | `gpt-5.4-mini` | `$0.004229` | `$0.016309` |
 | `gpt-5.4` | `$0.032236` | `$0.153116` |
 
-## How To Use This File
+How To Use This File
+---
 
 Use it for the broad picture across prompt shapes and for the large repeated prompt summary. Do not use it as the final source for the long-history conclusion; the stability study is stronger there.
