@@ -10,11 +10,12 @@ If you only need the main result:
 - **Cheap exception:** Cohere `command-r7b-12-2024` stayed inexpensive, but the repo does not show a clean public cache discount behind that price.
 - **Latency:** in this sample, latency was noisy and not a dependable win on either provider. Cost was the much stronger signal.
 - **Scaling:** for long-running agents with a large repeated prefix, the cost gap becomes material very quickly.
+- **Stability follow-up:** the stronger repeat study kept the Command A conclusion intact and showed that the earlier weak `gpt-5.4` long-history result was probably just under-sampled.
 
 How this summary is measured:
 
-- `cold turn` = `exact_1`
-- `warm repeated turn` = median of `exact_2` and `exact_3`
+- `cold turn` = first exact request for that prompt shape
+- `warm repeated turn` = median of the warm exact repeats used by that benchmark
 - projections assume the same prompt shape repeats: `cold turn cost + (N - 1) * warm repeated turn cost`
 
 ### Large Repeated Prompt
@@ -50,18 +51,20 @@ Measured prompt shape:
 
 This used a retained `messages` history with alternating user and assistant turns.
 
+These numbers come from the follow-up stability study rather than the earlier 2-repeat comparison.
+
 | Model | cold turn cost | warm repeated turn cost | observed change |
 | --- | ---: | ---: | ---: |
-| `command-a-03-2025` | `$0.004722` | `$0.004722` | `0.0%` |
+| `command-a-03-2025` | `$0.004727` | `$0.004727` | `0.0%` |
 | `command-r7b-12-2024` | `$0.000071` | `$0.000071` | `0.0%` |
-| `gpt-5.4-mini` | `$0.001511` | `$0.000302` | `80.0% cheaper` |
-| `gpt-5.4` | `$0.005038` | `$0.003022` | `40.0% cheaper` |
+| `gpt-5.4-mini` | `$0.001513` | `$0.000303` | `80.0% cheaper` |
+| `gpt-5.4` | `$0.005043` | `$0.001010` | `80.0% cheaper` |
 
 Evidence:
 
-- [results/openai-vs-cohere-latency-cost-2026-04-03.json](results/openai-vs-cohere-latency-cost-2026-04-03.json)
-- [Longer history analysis](docs/openai-vs-cohere-latency-cost-2026-04-03.md#longer-history)
-- [Methodology](docs/methodology.md#openai-comparison-design)
+- [results/cache-stability-study-2026-04-03.json](results/cache-stability-study-2026-04-03.json)
+- [Stability study analysis](docs/stability-study-2026-04-03.md#longer-multi-turn-messages-history)
+- [Methodology](docs/methodology.md#stability-study-design)
 
 ### Latency
 
@@ -92,6 +95,11 @@ These projections use the measured formula:
 
 `cold turn cost + (N - 1) * warm repeated turn cost`
 
+Sources:
+
+- large repeated prompt: broader cross-provider comparison
+- longer multi-turn conversation: follow-up stability study
+
 #### Large Repeated Prompt
 
 | Model | 10 turns | 50 turns |
@@ -105,21 +113,52 @@ These projections use the measured formula:
 
 | Model | 10 turns | 50 turns |
 | --- | ---: | ---: |
-| `command-a-03-2025` | `$0.047220` | `$0.236100` |
+| `command-a-03-2025` | `$0.047270` | `$0.236350` |
 | `command-r7b-12-2024` | `$0.000710` | `$0.003550` |
-| `gpt-5.4-mini` | `$0.004229` | `$0.016309` |
-| `gpt-5.4` | `$0.032236` | `$0.153116` |
+| `gpt-5.4-mini` | `$0.004240` | `$0.016360` |
+| `gpt-5.4` | `$0.014133` | `$0.054533` |
 
 What this means:
 
 - if your app keeps repeating a large stable prefix, **Command A scales almost linearly**
 - OpenAI cost **bends downward** after the first turn because the repeated prefix is cached
 - `command-r7b-12-2024` is still cheap, but that is because the model itself is cheap, not because the public cache story is clear
+- on the long-history case, the stronger follow-up study makes `gpt-5.4` look much better than the original 2-repeat sample suggested
 
 Evidence:
 
-- [Scaling projections](docs/openai-vs-cohere-latency-cost-2026-04-03.md#scaling-projections)
+- [Stability study](docs/stability-study-2026-04-03.md)
 - [Raw comparison results](results/openai-vs-cohere-latency-cost-2026-04-03.json)
+- [Raw stability results](results/cache-stability-study-2026-04-03.json)
+
+### Stability Follow-Up
+
+Focused repeat study:
+
+- `1` cold request
+- `6` immediate warm repeats
+- `4` misses
+- `2` warm repeats after `20s`
+
+What changed:
+
+- `command-a-03-2025` still showed `0/6` immediate billing hits and `0/2` delayed billing hits on both key prompt shapes
+- `gpt-5.4` large repeated prompt hit `6/6` immediate and `2/2` delayed warm requests
+- `gpt-5.4` long retained history also hit `6/6` immediate and `2/2` delayed warm requests
+- `gpt-5.4-mini` was also stable except for `1` delayed miss on the long-history case
+- `command-r7b-12-2024` reported cache hits even on `4/4` miss cases, which makes the telemetry hard to trust as a public cache signal
+
+This is the strongest answer in the repo to "did we repeat enough times to judge stability?":
+
+- enough to reject obvious stability on Cohere Command A
+- enough to show real short-run stability on OpenAI
+- not enough to fully map TTL or region-dependent routing behavior
+
+Evidence:
+
+- [Stability study](docs/stability-study-2026-04-03.md)
+- [Raw stability results](results/cache-stability-study-2026-04-03.json)
+- [Methodology](docs/methodology.md#stability-study-design)
 
 ### Where Cohere Public API Is a Poor Fit
 
@@ -145,9 +184,11 @@ Evidence:
 
 - methodology and glossary: [docs/methodology.md](docs/methodology.md)
 - latency/cost comparison: [docs/openai-vs-cohere-latency-cost-2026-04-03.md](docs/openai-vs-cohere-latency-cost-2026-04-03.md)
+- stability follow-up: [docs/stability-study-2026-04-03.md](docs/stability-study-2026-04-03.md)
 - broader chat-shape summary: [docs/chat-shapes-2026-04-03.md](docs/chat-shapes-2026-04-03.md)
 - earlier repetitive-prefix notes: [docs/findings-2026-04-03.md](docs/findings-2026-04-03.md)
 - raw comparison results: [results/openai-vs-cohere-latency-cost-2026-04-03.json](results/openai-vs-cohere-latency-cost-2026-04-03.json)
+- raw stability results: [results/cache-stability-study-2026-04-03.json](results/cache-stability-study-2026-04-03.json)
 - raw chat-shape results: [results/chat-shapes-2026-04-03.json](results/chat-shapes-2026-04-03.json)
 - raw earlier chat results: [results/chat-cache-2026-04-03.json](results/chat-cache-2026-04-03.json)
 - raw non-chat smoke results: [results/nonchat-cache-smoke-2026-04-03.json](results/nonchat-cache-smoke-2026-04-03.json)
@@ -178,6 +219,7 @@ Important:
 - this is an exploratory benchmark, not a formal audit
 - all runs were on public API paths, not private deployments or Model Vault
 - latency was noisier than cost
+- the stability study only checked a `20s` delay, not full cache lifetime
 - `v2/embed` and `v2/rerank` were only smoke-tested
 - the prompts are benchmark prompts, not real production traffic
 
@@ -190,6 +232,7 @@ python scripts/profile_chat_shapes.py
 python scripts/profile_chat_cache.py
 python scripts/smoke_nonchat_cache.py
 python scripts/compare_openai_cohere_latency_cost.py
+python scripts/cache_stability_study.py
 ```
 
 Each script writes JSON into `results/`.

@@ -4,6 +4,8 @@ Raw data: [results/openai-vs-cohere-latency-cost-2026-04-03.json](../results/ope
 
 Methodology: [docs/methodology.md](methodology.md)
 
+Stability follow-up: [docs/stability-study-2026-04-03.md](stability-study-2026-04-03.md)
+
 Official references:
 
 - OpenAI prompt caching guide: <https://developers.openai.com/api/docs/guides/prompt-caching>
@@ -43,6 +45,8 @@ Those token counts come from each provider's own usage accounting. They are usef
 Cost moved in a meaningful way on OpenAI and did not move in a meaningful way on Cohere Command A.
 
 Latency did not give a stable, dependable story.
+
+Important: this file is the broader first-pass comparison. For the stronger follow-up on repeated warm-hit stability, especially the long-history case, read [docs/stability-study-2026-04-03.md](stability-study-2026-04-03.md).
 
 ## Large repeated prompt
 

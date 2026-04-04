@@ -4,8 +4,9 @@ This file explains exactly what the scripts do and how to read the results.
 
 ## Scope
 
-The current repo contains four probe scripts:
+The current repo contains five probe scripts:
 
+- [scripts/cache_stability_study.py](../scripts/cache_stability_study.py)
 - [scripts/profile_chat_shapes.py](../scripts/profile_chat_shapes.py)
 - [scripts/profile_chat_cache.py](../scripts/profile_chat_cache.py)
 - [scripts/smoke_nonchat_cache.py](../scripts/smoke_nonchat_cache.py)
@@ -13,6 +14,7 @@ The current repo contains four probe scripts:
 
 The main teaching value is in `profile_chat_shapes.py`. That script is the clearest version of the experiment.
 The newest comparison work is in `compare_openai_cohere_latency_cost.py`.
+The strongest evidence about fluctuation is in `cache_stability_study.py`.
 
 ## Experiment design
 
@@ -65,6 +67,29 @@ One important correction from the earlier draft:
 - the longer `messages_history_long` case did show cache hits
 
 So the safe lesson is not "1024 always caches." The safe lesson is that crossing the documented threshold was not enough by itself in this benchmark.
+
+## Stability-study design
+
+The stability follow-up uses:
+
+- the same public Cohere and OpenAI endpoints as the cross-provider comparison
+- two prompt groups that matter most to the repo's main conclusion:
+  - `size_large`
+  - `messages_history_long`
+
+Each provider/model/group gets:
+
+- `cold`: 1 request
+- `warm_immediate`: 6 exact repeats
+- `miss_immediate`: 4 mutated-prefix misses
+- `warm_delayed`: 2 exact repeats after a `20s` pause
+
+The stability study also uses two different hit definitions:
+
+- `reported cache hit`: `cached_tokens > 0`
+- `billing-visible hit`: estimated request cost is at least `5%` lower than the cold request
+
+That second definition is necessary because Cohere `command-r7b-12-2024` can report `cached_tokens` even on miss cases where billing does not move.
 
 ## Scenario types
 
@@ -146,7 +171,8 @@ That is why the docs describe `cached_tokens` as real telemetry but not a reliab
 
 - only 2 exact repeats and 1 miss per group in the main shape test
 - only 3 exact or miss requests per group in the cross-provider comparison
-- no delayed retry to test cache lifetime
+- only 6 immediate repeats and 2 delayed repeats in the stability study
+- no delay curve beyond the single `20s` bucket in the stability study
 - no streaming test
 - no Model Vault test
 - no multi-region or multi-account comparison
@@ -160,4 +186,5 @@ For a TA or new programmer, the safe interpretation is:
 
 1. The Command A models did not show any usable prompt-cache signal in the tested chat scenarios.
 2. `command-r7b-12-2024` did report `cached_tokens`, but the values were inconsistent and did not map cleanly to billed input.
-3. Therefore, this repo does not support the claim that Cohere currently offers Anthropic-style public prompt caching on the tested public API path.
+3. The stability follow-up showed that OpenAI's cache behavior was much more consistent than the earlier 2-repeat sample implied, especially on the long-history prompt.
+4. Therefore, this repo does not support the claim that Cohere currently offers Anthropic-style public prompt caching on the tested public API path.

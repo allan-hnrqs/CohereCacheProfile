@@ -1,0 +1,3294 @@
+{
+  "run_date": "2026-04-03",
+  "run_nonce": "ad8b0e2ecf624b919da528711494f53d",
+  "parameters": {
+    "immediate_repeats": 6,
+    "miss_repeats": 4,
+    "delayed_repeats": 2,
+    "delay_seconds": 20,
+    "groups": [
+      "size_large",
+      "messages_history_long"
+    ],
+    "cohere_models": [
+      "command-a-03-2025",
+      "command-r7b-12-2024"
+    ],
+    "openai_models": [
+      "gpt-5.4-mini",
+      "gpt-5.4"
+    ]
+  },
+  "rows": [
+    {
+      "provider": "cohere",
+      "model": "command-a-03-2025",
+      "group": "size_large",
+      "phase": "cold",
+      "attempt": 1,
+      "delay_seconds": 0,
+      "status": 200,
+      "elapsed_s": 5.606,
+      "usage": {
+        "billed_input_tokens": 35020,
+        "billed_output_tokens": 3,
+        "raw_input_tokens": 35549,
+        "raw_output_tokens": 4,
+        "cached_tokens": 0
+      },
+      "estimated_cost_usd": 0.08758,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-a-03-2025",
+      "group": "size_large",
+      "phase": "warm_immediate",
+      "attempt": 1,
+      "delay_seconds": 0,
+      "status": 200,
+      "elapsed_s": 7.993,
+      "usage": {
+        "billed_input_tokens": 35020,
+        "billed_output_tokens": 3,
+        "raw_input_tokens": 35549,
+        "raw_output_tokens": 4,
+        "cached_tokens": 0
+      },
+      "estimated_cost_usd": 0.08758,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-a-03-2025",
+      "group": "size_large",
+      "phase": "warm_immediate",
+      "attempt": 2,
+      "delay_seconds": 0,
+      "status": 200,
+      "elapsed_s": 6.459,
+      "usage": {
+        "billed_input_tokens": 35020,
+        "billed_output_tokens": 3,
+        "raw_input_tokens": 35549,
+        "raw_output_tokens": 4,
+        "cached_tokens": 0
+      },
+      "estimated_cost_usd": 0.08758,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-a-03-2025",
+      "group": "size_large",
+      "phase": "warm_immediate",
+      "attempt": 3,
+      "delay_seconds": 0,
+      "status": 200,
+      "elapsed_s": 10.156,
+      "usage": {
+        "billed_input_tokens": 35020,
+        "billed_output_tokens": 3,
+        "raw_input_tokens": 35549,
+        "raw_output_tokens": 4,
+        "cached_tokens": 0
+      },
+      "estimated_cost_usd": 0.08758,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-a-03-2025",
+      "group": "size_large",
+      "phase": "warm_immediate",
+      "attempt": 4,
+      "delay_seconds": 0,
+      "status": 200,
+      "elapsed_s": 6.889,
+      "usage": {
+        "billed_input_tokens": 35020,
+        "billed_output_tokens": 3,
+        "raw_input_tokens": 35549,
+        "raw_output_tokens": 4,
+        "cached_tokens": 0
+      },
+      "estimated_cost_usd": 0.08758,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-a-03-2025",
+      "group": "size_large",
+      "phase": "warm_immediate",
+      "attempt": 5,
+      "delay_seconds": 0,
+      "status": 200,
+      "elapsed_s": 6.6,
+      "usage": {
+        "billed_input_tokens": 35020,
+        "billed_output_tokens": 3,
+        "raw_input_tokens": 35549,
+        "raw_output_tokens": 4,
+        "cached_tokens": 0
+      },
+      "estimated_cost_usd": 0.08758,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-a-03-2025",
+      "group": "size_large",
+      "phase": "warm_immediate",
+      "attempt": 6,
+      "delay_seconds": 0,
+      "status": 200,
+      "elapsed_s": 6.0,
+      "usage": {
+        "billed_input_tokens": 35020,
+        "billed_output_tokens": 3,
+        "raw_input_tokens": 35549,
+        "raw_output_tokens": 4,
+        "cached_tokens": 0
+      },
+      "estimated_cost_usd": 0.08758,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-a-03-2025",
+      "group": "size_large",
+      "phase": "miss_immediate",
+      "attempt": 1,
+      "delay_seconds": 0,
+      "status": 200,
+      "elapsed_s": 6.633,
+      "usage": {
+        "billed_input_tokens": 35021,
+        "billed_output_tokens": 3,
+        "raw_input_tokens": 35550,
+        "raw_output_tokens": 4,
+        "cached_tokens": 0
+      },
+      "estimated_cost_usd": 0.087582,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-a-03-2025",
+      "group": "size_large",
+      "phase": "miss_immediate",
+      "attempt": 2,
+      "delay_seconds": 0,
+      "status": 200,
+      "elapsed_s": 10.062,
+      "usage": {
+        "billed_input_tokens": 35021,
+        "billed_output_tokens": 3,
+        "raw_input_tokens": 35550,
+        "raw_output_tokens": 4,
+        "cached_tokens": 0
+      },
+      "estimated_cost_usd": 0.087582,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-a-03-2025",
+      "group": "size_large",
+      "phase": "miss_immediate",
+      "attempt": 3,
+      "delay_seconds": 0,
+      "status": 200,
+      "elapsed_s": 6.098,
+      "usage": {
+        "billed_input_tokens": 35021,
+        "billed_output_tokens": 3,
+        "raw_input_tokens": 35550,
+        "raw_output_tokens": 4,
+        "cached_tokens": 0
+      },
+      "estimated_cost_usd": 0.087582,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-a-03-2025",
+      "group": "size_large",
+      "phase": "miss_immediate",
+      "attempt": 4,
+      "delay_seconds": 0,
+      "status": 200,
+      "elapsed_s": 5.999,
+      "usage": {
+        "billed_input_tokens": 35021,
+        "billed_output_tokens": 3,
+        "raw_input_tokens": 35550,
+        "raw_output_tokens": 4,
+        "cached_tokens": 0
+      },
+      "estimated_cost_usd": 0.087582,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-a-03-2025",
+      "group": "size_large",
+      "phase": "warm_delayed",
+      "attempt": 1,
+      "delay_seconds": 20,
+      "status": 200,
+      "elapsed_s": 5.99,
+      "usage": {
+        "billed_input_tokens": 35020,
+        "billed_output_tokens": 3,
+        "raw_input_tokens": 35549,
+        "raw_output_tokens": 4,
+        "cached_tokens": 0
+      },
+      "estimated_cost_usd": 0.08758,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-a-03-2025",
+      "group": "size_large",
+      "phase": "warm_delayed",
+      "attempt": 2,
+      "delay_seconds": 20,
+      "status": 200,
+      "elapsed_s": 5.759,
+      "usage": {
+        "billed_input_tokens": 35020,
+        "billed_output_tokens": 3,
+        "raw_input_tokens": 35549,
+        "raw_output_tokens": 4,
+        "cached_tokens": 0
+      },
+      "estimated_cost_usd": 0.08758,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-a-03-2025",
+      "group": "messages_history_long",
+      "phase": "cold",
+      "attempt": 1,
+      "delay_seconds": 0,
+      "status": 200,
+      "elapsed_s": 0.633,
+      "usage": {
+        "billed_input_tokens": 1887,
+        "billed_output_tokens": 1,
+        "raw_input_tokens": 2544,
+        "raw_output_tokens": 3,
+        "cached_tokens": 0
+      },
+      "estimated_cost_usd": 0.004727,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-a-03-2025",
+      "group": "messages_history_long",
+      "phase": "warm_immediate",
+      "attempt": 1,
+      "delay_seconds": 0,
+      "status": 200,
+      "elapsed_s": 1.532,
+      "usage": {
+        "billed_input_tokens": 1887,
+        "billed_output_tokens": 1,
+        "raw_input_tokens": 2544,
+        "raw_output_tokens": 3,
+        "cached_tokens": 0
+      },
+      "estimated_cost_usd": 0.004727,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-a-03-2025",
+      "group": "messages_history_long",
+      "phase": "warm_immediate",
+      "attempt": 2,
+      "delay_seconds": 0,
+      "status": 200,
+      "elapsed_s": 0.494,
+      "usage": {
+        "billed_input_tokens": 1887,
+        "billed_output_tokens": 1,
+        "raw_input_tokens": 2544,
+        "raw_output_tokens": 3,
+        "cached_tokens": 0
+      },
+      "estimated_cost_usd": 0.004727,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-a-03-2025",
+      "group": "messages_history_long",
+      "phase": "warm_immediate",
+      "attempt": 3,
+      "delay_seconds": 0,
+      "status": 200,
+      "elapsed_s": 2.706,
+      "usage": {
+        "billed_input_tokens": 1887,
+        "billed_output_tokens": 1,
+        "raw_input_tokens": 2544,
+        "raw_output_tokens": 3,
+        "cached_tokens": 0
+      },
+      "estimated_cost_usd": 0.004727,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-a-03-2025",
+      "group": "messages_history_long",
+      "phase": "warm_immediate",
+      "attempt": 4,
+      "delay_seconds": 0,
+      "status": 200,
+      "elapsed_s": 0.516,
+      "usage": {
+        "billed_input_tokens": 1887,
+        "billed_output_tokens": 1,
+        "raw_input_tokens": 2544,
+        "raw_output_tokens": 3,
+        "cached_tokens": 0
+      },
+      "estimated_cost_usd": 0.004727,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-a-03-2025",
+      "group": "messages_history_long",
+      "phase": "warm_immediate",
+      "attempt": 5,
+      "delay_seconds": 0,
+      "status": 200,
+      "elapsed_s": 1.071,
+      "usage": {
+        "billed_input_tokens": 1887,
+        "billed_output_tokens": 1,
+        "raw_input_tokens": 2544,
+        "raw_output_tokens": 3,
+        "cached_tokens": 0
+      },
+      "estimated_cost_usd": 0.004727,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-a-03-2025",
+      "group": "messages_history_long",
+      "phase": "warm_immediate",
+      "attempt": 6,
+      "delay_seconds": 0,
+      "status": 200,
+      "elapsed_s": 0.525,
+      "usage": {
+        "billed_input_tokens": 1887,
+        "billed_output_tokens": 1,
+        "raw_input_tokens": 2544,
+        "raw_output_tokens": 3,
+        "cached_tokens": 0
+      },
+      "estimated_cost_usd": 0.004727,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-a-03-2025",
+      "group": "messages_history_long",
+      "phase": "miss_immediate",
+      "attempt": 1,
+      "delay_seconds": 0,
+      "status": 200,
+      "elapsed_s": 0.456,
+      "usage": {
+        "billed_input_tokens": 1888,
+        "billed_output_tokens": 1,
+        "raw_input_tokens": 2545,
+        "raw_output_tokens": 3,
+        "cached_tokens": 0
+      },
+      "estimated_cost_usd": 0.00473,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-a-03-2025",
+      "group": "messages_history_long",
+      "phase": "miss_immediate",
+      "attempt": 2,
+      "delay_seconds": 0,
+      "status": 200,
+      "elapsed_s": 0.661,
+      "usage": {
+        "billed_input_tokens": 1888,
+        "billed_output_tokens": 1,
+        "raw_input_tokens": 2545,
+        "raw_output_tokens": 3,
+        "cached_tokens": 0
+      },
+      "estimated_cost_usd": 0.00473,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-a-03-2025",
+      "group": "messages_history_long",
+      "phase": "miss_immediate",
+      "attempt": 3,
+      "delay_seconds": 0,
+      "status": 200,
+      "elapsed_s": 0.964,
+      "usage": {
+        "billed_input_tokens": 1888,
+        "billed_output_tokens": 1,
+        "raw_input_tokens": 2545,
+        "raw_output_tokens": 3,
+        "cached_tokens": 0
+      },
+      "estimated_cost_usd": 0.00473,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-a-03-2025",
+      "group": "messages_history_long",
+      "phase": "miss_immediate",
+      "attempt": 4,
+      "delay_seconds": 0,
+      "status": 200,
+      "elapsed_s": 0.517,
+      "usage": {
+        "billed_input_tokens": 1888,
+        "billed_output_tokens": 1,
+        "raw_input_tokens": 2545,
+        "raw_output_tokens": 3,
+        "cached_tokens": 0
+      },
+      "estimated_cost_usd": 0.00473,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-a-03-2025",
+      "group": "messages_history_long",
+      "phase": "warm_delayed",
+      "attempt": 1,
+      "delay_seconds": 20,
+      "status": 200,
+      "elapsed_s": 0.514,
+      "usage": {
+        "billed_input_tokens": 1887,
+        "billed_output_tokens": 1,
+        "raw_input_tokens": 2544,
+        "raw_output_tokens": 3,
+        "cached_tokens": 0
+      },
+      "estimated_cost_usd": 0.004727,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-a-03-2025",
+      "group": "messages_history_long",
+      "phase": "warm_delayed",
+      "attempt": 2,
+      "delay_seconds": 20,
+      "status": 200,
+      "elapsed_s": 1.358,
+      "usage": {
+        "billed_input_tokens": 1887,
+        "billed_output_tokens": 1,
+        "raw_input_tokens": 2544,
+        "raw_output_tokens": 3,
+        "cached_tokens": 0
+      },
+      "estimated_cost_usd": 0.004727,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-r7b-12-2024",
+      "group": "size_large",
+      "phase": "cold",
+      "attempt": 1,
+      "delay_seconds": 0,
+      "status": 200,
+      "elapsed_s": 2.417,
+      "usage": {
+        "billed_input_tokens": 35020,
+        "billed_output_tokens": 2,
+        "raw_input_tokens": 35549,
+        "raw_output_tokens": 4,
+        "cached_tokens": 512
+      },
+      "estimated_cost_usd": 0.001314,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-r7b-12-2024",
+      "group": "size_large",
+      "phase": "warm_immediate",
+      "attempt": 1,
+      "delay_seconds": 0,
+      "status": 200,
+      "elapsed_s": 0.749,
+      "usage": {
+        "billed_input_tokens": 35020,
+        "billed_output_tokens": 2,
+        "raw_input_tokens": 35549,
+        "raw_output_tokens": 4,
+        "cached_tokens": 35536
+      },
+      "estimated_cost_usd": 0.001314,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-r7b-12-2024",
+      "group": "size_large",
+      "phase": "warm_immediate",
+      "attempt": 2,
+      "delay_seconds": 0,
+      "status": 200,
+      "elapsed_s": 0.679,
+      "usage": {
+        "billed_input_tokens": 35020,
+        "billed_output_tokens": 2,
+        "raw_input_tokens": 35549,
+        "raw_output_tokens": 4,
+        "cached_tokens": 35536
+      },
+      "estimated_cost_usd": 0.001314,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-r7b-12-2024",
+      "group": "size_large",
+      "phase": "warm_immediate",
+      "attempt": 3,
+      "delay_seconds": 0,
+      "status": 200,
+      "elapsed_s": 0.713,
+      "usage": {
+        "billed_input_tokens": 35020,
+        "billed_output_tokens": 2,
+        "raw_input_tokens": 35549,
+        "raw_output_tokens": 4,
+        "cached_tokens": 35536
+      },
+      "estimated_cost_usd": 0.001314,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-r7b-12-2024",
+      "group": "size_large",
+      "phase": "warm_immediate",
+      "attempt": 4,
+      "delay_seconds": 0,
+      "status": 200,
+      "elapsed_s": 1.061,
+      "usage": {
+        "billed_input_tokens": 35020,
+        "billed_output_tokens": 2,
+        "raw_input_tokens": 35549,
+        "raw_output_tokens": 4,
+        "cached_tokens": 35536
+      },
+      "estimated_cost_usd": 0.001314,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-r7b-12-2024",
+      "group": "size_large",
+      "phase": "warm_immediate",
+      "attempt": 5,
+      "delay_seconds": 0,
+      "status": 200,
+      "elapsed_s": 1.759,
+      "usage": {
+        "billed_input_tokens": 35020,
+        "billed_output_tokens": 2,
+        "raw_input_tokens": 35549,
+        "raw_output_tokens": 4,
+        "cached_tokens": 512
+      },
+      "estimated_cost_usd": 0.001314,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-r7b-12-2024",
+      "group": "size_large",
+      "phase": "warm_immediate",
+      "attempt": 6,
+      "delay_seconds": 0,
+      "status": 200,
+      "elapsed_s": 0.79,
+      "usage": {
+        "billed_input_tokens": 35020,
+        "billed_output_tokens": 2,
+        "raw_input_tokens": 35549,
+        "raw_output_tokens": 4,
+        "cached_tokens": 35536
+      },
+      "estimated_cost_usd": 0.001314,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-r7b-12-2024",
+      "group": "size_large",
+      "phase": "miss_immediate",
+      "attempt": 1,
+      "delay_seconds": 0,
+      "status": 200,
+      "elapsed_s": 1.715,
+      "usage": {
+        "billed_input_tokens": 35021,
+        "billed_output_tokens": 2,
+        "raw_input_tokens": 35550,
+        "raw_output_tokens": 4,
+        "cached_tokens": 528
+      },
+      "estimated_cost_usd": 0.001314,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-r7b-12-2024",
+      "group": "size_large",
+      "phase": "miss_immediate",
+      "attempt": 2,
+      "delay_seconds": 0,
+      "status": 200,
+      "elapsed_s": 1.913,
+      "usage": {
+        "billed_input_tokens": 35021,
+        "billed_output_tokens": 2,
+        "raw_input_tokens": 35550,
+        "raw_output_tokens": 4,
+        "cached_tokens": 528
+      },
+      "estimated_cost_usd": 0.001314,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-r7b-12-2024",
+      "group": "size_large",
+      "phase": "miss_immediate",
+      "attempt": 3,
+      "delay_seconds": 0,
+      "status": 200,
+      "elapsed_s": 2.119,
+      "usage": {
+        "billed_input_tokens": 35021,
+        "billed_output_tokens": 2,
+        "raw_input_tokens": 35550,
+        "raw_output_tokens": 4,
+        "cached_tokens": 528
+      },
+      "estimated_cost_usd": 0.001314,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-r7b-12-2024",
+      "group": "size_large",
+      "phase": "miss_immediate",
+      "attempt": 4,
+      "delay_seconds": 0,
+      "status": 200,
+      "elapsed_s": 1.759,
+      "usage": {
+        "billed_input_tokens": 35021,
+        "billed_output_tokens": 2,
+        "raw_input_tokens": 35550,
+        "raw_output_tokens": 4,
+        "cached_tokens": 528
+      },
+      "estimated_cost_usd": 0.001314,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-r7b-12-2024",
+      "group": "size_large",
+      "phase": "warm_delayed",
+      "attempt": 1,
+      "delay_seconds": 20,
+      "status": 200,
+      "elapsed_s": 0.728,
+      "usage": {
+        "billed_input_tokens": 35020,
+        "billed_output_tokens": 2,
+        "raw_input_tokens": 35549,
+        "raw_output_tokens": 4,
+        "cached_tokens": 35536
+      },
+      "estimated_cost_usd": 0.001314,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-r7b-12-2024",
+      "group": "size_large",
+      "phase": "warm_delayed",
+      "attempt": 2,
+      "delay_seconds": 20,
+      "status": 200,
+      "elapsed_s": 0.697,
+      "usage": {
+        "billed_input_tokens": 35020,
+        "billed_output_tokens": 2,
+        "raw_input_tokens": 35549,
+        "raw_output_tokens": 4,
+        "cached_tokens": 35536
+      },
+      "estimated_cost_usd": 0.001314,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-r7b-12-2024",
+      "group": "messages_history_long",
+      "phase": "cold",
+      "attempt": 1,
+      "delay_seconds": 0,
+      "status": 200,
+      "elapsed_s": 0.268,
+      "usage": {
+        "billed_input_tokens": 1887,
+        "billed_output_tokens": 1,
+        "raw_input_tokens": 2544,
+        "raw_output_tokens": 3,
+        "cached_tokens": 528
+      },
+      "estimated_cost_usd": 7.1e-05,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-r7b-12-2024",
+      "group": "messages_history_long",
+      "phase": "warm_immediate",
+      "attempt": 1,
+      "delay_seconds": 0,
+      "status": 200,
+      "elapsed_s": 0.26,
+      "usage": {
+        "billed_input_tokens": 1887,
+        "billed_output_tokens": 1,
+        "raw_input_tokens": 2544,
+        "raw_output_tokens": 3,
+        "cached_tokens": 2528
+      },
+      "estimated_cost_usd": 7.1e-05,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-r7b-12-2024",
+      "group": "messages_history_long",
+      "phase": "warm_immediate",
+      "attempt": 2,
+      "delay_seconds": 0,
+      "status": 200,
+      "elapsed_s": 0.263,
+      "usage": {
+        "billed_input_tokens": 1887,
+        "billed_output_tokens": 1,
+        "raw_input_tokens": 2544,
+        "raw_output_tokens": 3,
+        "cached_tokens": 528
+      },
+      "estimated_cost_usd": 7.1e-05,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-r7b-12-2024",
+      "group": "messages_history_long",
+      "phase": "warm_immediate",
+      "attempt": 3,
+      "delay_seconds": 0,
+      "status": 200,
+      "elapsed_s": 0.244,
+      "usage": {
+        "billed_input_tokens": 1887,
+        "billed_output_tokens": 1,
+        "raw_input_tokens": 2544,
+        "raw_output_tokens": 3,
+        "cached_tokens": 2528
+      },
+      "estimated_cost_usd": 7.1e-05,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-r7b-12-2024",
+      "group": "messages_history_long",
+      "phase": "warm_immediate",
+      "attempt": 4,
+      "delay_seconds": 0,
+      "status": 200,
+      "elapsed_s": 0.222,
+      "usage": {
+        "billed_input_tokens": 1887,
+        "billed_output_tokens": 1,
+        "raw_input_tokens": 2544,
+        "raw_output_tokens": 3,
+        "cached_tokens": 2528
+      },
+      "estimated_cost_usd": 7.1e-05,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-r7b-12-2024",
+      "group": "messages_history_long",
+      "phase": "warm_immediate",
+      "attempt": 5,
+      "delay_seconds": 0,
+      "status": 200,
+      "elapsed_s": 0.232,
+      "usage": {
+        "billed_input_tokens": 1887,
+        "billed_output_tokens": 1,
+        "raw_input_tokens": 2544,
+        "raw_output_tokens": 3,
+        "cached_tokens": 2528
+      },
+      "estimated_cost_usd": 7.1e-05,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-r7b-12-2024",
+      "group": "messages_history_long",
+      "phase": "warm_immediate",
+      "attempt": 6,
+      "delay_seconds": 0,
+      "status": 200,
+      "elapsed_s": 0.271,
+      "usage": {
+        "billed_input_tokens": 1887,
+        "billed_output_tokens": 1,
+        "raw_input_tokens": 2544,
+        "raw_output_tokens": 3,
+        "cached_tokens": 2528
+      },
+      "estimated_cost_usd": 7.1e-05,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-r7b-12-2024",
+      "group": "messages_history_long",
+      "phase": "miss_immediate",
+      "attempt": 1,
+      "delay_seconds": 0,
+      "status": 200,
+      "elapsed_s": 0.315,
+      "usage": {
+        "billed_input_tokens": 1888,
+        "billed_output_tokens": 1,
+        "raw_input_tokens": 2545,
+        "raw_output_tokens": 3,
+        "cached_tokens": 528
+      },
+      "estimated_cost_usd": 7.1e-05,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-r7b-12-2024",
+      "group": "messages_history_long",
+      "phase": "miss_immediate",
+      "attempt": 2,
+      "delay_seconds": 0,
+      "status": 200,
+      "elapsed_s": 0.29,
+      "usage": {
+        "billed_input_tokens": 1888,
+        "billed_output_tokens": 1,
+        "raw_input_tokens": 2545,
+        "raw_output_tokens": 3,
+        "cached_tokens": 528
+      },
+      "estimated_cost_usd": 7.1e-05,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-r7b-12-2024",
+      "group": "messages_history_long",
+      "phase": "miss_immediate",
+      "attempt": 3,
+      "delay_seconds": 0,
+      "status": 200,
+      "elapsed_s": 0.26,
+      "usage": {
+        "billed_input_tokens": 1888,
+        "billed_output_tokens": 1,
+        "raw_input_tokens": 2545,
+        "raw_output_tokens": 3,
+        "cached_tokens": 528
+      },
+      "estimated_cost_usd": 7.1e-05,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-r7b-12-2024",
+      "group": "messages_history_long",
+      "phase": "miss_immediate",
+      "attempt": 4,
+      "delay_seconds": 0,
+      "status": 200,
+      "elapsed_s": 0.285,
+      "usage": {
+        "billed_input_tokens": 1888,
+        "billed_output_tokens": 1,
+        "raw_input_tokens": 2545,
+        "raw_output_tokens": 3,
+        "cached_tokens": 528
+      },
+      "estimated_cost_usd": 7.1e-05,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-r7b-12-2024",
+      "group": "messages_history_long",
+      "phase": "warm_delayed",
+      "attempt": 1,
+      "delay_seconds": 20,
+      "status": 200,
+      "elapsed_s": 0.27,
+      "usage": {
+        "billed_input_tokens": 1887,
+        "billed_output_tokens": 1,
+        "raw_input_tokens": 2544,
+        "raw_output_tokens": 3,
+        "cached_tokens": 2528
+      },
+      "estimated_cost_usd": 7.1e-05,
+      "error": null
+    },
+    {
+      "provider": "cohere",
+      "model": "command-r7b-12-2024",
+      "group": "messages_history_long",
+      "phase": "warm_delayed",
+      "attempt": 2,
+      "delay_seconds": 20,
+      "status": 200,
+      "elapsed_s": 0.24,
+      "usage": {
+        "billed_input_tokens": 1887,
+        "billed_output_tokens": 1,
+        "raw_input_tokens": 2544,
+        "raw_output_tokens": 3,
+        "cached_tokens": 2528
+      },
+      "estimated_cost_usd": 7.1e-05,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4-mini",
+      "group": "size_large",
+      "phase": "cold",
+      "attempt": 1,
+      "delay_seconds": 0,
+      "status": 200,
+      "elapsed_s": 1.091,
+      "resolved_model": "gpt-5.4-mini-2026-03-17",
+      "usage": {
+        "input_tokens": 15028,
+        "cached_tokens": 0,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.011293,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4-mini",
+      "group": "size_large",
+      "phase": "warm_immediate",
+      "attempt": 1,
+      "delay_seconds": 0,
+      "status": 200,
+      "elapsed_s": 0.994,
+      "resolved_model": "gpt-5.4-mini-2026-03-17",
+      "usage": {
+        "input_tokens": 15028,
+        "cached_tokens": 14592,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.001444,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4-mini",
+      "group": "size_large",
+      "phase": "warm_immediate",
+      "attempt": 2,
+      "delay_seconds": 0,
+      "status": 200,
+      "elapsed_s": 0.845,
+      "resolved_model": "gpt-5.4-mini-2026-03-17",
+      "usage": {
+        "input_tokens": 15028,
+        "cached_tokens": 14592,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.001444,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4-mini",
+      "group": "size_large",
+      "phase": "warm_immediate",
+      "attempt": 3,
+      "delay_seconds": 0,
+      "status": 200,
+      "elapsed_s": 0.959,
+      "resolved_model": "gpt-5.4-mini-2026-03-17",
+      "usage": {
+        "input_tokens": 15028,
+        "cached_tokens": 14592,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.001444,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4-mini",
+      "group": "size_large",
+      "phase": "warm_immediate",
+      "attempt": 4,
+      "delay_seconds": 0,
+      "status": 200,
+      "elapsed_s": 0.831,
+      "resolved_model": "gpt-5.4-mini-2026-03-17",
+      "usage": {
+        "input_tokens": 15028,
+        "cached_tokens": 14592,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.001444,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4-mini",
+      "group": "size_large",
+      "phase": "warm_immediate",
+      "attempt": 5,
+      "delay_seconds": 0,
+      "status": 200,
+      "elapsed_s": 1.048,
+      "resolved_model": "gpt-5.4-mini-2026-03-17",
+      "usage": {
+        "input_tokens": 15028,
+        "cached_tokens": 14592,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.001444,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4-mini",
+      "group": "size_large",
+      "phase": "warm_immediate",
+      "attempt": 6,
+      "delay_seconds": 0,
+      "status": 200,
+      "elapsed_s": 0.886,
+      "resolved_model": "gpt-5.4-mini-2026-03-17",
+      "usage": {
+        "input_tokens": 15028,
+        "cached_tokens": 14592,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.001444,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4-mini",
+      "group": "size_large",
+      "phase": "miss_immediate",
+      "attempt": 1,
+      "delay_seconds": 0,
+      "status": 200,
+      "elapsed_s": 0.932,
+      "resolved_model": "gpt-5.4-mini-2026-03-17",
+      "usage": {
+        "input_tokens": 15029,
+        "cached_tokens": 0,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.011294,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4-mini",
+      "group": "size_large",
+      "phase": "miss_immediate",
+      "attempt": 2,
+      "delay_seconds": 0,
+      "status": 200,
+      "elapsed_s": 0.942,
+      "resolved_model": "gpt-5.4-mini-2026-03-17",
+      "usage": {
+        "input_tokens": 15029,
+        "cached_tokens": 0,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.011294,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4-mini",
+      "group": "size_large",
+      "phase": "miss_immediate",
+      "attempt": 3,
+      "delay_seconds": 0,
+      "status": 200,
+      "elapsed_s": 0.816,
+      "resolved_model": "gpt-5.4-mini-2026-03-17",
+      "usage": {
+        "input_tokens": 15029,
+        "cached_tokens": 0,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.011294,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4-mini",
+      "group": "size_large",
+      "phase": "miss_immediate",
+      "attempt": 4,
+      "delay_seconds": 0,
+      "status": 200,
+      "elapsed_s": 1.086,
+      "resolved_model": "gpt-5.4-mini-2026-03-17",
+      "usage": {
+        "input_tokens": 15029,
+        "cached_tokens": 0,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.011294,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4-mini",
+      "group": "size_large",
+      "phase": "warm_delayed",
+      "attempt": 1,
+      "delay_seconds": 20,
+      "status": 200,
+      "elapsed_s": 1.132,
+      "resolved_model": "gpt-5.4-mini-2026-03-17",
+      "usage": {
+        "input_tokens": 15028,
+        "cached_tokens": 14592,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.001444,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4-mini",
+      "group": "size_large",
+      "phase": "warm_delayed",
+      "attempt": 2,
+      "delay_seconds": 20,
+      "status": 200,
+      "elapsed_s": 0.911,
+      "resolved_model": "gpt-5.4-mini-2026-03-17",
+      "usage": {
+        "input_tokens": 15028,
+        "cached_tokens": 14592,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.001444,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4-mini",
+      "group": "messages_history_long",
+      "phase": "cold",
+      "attempt": 1,
+      "delay_seconds": 0,
+      "status": 200,
+      "elapsed_s": 0.855,
+      "resolved_model": "gpt-5.4-mini-2026-03-17",
+      "usage": {
+        "input_tokens": 1987,
+        "cached_tokens": 0,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.001513,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4-mini",
+      "group": "messages_history_long",
+      "phase": "warm_immediate",
+      "attempt": 1,
+      "delay_seconds": 0,
+      "status": 200,
+      "elapsed_s": 0.968,
+      "resolved_model": "gpt-5.4-mini-2026-03-17",
+      "usage": {
+        "input_tokens": 1987,
+        "cached_tokens": 1792,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.000303,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4-mini",
+      "group": "messages_history_long",
+      "phase": "warm_immediate",
+      "attempt": 2,
+      "delay_seconds": 0,
+      "status": 200,
+      "elapsed_s": 0.863,
+      "resolved_model": "gpt-5.4-mini-2026-03-17",
+      "usage": {
+        "input_tokens": 1987,
+        "cached_tokens": 1792,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.000303,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4-mini",
+      "group": "messages_history_long",
+      "phase": "warm_immediate",
+      "attempt": 3,
+      "delay_seconds": 0,
+      "status": 200,
+      "elapsed_s": 0.891,
+      "resolved_model": "gpt-5.4-mini-2026-03-17",
+      "usage": {
+        "input_tokens": 1987,
+        "cached_tokens": 1792,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.000303,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4-mini",
+      "group": "messages_history_long",
+      "phase": "warm_immediate",
+      "attempt": 4,
+      "delay_seconds": 0,
+      "status": 200,
+      "elapsed_s": 0.863,
+      "resolved_model": "gpt-5.4-mini-2026-03-17",
+      "usage": {
+        "input_tokens": 1987,
+        "cached_tokens": 1792,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.000303,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4-mini",
+      "group": "messages_history_long",
+      "phase": "warm_immediate",
+      "attempt": 5,
+      "delay_seconds": 0,
+      "status": 200,
+      "elapsed_s": 0.863,
+      "resolved_model": "gpt-5.4-mini-2026-03-17",
+      "usage": {
+        "input_tokens": 1987,
+        "cached_tokens": 1792,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.000303,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4-mini",
+      "group": "messages_history_long",
+      "phase": "warm_immediate",
+      "attempt": 6,
+      "delay_seconds": 0,
+      "status": 200,
+      "elapsed_s": 0.82,
+      "resolved_model": "gpt-5.4-mini-2026-03-17",
+      "usage": {
+        "input_tokens": 1987,
+        "cached_tokens": 1792,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.000303,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4-mini",
+      "group": "messages_history_long",
+      "phase": "miss_immediate",
+      "attempt": 1,
+      "delay_seconds": 0,
+      "status": 200,
+      "elapsed_s": 0.589,
+      "resolved_model": "gpt-5.4-mini-2026-03-17",
+      "usage": {
+        "input_tokens": 1988,
+        "cached_tokens": 0,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.001514,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4-mini",
+      "group": "messages_history_long",
+      "phase": "miss_immediate",
+      "attempt": 2,
+      "delay_seconds": 0,
+      "status": 200,
+      "elapsed_s": 0.951,
+      "resolved_model": "gpt-5.4-mini-2026-03-17",
+      "usage": {
+        "input_tokens": 1988,
+        "cached_tokens": 0,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.001514,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4-mini",
+      "group": "messages_history_long",
+      "phase": "miss_immediate",
+      "attempt": 3,
+      "delay_seconds": 0,
+      "status": 200,
+      "elapsed_s": 0.832,
+      "resolved_model": "gpt-5.4-mini-2026-03-17",
+      "usage": {
+        "input_tokens": 1988,
+        "cached_tokens": 0,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.001514,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4-mini",
+      "group": "messages_history_long",
+      "phase": "miss_immediate",
+      "attempt": 4,
+      "delay_seconds": 0,
+      "status": 200,
+      "elapsed_s": 0.923,
+      "resolved_model": "gpt-5.4-mini-2026-03-17",
+      "usage": {
+        "input_tokens": 1988,
+        "cached_tokens": 0,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.001514,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4-mini",
+      "group": "messages_history_long",
+      "phase": "warm_delayed",
+      "attempt": 1,
+      "delay_seconds": 20,
+      "status": 200,
+      "elapsed_s": 0.825,
+      "resolved_model": "gpt-5.4-mini-2026-03-17",
+      "usage": {
+        "input_tokens": 1987,
+        "cached_tokens": 0,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.001513,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4-mini",
+      "group": "messages_history_long",
+      "phase": "warm_delayed",
+      "attempt": 2,
+      "delay_seconds": 20,
+      "status": 200,
+      "elapsed_s": 0.767,
+      "resolved_model": "gpt-5.4-mini-2026-03-17",
+      "usage": {
+        "input_tokens": 1987,
+        "cached_tokens": 1792,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.000303,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4",
+      "group": "size_large",
+      "phase": "cold",
+      "attempt": 1,
+      "delay_seconds": 0,
+      "status": 200,
+      "elapsed_s": 0.973,
+      "resolved_model": "gpt-5.4-2026-03-05",
+      "usage": {
+        "input_tokens": 15028,
+        "cached_tokens": 0,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.037645,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4",
+      "group": "size_large",
+      "phase": "warm_immediate",
+      "attempt": 1,
+      "delay_seconds": 0,
+      "status": 200,
+      "elapsed_s": 0.968,
+      "resolved_model": "gpt-5.4-2026-03-05",
+      "usage": {
+        "input_tokens": 15028,
+        "cached_tokens": 14848,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.004237,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4",
+      "group": "size_large",
+      "phase": "warm_immediate",
+      "attempt": 2,
+      "delay_seconds": 0,
+      "status": 200,
+      "elapsed_s": 0.959,
+      "resolved_model": "gpt-5.4-2026-03-05",
+      "usage": {
+        "input_tokens": 15028,
+        "cached_tokens": 14848,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.004237,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4",
+      "group": "size_large",
+      "phase": "warm_immediate",
+      "attempt": 3,
+      "delay_seconds": 0,
+      "status": 200,
+      "elapsed_s": 0.805,
+      "resolved_model": "gpt-5.4-2026-03-05",
+      "usage": {
+        "input_tokens": 15028,
+        "cached_tokens": 14848,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.004237,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4",
+      "group": "size_large",
+      "phase": "warm_immediate",
+      "attempt": 4,
+      "delay_seconds": 0,
+      "status": 200,
+      "elapsed_s": 0.93,
+      "resolved_model": "gpt-5.4-2026-03-05",
+      "usage": {
+        "input_tokens": 15028,
+        "cached_tokens": 14848,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.004237,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4",
+      "group": "size_large",
+      "phase": "warm_immediate",
+      "attempt": 5,
+      "delay_seconds": 0,
+      "status": 200,
+      "elapsed_s": 0.847,
+      "resolved_model": "gpt-5.4-2026-03-05",
+      "usage": {
+        "input_tokens": 15028,
+        "cached_tokens": 14848,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.004237,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4",
+      "group": "size_large",
+      "phase": "warm_immediate",
+      "attempt": 6,
+      "delay_seconds": 0,
+      "status": 200,
+      "elapsed_s": 0.983,
+      "resolved_model": "gpt-5.4-2026-03-05",
+      "usage": {
+        "input_tokens": 15028,
+        "cached_tokens": 14848,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.004237,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4",
+      "group": "size_large",
+      "phase": "miss_immediate",
+      "attempt": 1,
+      "delay_seconds": 0,
+      "status": 200,
+      "elapsed_s": 1.072,
+      "resolved_model": "gpt-5.4-2026-03-05",
+      "usage": {
+        "input_tokens": 15029,
+        "cached_tokens": 0,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.037648,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4",
+      "group": "size_large",
+      "phase": "miss_immediate",
+      "attempt": 2,
+      "delay_seconds": 0,
+      "status": 200,
+      "elapsed_s": 1.099,
+      "resolved_model": "gpt-5.4-2026-03-05",
+      "usage": {
+        "input_tokens": 15029,
+        "cached_tokens": 0,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.037648,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4",
+      "group": "size_large",
+      "phase": "miss_immediate",
+      "attempt": 3,
+      "delay_seconds": 0,
+      "status": 200,
+      "elapsed_s": 0.877,
+      "resolved_model": "gpt-5.4-2026-03-05",
+      "usage": {
+        "input_tokens": 15029,
+        "cached_tokens": 0,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.037648,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4",
+      "group": "size_large",
+      "phase": "miss_immediate",
+      "attempt": 4,
+      "delay_seconds": 0,
+      "status": 200,
+      "elapsed_s": 1.105,
+      "resolved_model": "gpt-5.4-2026-03-05",
+      "usage": {
+        "input_tokens": 15029,
+        "cached_tokens": 0,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.037648,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4",
+      "group": "size_large",
+      "phase": "warm_delayed",
+      "attempt": 1,
+      "delay_seconds": 20,
+      "status": 200,
+      "elapsed_s": 0.906,
+      "resolved_model": "gpt-5.4-2026-03-05",
+      "usage": {
+        "input_tokens": 15028,
+        "cached_tokens": 14848,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.004237,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4",
+      "group": "size_large",
+      "phase": "warm_delayed",
+      "attempt": 2,
+      "delay_seconds": 20,
+      "status": 200,
+      "elapsed_s": 0.867,
+      "resolved_model": "gpt-5.4-2026-03-05",
+      "usage": {
+        "input_tokens": 15028,
+        "cached_tokens": 14848,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.004237,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4",
+      "group": "messages_history_long",
+      "phase": "cold",
+      "attempt": 1,
+      "delay_seconds": 0,
+      "status": 200,
+      "elapsed_s": 2.243,
+      "resolved_model": "gpt-5.4-2026-03-05",
+      "usage": {
+        "input_tokens": 1987,
+        "cached_tokens": 0,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.005043,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4",
+      "group": "messages_history_long",
+      "phase": "warm_immediate",
+      "attempt": 1,
+      "delay_seconds": 0,
+      "status": 200,
+      "elapsed_s": 0.993,
+      "resolved_model": "gpt-5.4-2026-03-05",
+      "usage": {
+        "input_tokens": 1987,
+        "cached_tokens": 1792,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.00101,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4",
+      "group": "messages_history_long",
+      "phase": "warm_immediate",
+      "attempt": 2,
+      "delay_seconds": 0,
+      "status": 200,
+      "elapsed_s": 0.823,
+      "resolved_model": "gpt-5.4-2026-03-05",
+      "usage": {
+        "input_tokens": 1987,
+        "cached_tokens": 1792,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.00101,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4",
+      "group": "messages_history_long",
+      "phase": "warm_immediate",
+      "attempt": 3,
+      "delay_seconds": 0,
+      "status": 200,
+      "elapsed_s": 0.802,
+      "resolved_model": "gpt-5.4-2026-03-05",
+      "usage": {
+        "input_tokens": 1987,
+        "cached_tokens": 1792,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.00101,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4",
+      "group": "messages_history_long",
+      "phase": "warm_immediate",
+      "attempt": 4,
+      "delay_seconds": 0,
+      "status": 200,
+      "elapsed_s": 0.941,
+      "resolved_model": "gpt-5.4-2026-03-05",
+      "usage": {
+        "input_tokens": 1987,
+        "cached_tokens": 1792,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.00101,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4",
+      "group": "messages_history_long",
+      "phase": "warm_immediate",
+      "attempt": 5,
+      "delay_seconds": 0,
+      "status": 200,
+      "elapsed_s": 1.099,
+      "resolved_model": "gpt-5.4-2026-03-05",
+      "usage": {
+        "input_tokens": 1987,
+        "cached_tokens": 1792,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.00101,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4",
+      "group": "messages_history_long",
+      "phase": "warm_immediate",
+      "attempt": 6,
+      "delay_seconds": 0,
+      "status": 200,
+      "elapsed_s": 0.905,
+      "resolved_model": "gpt-5.4-2026-03-05",
+      "usage": {
+        "input_tokens": 1987,
+        "cached_tokens": 1792,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.00101,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4",
+      "group": "messages_history_long",
+      "phase": "miss_immediate",
+      "attempt": 1,
+      "delay_seconds": 0,
+      "status": 200,
+      "elapsed_s": 0.893,
+      "resolved_model": "gpt-5.4-2026-03-05",
+      "usage": {
+        "input_tokens": 1988,
+        "cached_tokens": 0,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.005045,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4",
+      "group": "messages_history_long",
+      "phase": "miss_immediate",
+      "attempt": 2,
+      "delay_seconds": 0,
+      "status": 200,
+      "elapsed_s": 1.331,
+      "resolved_model": "gpt-5.4-2026-03-05",
+      "usage": {
+        "input_tokens": 1988,
+        "cached_tokens": 0,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.005045,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4",
+      "group": "messages_history_long",
+      "phase": "miss_immediate",
+      "attempt": 3,
+      "delay_seconds": 0,
+      "status": 200,
+      "elapsed_s": 0.969,
+      "resolved_model": "gpt-5.4-2026-03-05",
+      "usage": {
+        "input_tokens": 1988,
+        "cached_tokens": 0,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.005045,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4",
+      "group": "messages_history_long",
+      "phase": "miss_immediate",
+      "attempt": 4,
+      "delay_seconds": 0,
+      "status": 200,
+      "elapsed_s": 0.888,
+      "resolved_model": "gpt-5.4-2026-03-05",
+      "usage": {
+        "input_tokens": 1988,
+        "cached_tokens": 0,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.005045,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4",
+      "group": "messages_history_long",
+      "phase": "warm_delayed",
+      "attempt": 1,
+      "delay_seconds": 20,
+      "status": 200,
+      "elapsed_s": 1.125,
+      "resolved_model": "gpt-5.4-2026-03-05",
+      "usage": {
+        "input_tokens": 1987,
+        "cached_tokens": 1792,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.00101,
+      "error": null
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.4",
+      "group": "messages_history_long",
+      "phase": "warm_delayed",
+      "attempt": 2,
+      "delay_seconds": 20,
+      "status": 200,
+      "elapsed_s": 0.965,
+      "resolved_model": "gpt-5.4-2026-03-05",
+      "usage": {
+        "input_tokens": 1987,
+        "cached_tokens": 1792,
+        "output_tokens": 5,
+        "reasoning_tokens": 0
+      },
+      "estimated_cost_usd": 0.00101,
+      "error": null
+    }
+  ],
+  "summary": {
+    "cohere": {
+      "command-a-03-2025": {
+        "size_large": {
+          "cold": {
+            "count": 1,
+            "median_elapsed_s": 5.606,
+            "min_elapsed_s": 5.606,
+            "max_elapsed_s": 5.606,
+            "median_cost_usd": 0.08758,
+            "min_cost_usd": 0.08758,
+            "max_cost_usd": 0.08758,
+            "median_input_tokens": 35020,
+            "median_cached_tokens": 0,
+            "reported_cache_hit_rate": 0.0,
+            "billing_hit_rate": 0.0,
+            "reported_cache_hits": [
+              false
+            ],
+            "billing_hits": [
+              false
+            ],
+            "cached_tokens": [
+              0
+            ],
+            "costs_usd": [
+              0.08758
+            ],
+            "elapsed_s": [
+              5.606
+            ]
+          },
+          "warm_immediate": {
+            "count": 6,
+            "median_elapsed_s": 6.745,
+            "min_elapsed_s": 6.0,
+            "max_elapsed_s": 10.156,
+            "median_cost_usd": 0.08758,
+            "min_cost_usd": 0.08758,
+            "max_cost_usd": 0.08758,
+            "median_input_tokens": 35020.0,
+            "median_cached_tokens": 0.0,
+            "reported_cache_hit_rate": 0.0,
+            "billing_hit_rate": 0.0,
+            "reported_cache_hits": [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            "billing_hits": [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            "cached_tokens": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "costs_usd": [
+              0.08758,
+              0.08758,
+              0.08758,
+              0.08758,
+              0.08758,
+              0.08758
+            ],
+            "elapsed_s": [
+              7.993,
+              6.459,
+              10.156,
+              6.889,
+              6.6,
+              6.0
+            ]
+          },
+          "miss_immediate": {
+            "count": 4,
+            "median_elapsed_s": 6.365,
+            "min_elapsed_s": 5.999,
+            "max_elapsed_s": 10.062,
+            "median_cost_usd": 0.087582,
+            "min_cost_usd": 0.087582,
+            "max_cost_usd": 0.087582,
+            "median_input_tokens": 35021.0,
+            "median_cached_tokens": 0.0,
+            "reported_cache_hit_rate": 0.0,
+            "billing_hit_rate": 0.0,
+            "reported_cache_hits": [
+              false,
+              false,
+              false,
+              false
+            ],
+            "billing_hits": [
+              false,
+              false,
+              false,
+              false
+            ],
+            "cached_tokens": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "costs_usd": [
+              0.087582,
+              0.087582,
+              0.087582,
+              0.087582
+            ],
+            "elapsed_s": [
+              6.633,
+              10.062,
+              6.098,
+              5.999
+            ]
+          },
+          "warm_delayed": {
+            "count": 2,
+            "median_elapsed_s": 5.875,
+            "min_elapsed_s": 5.759,
+            "max_elapsed_s": 5.99,
+            "median_cost_usd": 0.08758,
+            "min_cost_usd": 0.08758,
+            "max_cost_usd": 0.08758,
+            "median_input_tokens": 35020.0,
+            "median_cached_tokens": 0.0,
+            "reported_cache_hit_rate": 0.0,
+            "billing_hit_rate": 0.0,
+            "reported_cache_hits": [
+              false,
+              false
+            ],
+            "billing_hits": [
+              false,
+              false
+            ],
+            "cached_tokens": [
+              0,
+              0
+            ],
+            "costs_usd": [
+              0.08758,
+              0.08758
+            ],
+            "elapsed_s": [
+              5.99,
+              5.759
+            ]
+          },
+          "delay_seconds": 20
+        },
+        "messages_history_long": {
+          "cold": {
+            "count": 1,
+            "median_elapsed_s": 0.633,
+            "min_elapsed_s": 0.633,
+            "max_elapsed_s": 0.633,
+            "median_cost_usd": 0.004727,
+            "min_cost_usd": 0.004727,
+            "max_cost_usd": 0.004727,
+            "median_input_tokens": 1887,
+            "median_cached_tokens": 0,
+            "reported_cache_hit_rate": 0.0,
+            "billing_hit_rate": 0.0,
+            "reported_cache_hits": [
+              false
+            ],
+            "billing_hits": [
+              false
+            ],
+            "cached_tokens": [
+              0
+            ],
+            "costs_usd": [
+              0.004727
+            ],
+            "elapsed_s": [
+              0.633
+            ]
+          },
+          "warm_immediate": {
+            "count": 6,
+            "median_elapsed_s": 0.798,
+            "min_elapsed_s": 0.494,
+            "max_elapsed_s": 2.706,
+            "median_cost_usd": 0.004727,
+            "min_cost_usd": 0.004727,
+            "max_cost_usd": 0.004727,
+            "median_input_tokens": 1887.0,
+            "median_cached_tokens": 0.0,
+            "reported_cache_hit_rate": 0.0,
+            "billing_hit_rate": 0.0,
+            "reported_cache_hits": [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            "billing_hits": [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            "cached_tokens": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "costs_usd": [
+              0.004727,
+              0.004727,
+              0.004727,
+              0.004727,
+              0.004727,
+              0.004727
+            ],
+            "elapsed_s": [
+              1.532,
+              0.494,
+              2.706,
+              0.516,
+              1.071,
+              0.525
+            ]
+          },
+          "miss_immediate": {
+            "count": 4,
+            "median_elapsed_s": 0.589,
+            "min_elapsed_s": 0.456,
+            "max_elapsed_s": 0.964,
+            "median_cost_usd": 0.00473,
+            "min_cost_usd": 0.00473,
+            "max_cost_usd": 0.00473,
+            "median_input_tokens": 1888.0,
+            "median_cached_tokens": 0.0,
+            "reported_cache_hit_rate": 0.0,
+            "billing_hit_rate": 0.0,
+            "reported_cache_hits": [
+              false,
+              false,
+              false,
+              false
+            ],
+            "billing_hits": [
+              false,
+              false,
+              false,
+              false
+            ],
+            "cached_tokens": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "costs_usd": [
+              0.00473,
+              0.00473,
+              0.00473,
+              0.00473
+            ],
+            "elapsed_s": [
+              0.456,
+              0.661,
+              0.964,
+              0.517
+            ]
+          },
+          "warm_delayed": {
+            "count": 2,
+            "median_elapsed_s": 0.936,
+            "min_elapsed_s": 0.514,
+            "max_elapsed_s": 1.358,
+            "median_cost_usd": 0.004727,
+            "min_cost_usd": 0.004727,
+            "max_cost_usd": 0.004727,
+            "median_input_tokens": 1887.0,
+            "median_cached_tokens": 0.0,
+            "reported_cache_hit_rate": 0.0,
+            "billing_hit_rate": 0.0,
+            "reported_cache_hits": [
+              false,
+              false
+            ],
+            "billing_hits": [
+              false,
+              false
+            ],
+            "cached_tokens": [
+              0,
+              0
+            ],
+            "costs_usd": [
+              0.004727,
+              0.004727
+            ],
+            "elapsed_s": [
+              0.514,
+              1.358
+            ]
+          },
+          "delay_seconds": 20
+        }
+      },
+      "command-r7b-12-2024": {
+        "size_large": {
+          "cold": {
+            "count": 1,
+            "median_elapsed_s": 2.417,
+            "min_elapsed_s": 2.417,
+            "max_elapsed_s": 2.417,
+            "median_cost_usd": 0.001314,
+            "min_cost_usd": 0.001314,
+            "max_cost_usd": 0.001314,
+            "median_input_tokens": 35020,
+            "median_cached_tokens": 512,
+            "reported_cache_hit_rate": 1.0,
+            "billing_hit_rate": 0.0,
+            "reported_cache_hits": [
+              true
+            ],
+            "billing_hits": [
+              false
+            ],
+            "cached_tokens": [
+              512
+            ],
+            "costs_usd": [
+              0.001314
+            ],
+            "elapsed_s": [
+              2.417
+            ]
+          },
+          "warm_immediate": {
+            "count": 6,
+            "median_elapsed_s": 0.77,
+            "min_elapsed_s": 0.679,
+            "max_elapsed_s": 1.759,
+            "median_cost_usd": 0.001314,
+            "min_cost_usd": 0.001314,
+            "max_cost_usd": 0.001314,
+            "median_input_tokens": 35020.0,
+            "median_cached_tokens": 35536.0,
+            "reported_cache_hit_rate": 1.0,
+            "billing_hit_rate": 0.0,
+            "reported_cache_hits": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "billing_hits": [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            "cached_tokens": [
+              35536,
+              35536,
+              35536,
+              35536,
+              512,
+              35536
+            ],
+            "costs_usd": [
+              0.001314,
+              0.001314,
+              0.001314,
+              0.001314,
+              0.001314,
+              0.001314
+            ],
+            "elapsed_s": [
+              0.749,
+              0.679,
+              0.713,
+              1.061,
+              1.759,
+              0.79
+            ]
+          },
+          "miss_immediate": {
+            "count": 4,
+            "median_elapsed_s": 1.836,
+            "min_elapsed_s": 1.715,
+            "max_elapsed_s": 2.119,
+            "median_cost_usd": 0.001314,
+            "min_cost_usd": 0.001314,
+            "max_cost_usd": 0.001314,
+            "median_input_tokens": 35021.0,
+            "median_cached_tokens": 528.0,
+            "reported_cache_hit_rate": 1.0,
+            "billing_hit_rate": 0.0,
+            "reported_cache_hits": [
+              true,
+              true,
+              true,
+              true
+            ],
+            "billing_hits": [
+              false,
+              false,
+              false,
+              false
+            ],
+            "cached_tokens": [
+              528,
+              528,
+              528,
+              528
+            ],
+            "costs_usd": [
+              0.001314,
+              0.001314,
+              0.001314,
+              0.001314
+            ],
+            "elapsed_s": [
+              1.715,
+              1.913,
+              2.119,
+              1.759
+            ]
+          },
+          "warm_delayed": {
+            "count": 2,
+            "median_elapsed_s": 0.712,
+            "min_elapsed_s": 0.697,
+            "max_elapsed_s": 0.728,
+            "median_cost_usd": 0.001314,
+            "min_cost_usd": 0.001314,
+            "max_cost_usd": 0.001314,
+            "median_input_tokens": 35020.0,
+            "median_cached_tokens": 35536.0,
+            "reported_cache_hit_rate": 1.0,
+            "billing_hit_rate": 0.0,
+            "reported_cache_hits": [
+              true,
+              true
+            ],
+            "billing_hits": [
+              false,
+              false
+            ],
+            "cached_tokens": [
+              35536,
+              35536
+            ],
+            "costs_usd": [
+              0.001314,
+              0.001314
+            ],
+            "elapsed_s": [
+              0.728,
+              0.697
+            ]
+          },
+          "delay_seconds": 20
+        },
+        "messages_history_long": {
+          "cold": {
+            "count": 1,
+            "median_elapsed_s": 0.268,
+            "min_elapsed_s": 0.268,
+            "max_elapsed_s": 0.268,
+            "median_cost_usd": 7.1e-05,
+            "min_cost_usd": 7.1e-05,
+            "max_cost_usd": 7.1e-05,
+            "median_input_tokens": 1887,
+            "median_cached_tokens": 528,
+            "reported_cache_hit_rate": 1.0,
+            "billing_hit_rate": 0.0,
+            "reported_cache_hits": [
+              true
+            ],
+            "billing_hits": [
+              false
+            ],
+            "cached_tokens": [
+              528
+            ],
+            "costs_usd": [
+              7.1e-05
+            ],
+            "elapsed_s": [
+              0.268
+            ]
+          },
+          "warm_immediate": {
+            "count": 6,
+            "median_elapsed_s": 0.252,
+            "min_elapsed_s": 0.222,
+            "max_elapsed_s": 0.271,
+            "median_cost_usd": 7.1e-05,
+            "min_cost_usd": 7.1e-05,
+            "max_cost_usd": 7.1e-05,
+            "median_input_tokens": 1887.0,
+            "median_cached_tokens": 2528.0,
+            "reported_cache_hit_rate": 1.0,
+            "billing_hit_rate": 0.0,
+            "reported_cache_hits": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "billing_hits": [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            "cached_tokens": [
+              2528,
+              528,
+              2528,
+              2528,
+              2528,
+              2528
+            ],
+            "costs_usd": [
+              7.1e-05,
+              7.1e-05,
+              7.1e-05,
+              7.1e-05,
+              7.1e-05,
+              7.1e-05
+            ],
+            "elapsed_s": [
+              0.26,
+              0.263,
+              0.244,
+              0.222,
+              0.232,
+              0.271
+            ]
+          },
+          "miss_immediate": {
+            "count": 4,
+            "median_elapsed_s": 0.287,
+            "min_elapsed_s": 0.26,
+            "max_elapsed_s": 0.315,
+            "median_cost_usd": 7.1e-05,
+            "min_cost_usd": 7.1e-05,
+            "max_cost_usd": 7.1e-05,
+            "median_input_tokens": 1888.0,
+            "median_cached_tokens": 528.0,
+            "reported_cache_hit_rate": 1.0,
+            "billing_hit_rate": 0.0,
+            "reported_cache_hits": [
+              true,
+              true,
+              true,
+              true
+            ],
+            "billing_hits": [
+              false,
+              false,
+              false,
+              false
+            ],
+            "cached_tokens": [
+              528,
+              528,
+              528,
+              528
+            ],
+            "costs_usd": [
+              7.1e-05,
+              7.1e-05,
+              7.1e-05,
+              7.1e-05
+            ],
+            "elapsed_s": [
+              0.315,
+              0.29,
+              0.26,
+              0.285
+            ]
+          },
+          "warm_delayed": {
+            "count": 2,
+            "median_elapsed_s": 0.255,
+            "min_elapsed_s": 0.24,
+            "max_elapsed_s": 0.27,
+            "median_cost_usd": 7.1e-05,
+            "min_cost_usd": 7.1e-05,
+            "max_cost_usd": 7.1e-05,
+            "median_input_tokens": 1887.0,
+            "median_cached_tokens": 2528.0,
+            "reported_cache_hit_rate": 1.0,
+            "billing_hit_rate": 0.0,
+            "reported_cache_hits": [
+              true,
+              true
+            ],
+            "billing_hits": [
+              false,
+              false
+            ],
+            "cached_tokens": [
+              2528,
+              2528
+            ],
+            "costs_usd": [
+              7.1e-05,
+              7.1e-05
+            ],
+            "elapsed_s": [
+              0.27,
+              0.24
+            ]
+          },
+          "delay_seconds": 20
+        }
+      }
+    },
+    "openai": {
+      "gpt-5.4-mini": {
+        "size_large": {
+          "cold": {
+            "count": 1,
+            "median_elapsed_s": 1.091,
+            "min_elapsed_s": 1.091,
+            "max_elapsed_s": 1.091,
+            "median_cost_usd": 0.011293,
+            "min_cost_usd": 0.011293,
+            "max_cost_usd": 0.011293,
+            "median_input_tokens": 15028,
+            "median_cached_tokens": 0,
+            "reported_cache_hit_rate": 0.0,
+            "billing_hit_rate": 0.0,
+            "reported_cache_hits": [
+              false
+            ],
+            "billing_hits": [
+              false
+            ],
+            "cached_tokens": [
+              0
+            ],
+            "costs_usd": [
+              0.011293
+            ],
+            "elapsed_s": [
+              1.091
+            ]
+          },
+          "warm_immediate": {
+            "count": 6,
+            "median_elapsed_s": 0.922,
+            "min_elapsed_s": 0.831,
+            "max_elapsed_s": 1.048,
+            "median_cost_usd": 0.001444,
+            "min_cost_usd": 0.001444,
+            "max_cost_usd": 0.001444,
+            "median_input_tokens": 15028.0,
+            "median_cached_tokens": 14592.0,
+            "reported_cache_hit_rate": 1.0,
+            "billing_hit_rate": 1.0,
+            "reported_cache_hits": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "billing_hits": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "cached_tokens": [
+              14592,
+              14592,
+              14592,
+              14592,
+              14592,
+              14592
+            ],
+            "costs_usd": [
+              0.001444,
+              0.001444,
+              0.001444,
+              0.001444,
+              0.001444,
+              0.001444
+            ],
+            "elapsed_s": [
+              0.994,
+              0.845,
+              0.959,
+              0.831,
+              1.048,
+              0.886
+            ]
+          },
+          "miss_immediate": {
+            "count": 4,
+            "median_elapsed_s": 0.937,
+            "min_elapsed_s": 0.816,
+            "max_elapsed_s": 1.086,
+            "median_cost_usd": 0.011294,
+            "min_cost_usd": 0.011294,
+            "max_cost_usd": 0.011294,
+            "median_input_tokens": 15029.0,
+            "median_cached_tokens": 0.0,
+            "reported_cache_hit_rate": 0.0,
+            "billing_hit_rate": 0.0,
+            "reported_cache_hits": [
+              false,
+              false,
+              false,
+              false
+            ],
+            "billing_hits": [
+              false,
+              false,
+              false,
+              false
+            ],
+            "cached_tokens": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "costs_usd": [
+              0.011294,
+              0.011294,
+              0.011294,
+              0.011294
+            ],
+            "elapsed_s": [
+              0.932,
+              0.942,
+              0.816,
+              1.086
+            ]
+          },
+          "warm_delayed": {
+            "count": 2,
+            "median_elapsed_s": 1.022,
+            "min_elapsed_s": 0.911,
+            "max_elapsed_s": 1.132,
+            "median_cost_usd": 0.001444,
+            "min_cost_usd": 0.001444,
+            "max_cost_usd": 0.001444,
+            "median_input_tokens": 15028.0,
+            "median_cached_tokens": 14592.0,
+            "reported_cache_hit_rate": 1.0,
+            "billing_hit_rate": 1.0,
+            "reported_cache_hits": [
+              true,
+              true
+            ],
+            "billing_hits": [
+              true,
+              true
+            ],
+            "cached_tokens": [
+              14592,
+              14592
+            ],
+            "costs_usd": [
+              0.001444,
+              0.001444
+            ],
+            "elapsed_s": [
+              1.132,
+              0.911
+            ]
+          },
+          "delay_seconds": 20
+        },
+        "messages_history_long": {
+          "cold": {
+            "count": 1,
+            "median_elapsed_s": 0.855,
+            "min_elapsed_s": 0.855,
+            "max_elapsed_s": 0.855,
+            "median_cost_usd": 0.001513,
+            "min_cost_usd": 0.001513,
+            "max_cost_usd": 0.001513,
+            "median_input_tokens": 1987,
+            "median_cached_tokens": 0,
+            "reported_cache_hit_rate": 0.0,
+            "billing_hit_rate": 0.0,
+            "reported_cache_hits": [
+              false
+            ],
+            "billing_hits": [
+              false
+            ],
+            "cached_tokens": [
+              0
+            ],
+            "costs_usd": [
+              0.001513
+            ],
+            "elapsed_s": [
+              0.855
+            ]
+          },
+          "warm_immediate": {
+            "count": 6,
+            "median_elapsed_s": 0.863,
+            "min_elapsed_s": 0.82,
+            "max_elapsed_s": 0.968,
+            "median_cost_usd": 0.000303,
+            "min_cost_usd": 0.000303,
+            "max_cost_usd": 0.000303,
+            "median_input_tokens": 1987.0,
+            "median_cached_tokens": 1792.0,
+            "reported_cache_hit_rate": 1.0,
+            "billing_hit_rate": 1.0,
+            "reported_cache_hits": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "billing_hits": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "cached_tokens": [
+              1792,
+              1792,
+              1792,
+              1792,
+              1792,
+              1792
+            ],
+            "costs_usd": [
+              0.000303,
+              0.000303,
+              0.000303,
+              0.000303,
+              0.000303,
+              0.000303
+            ],
+            "elapsed_s": [
+              0.968,
+              0.863,
+              0.891,
+              0.863,
+              0.863,
+              0.82
+            ]
+          },
+          "miss_immediate": {
+            "count": 4,
+            "median_elapsed_s": 0.877,
+            "min_elapsed_s": 0.589,
+            "max_elapsed_s": 0.951,
+            "median_cost_usd": 0.001514,
+            "min_cost_usd": 0.001514,
+            "max_cost_usd": 0.001514,
+            "median_input_tokens": 1988.0,
+            "median_cached_tokens": 0.0,
+            "reported_cache_hit_rate": 0.0,
+            "billing_hit_rate": 0.0,
+            "reported_cache_hits": [
+              false,
+              false,
+              false,
+              false
+            ],
+            "billing_hits": [
+              false,
+              false,
+              false,
+              false
+            ],
+            "cached_tokens": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "costs_usd": [
+              0.001514,
+              0.001514,
+              0.001514,
+              0.001514
+            ],
+            "elapsed_s": [
+              0.589,
+              0.951,
+              0.832,
+              0.923
+            ]
+          },
+          "warm_delayed": {
+            "count": 2,
+            "median_elapsed_s": 0.796,
+            "min_elapsed_s": 0.767,
+            "max_elapsed_s": 0.825,
+            "median_cost_usd": 0.000908,
+            "min_cost_usd": 0.000303,
+            "max_cost_usd": 0.001513,
+            "median_input_tokens": 1987.0,
+            "median_cached_tokens": 896.0,
+            "reported_cache_hit_rate": 0.5,
+            "billing_hit_rate": 0.5,
+            "reported_cache_hits": [
+              false,
+              true
+            ],
+            "billing_hits": [
+              false,
+              true
+            ],
+            "cached_tokens": [
+              0,
+              1792
+            ],
+            "costs_usd": [
+              0.001513,
+              0.000303
+            ],
+            "elapsed_s": [
+              0.825,
+              0.767
+            ]
+          },
+          "delay_seconds": 20
+        }
+      },
+      "gpt-5.4": {
+        "size_large": {
+          "cold": {
+            "count": 1,
+            "median_elapsed_s": 0.973,
+            "min_elapsed_s": 0.973,
+            "max_elapsed_s": 0.973,
+            "median_cost_usd": 0.037645,
+            "min_cost_usd": 0.037645,
+            "max_cost_usd": 0.037645,
+            "median_input_tokens": 15028,
+            "median_cached_tokens": 0,
+            "reported_cache_hit_rate": 0.0,
+            "billing_hit_rate": 0.0,
+            "reported_cache_hits": [
+              false
+            ],
+            "billing_hits": [
+              false
+            ],
+            "cached_tokens": [
+              0
+            ],
+            "costs_usd": [
+              0.037645
+            ],
+            "elapsed_s": [
+              0.973
+            ]
+          },
+          "warm_immediate": {
+            "count": 6,
+            "median_elapsed_s": 0.945,
+            "min_elapsed_s": 0.805,
+            "max_elapsed_s": 0.983,
+            "median_cost_usd": 0.004237,
+            "min_cost_usd": 0.004237,
+            "max_cost_usd": 0.004237,
+            "median_input_tokens": 15028.0,
+            "median_cached_tokens": 14848.0,
+            "reported_cache_hit_rate": 1.0,
+            "billing_hit_rate": 1.0,
+            "reported_cache_hits": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "billing_hits": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "cached_tokens": [
+              14848,
+              14848,
+              14848,
+              14848,
+              14848,
+              14848
+            ],
+            "costs_usd": [
+              0.004237,
+              0.004237,
+              0.004237,
+              0.004237,
+              0.004237,
+              0.004237
+            ],
+            "elapsed_s": [
+              0.968,
+              0.959,
+              0.805,
+              0.93,
+              0.847,
+              0.983
+            ]
+          },
+          "miss_immediate": {
+            "count": 4,
+            "median_elapsed_s": 1.086,
+            "min_elapsed_s": 0.877,
+            "max_elapsed_s": 1.105,
+            "median_cost_usd": 0.037648,
+            "min_cost_usd": 0.037648,
+            "max_cost_usd": 0.037648,
+            "median_input_tokens": 15029.0,
+            "median_cached_tokens": 0.0,
+            "reported_cache_hit_rate": 0.0,
+            "billing_hit_rate": 0.0,
+            "reported_cache_hits": [
+              false,
+              false,
+              false,
+              false
+            ],
+            "billing_hits": [
+              false,
+              false,
+              false,
+              false
+            ],
+            "cached_tokens": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "costs_usd": [
+              0.037648,
+              0.037648,
+              0.037648,
+              0.037648
+            ],
+            "elapsed_s": [
+              1.072,
+              1.099,
+              0.877,
+              1.105
+            ]
+          },
+          "warm_delayed": {
+            "count": 2,
+            "median_elapsed_s": 0.887,
+            "min_elapsed_s": 0.867,
+            "max_elapsed_s": 0.906,
+            "median_cost_usd": 0.004237,
+            "min_cost_usd": 0.004237,
+            "max_cost_usd": 0.004237,
+            "median_input_tokens": 15028.0,
+            "median_cached_tokens": 14848.0,
+            "reported_cache_hit_rate": 1.0,
+            "billing_hit_rate": 1.0,
+            "reported_cache_hits": [
+              true,
+              true
+            ],
+            "billing_hits": [
+              true,
+              true
+            ],
+            "cached_tokens": [
+              14848,
+              14848
+            ],
+            "costs_usd": [
+              0.004237,
+              0.004237
+            ],
+            "elapsed_s": [
+              0.906,
+              0.867
+            ]
+          },
+          "delay_seconds": 20
+        },
+        "messages_history_long": {
+          "cold": {
+            "count": 1,
+            "median_elapsed_s": 2.243,
+            "min_elapsed_s": 2.243,
+            "max_elapsed_s": 2.243,
+            "median_cost_usd": 0.005043,
+            "min_cost_usd": 0.005043,
+            "max_cost_usd": 0.005043,
+            "median_input_tokens": 1987,
+            "median_cached_tokens": 0,
+            "reported_cache_hit_rate": 0.0,
+            "billing_hit_rate": 0.0,
+            "reported_cache_hits": [
+              false
+            ],
+            "billing_hits": [
+              false
+            ],
+            "cached_tokens": [
+              0
+            ],
+            "costs_usd": [
+              0.005043
+            ],
+            "elapsed_s": [
+              2.243
+            ]
+          },
+          "warm_immediate": {
+            "count": 6,
+            "median_elapsed_s": 0.923,
+            "min_elapsed_s": 0.802,
+            "max_elapsed_s": 1.099,
+            "median_cost_usd": 0.00101,
+            "min_cost_usd": 0.00101,
+            "max_cost_usd": 0.00101,
+            "median_input_tokens": 1987.0,
+            "median_cached_tokens": 1792.0,
+            "reported_cache_hit_rate": 1.0,
+            "billing_hit_rate": 1.0,
+            "reported_cache_hits": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "billing_hits": [
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ],
+            "cached_tokens": [
+              1792,
+              1792,
+              1792,
+              1792,
+              1792,
+              1792
+            ],
+            "costs_usd": [
+              0.00101,
+              0.00101,
+              0.00101,
+              0.00101,
+              0.00101,
+              0.00101
+            ],
+            "elapsed_s": [
+              0.993,
+              0.823,
+              0.802,
+              0.941,
+              1.099,
+              0.905
+            ]
+          },
+          "miss_immediate": {
+            "count": 4,
+            "median_elapsed_s": 0.931,
+            "min_elapsed_s": 0.888,
+            "max_elapsed_s": 1.331,
+            "median_cost_usd": 0.005045,
+            "min_cost_usd": 0.005045,
+            "max_cost_usd": 0.005045,
+            "median_input_tokens": 1988.0,
+            "median_cached_tokens": 0.0,
+            "reported_cache_hit_rate": 0.0,
+            "billing_hit_rate": 0.0,
+            "reported_cache_hits": [
+              false,
+              false,
+              false,
+              false
+            ],
+            "billing_hits": [
+              false,
+              false,
+              false,
+              false
+            ],
+            "cached_tokens": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "costs_usd": [
+              0.005045,
+              0.005045,
+              0.005045,
+              0.005045
+            ],
+            "elapsed_s": [
+              0.893,
+              1.331,
+              0.969,
+              0.888
+            ]
+          },
+          "warm_delayed": {
+            "count": 2,
+            "median_elapsed_s": 1.045,
+            "min_elapsed_s": 0.965,
+            "max_elapsed_s": 1.125,
+            "median_cost_usd": 0.00101,
+            "min_cost_usd": 0.00101,
+            "max_cost_usd": 0.00101,
+            "median_input_tokens": 1987.0,
+            "median_cached_tokens": 1792.0,
+            "reported_cache_hit_rate": 1.0,
+            "billing_hit_rate": 1.0,
+            "reported_cache_hits": [
+              true,
+              true
+            ],
+            "billing_hits": [
+              true,
+              true
+            ],
+            "cached_tokens": [
+              1792,
+              1792
+            ],
+            "costs_usd": [
+              0.00101,
+              0.00101
+            ],
+            "elapsed_s": [
+              1.125,
+              0.965
+            ]
+          },
+          "delay_seconds": 20
+        }
+      }
+    }
+  }
+}
