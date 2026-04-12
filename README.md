@@ -1,5 +1,7 @@
 #### Cohere Cache Profile
 
+Edit: look what happened when anthropic decreased decreased ttl from 1 hr to 5 min https://www.reddit.com/r/ClaudeCode/comments/1sj1zb0/data_from_120k_api_calls_across_2_machines_proves/
+
 This repo benchmarks whether repeated prompt reuse gets cheaper on the public API. In these tests, OpenAI did; Cohere Command A did not. The practical consequence is that Cohere Command A looks like a weak fit for repeat-heavy workloads whose economics depend on prompt caching, such as coding agents, long-history chat, and some RAG flows. This is not a general model comparison; it does not judge embeddings, rerank quality, retrieval quality, or private deployment options.
 
 #### Main Result
